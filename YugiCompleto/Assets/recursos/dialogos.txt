@@ -1,0 +1,443 @@
+// dialogos en historia cada uno tiene minimo 2 opciones maximo 3 ,sl empezar duelo si ganar,saltarse un evento,si perder,saltarse 2 eventos,si saltar duelo saltarse 3 eventos
+Hola 
+estás a 5000 años de tu época actual, necesitamos evitar que algo terrible ocurra
+El gran CJET está detrás de todo esto
+era tu destino encontrarme, por ahora te diré que CJET es muy poderoso, así que necesito medir tus habilidades
+¿Quieres tener un duelo conmigo?
+Genial ¡Hora del duelo!
+
+Entiendo tu apuro, nos veremos después.
+
+No creo que seas un novato en esto, lo hiciste bien.
+
+Creo que debes practicar más.
+
+El Gran maestro CJET ha estádo conspirando con los grandes magos de la región
+Por tu vestimenta se ve que no eres de por acá
+Creo que debes saber mas sobre los duelos de monstruos
+¿Quieres tener un duelo?
+Genial ¡Hora del duelo!
+
+Debes estár preparado para un verdadero reto, nos veremos después.
+
+Aprendes rápido pronto serás todo un experto en el duelo de monstruos.
+
+No creo que debas avanzar sin poder vencerme
+
+Ya he visto tu potencial en los duelos
+En este festival buscamos grandes duelistas para combatir contra la magia oscura
+Creo que me interesa saber si tienes ese potencial
+¿Quieres tener un duelo conmigo?
+Genial ¡Hora del duelo!
+
+No demuestras mucho potencial, pero entiendo tu decisión.
+
+No me he equivocado tienes buen potencial, ahora falta saber si puedes enfrentarte a Seto.
+
+No estuvo mal, pero aún te falta mucho por aprender del duelo de monstruos.
+
+Hola 
+Mi nombre es Seto, soy la mano derecha de nuestro poderoso faraón Atem
+He visto tus duelos y me mandó a luchar contra ti 
+Le demostraré que no eres el elegido para enfrentarse a CJET.
+
+No me lo esperaba, pero lo prometido es deuda, te enviaré donde se encuentra Atem.
+
+Te lo dije, te falta mucho para poder ganarme jajaja.
+
+Bien, lo prometido es deuda, te llevaré donde se encuentra Atem.
+Hola
+He visto lo que has hecho, estoy seguro que eres el elegido
+No por otra cosa estárías acá 5000 años atrás de tu época actual
+El destino te ha unido para salvar este mundo y el actual
+Bueno te lo contaré mejor más tarde
+Por ahora Tendremos Un duelo para medir tu experiencia.
+
+Es increíble que me hayas ganado, ahora te llevaré a tu época actual
+Gana el torneo realizado por Seto Kaiba y demuestra que tienes lo necesario.
+
+Solo quería medir tu capacidad, ahora te llevaré a tu época actual
+Gana el torneo realizada por Seto Kaiba y demuestra que tienes lo necesario.
+
+El gran torneo realizado por Seto Kaiba está a punto de empezar
+...
+Asi que has venido a este torneo, acá están los mejores duelistas de todo el mundo
+Yo participaré en el, hace un tiempo que no te veía
+Estoy preparado para el duelo.
+
+Tienes una gran determinación, espero que llegues lejos en el torneo, nos veremos después.
+
+Así no te veré en las fases altas del torneo, practica un poco más.
+
+Buenas tardes les damos la bienvenida a todos para el inicio del torneo
+Primer combate Tristan vs 
+No me considero un experto en los duelos
+Pero mis amigos me apoyaron para ingresar
+preparate para caer.
+
+Creo que no soy bueno, pero tú eres muy bueno
+Llegarás lejos amigo.
+
+Jaaa todavía no dominas el duelo de monstruos como es debido.
+
+Segundo combate Tea vs 
+Tengo un gran espíritu de lucha
+Mis amigos me apoyan y eso me ayuda a creer en mi y en mis cartas
+Por eso daré todo en este duelo.
+
+No me lo creo, a veces no sirve solo el apoyo de tus amigos
+Tienes experiencia en esto.
+
+Te digo, la amistad es un arma muy poderosa.
+
+Tercer combate Rex vs 
+No se quien eres pero no tienes ni la mas mínima oportunidad
+Mis dinosaurios te van a aplastar.
+
+Es inaudito que me hayas ganado, los dinosaurios no pueden perder!!
+
+No era una sorpresa que no me podías ganar
+jajaja.
+
+Cuarto combate Weevil vs
+¿te asustan los insectos?
+... Pronto verás a lo que te enfrentas.
+
+Nooo mis insectos los aplastaste como moscas 
+esto no puede ser !!.
+
+Mis queridos insectos te abrieron los ojos... ¿no te dije ? no tenías posibilidades
+jajaja.
+
+Quinto combate Maco vs
+Desde pequeño me gusta el mar
+siempre le he tenido respeto al oceano y por eso somos tan amigos
+Lo siento pero este torneo no es para ti
+no podrás ganarle a la furia de mis monstruos.
+
+Me dejas sorprendido, la verdad no esperaba que vencieras mi reino submarino
+
+Buen duelo, creo que tienes potencial, pero debes aprender mas sobre los monstruos de agua
+mucha suerte.
+
+Sexto combate Joey vs
+He visto tus duelos y no lo haces nada mal
+por desgracia para ti te tocó enfrentarte al unico e inigualable Joey Wheeler
+no tienes oportunidades, que lastima porque quería enfrentarte hasta las finales.
+
+Buen duelo 
+creo que lo hiciste bastante bien, no esperaba ese nivel de habilidad
+te veré desde las gradas, un gusto conocerte.
+
+Jaaaa te lo dije, no tienes lo que se necesita para vencer a Joey Wheeler.
+
+Septimo combate Mai vs
+Hola, creo que te había visto antes pero no sabía que eras duelista
+si venciste a Joey es que tienes un potencial importante
+pero te advierto que no me dejaré vencer.
+
+Increíble nivel de habilidad, que más da me toca aceptar mi derrota
+
+Lo siento, tienes habilidad pero no veo que tengas el nivel para vencerme
+jajaja.
+
+Hola, he visto tus duelos y tienes una gran habilidad
+no se porque presiento que no estás acá por casualidad
+el espíritu del rompecabezas del milenio también lo siente
+algo malo está por suceder y queremos ayudar
+...
+ya veo así que un faraón de hace 5000 años te llevó a su época
+está buscando detener a un ente maligno que puede afectar también nuestro tiempo
+y te dijo que ganaras el torneo que se está realizando en este momento
+tu historia se ve creíble 
+antes que nada quiero enfrentarme a ti para saber tu potencial
+
+Tu habilidad es incomparable
+no hay duda con esto se que nuestro futuro puede estár en riesgo
+continúa con el torneo.
+
+La verdad tienes mucho más por dar
+debes practicar más.
+
+Septimo combate Bandido Keith vs
+Interesante la clase de duelista que tenemos acá
+no tienes ni la mas mínima oportunidad de vencerme
+preparate para perder.
+
+Es absurdo, debe haber un error ahh no me esperaba esto.
+
+Jaaa, patético, mejor vete por donde viniste.
+
+ Hola 
+ no se si me conoces, mi nombre es Shadi
+ yo te ayudaré a que entiendas mejor lo que está pasando
+ vuestro faraón llamado Atem es el que te ha llevado a su época
+ el sabía que en está época estába el duelista de la profesía
+ buscando mucho te encontró a ti y sin decirte nada te llevó a su época
+ dejó que jugaras algunos duelos analizando tus jugadas y se dío cuenta que no se habia equivocado
+ tu le darías el equilibrio al mundo hace 5000 años para evitar un desastre en está época
+ tengo uno de los artículos milenarios, la llave del milenio
+ así pude saber todo sobre tu destino
+ buena suerte
+ nos encontraremos muy pronto.
+ Primer combate de las finales Shadi vs
+ Te lo dije, hora del duelo.
+
+ Tienes una gran habilidad
+ sigue adelante.
+
+ No dudo de tu habilidad pero si quieres avanzar debes practicar más tus jugadas.
+
+ Segundo combate de las finales Bakura vs
+ No tienes ni la mas mínima posibilidad de ganarme
+ preparate para conocer un duelo como nunca lo has vivido
+
+ ...Nooo puedo creer que me hayas vencido
+ conoces bien este juego.
+
+ jajaja
+ no me hagas reir asi nunca me ganarás
+ jajaja.
+
+ La verdad se que nos vamos a enfrentar después pero me presento
+ mi nombre es Marik y estoy en este torneo para apoderarme de las cartas de dioses egipcios
+ creo que tendré un pequeño duelo contigo para analizar tu juego.
+
+ Así tengas experiencia no podrás contra mi en las rondas finales.
+
+ Retirate del torneo no mereces estár aca
+ jajaja.
+
+ Tercer combate de las finales Ichizu vs
+ Es un placer enfrentarme a ti en combate
+ pero solo uno saldrá victorioso y seré yo!!
+
+ ¿cómo?...¿cómo he podido perder?
+
+ El collar del milenio no se equivoca yo iba a salir victoriosa.
+
+ Cuarto combate de las finales Pegasus vs 
+ Bueno bueno pero que tenemos acá
+ no se quien eres pero mi ojo del milenio te mostrará como jugar un duelo.
+
+ No puede ser posible ¿yo? ¿Maximillion Pegasus perdió contra ti ?
+ no lo creo...
+
+ Bien bien te lo dije
+ la victoria es dulce.
+
+ Cuarto combate de las finales Marik vs
+ Jajajaja, ya nos habiamos visto
+ no tienes ni idea de la oscuridad que vas a experimentar
+ preparate para la derrota.
+
+ No me lo creo, alguien como tú ¿cómo me va a vencer?.
+
+ Jajajajaja no tenías ninguna oportunidad.
+
+ Y ahora vienen las semifinales con el gran Seto Kaiba 
+ semifinales del torneo Kaiba vs
+ Hola no te habia visto mucho en el torneo, pero si llegaste hasta acá debes tener potencial
+ lastima que te toque el duelo contra mi, hasta acá llegaste.
+
+ Es ridículo las probabilidaes estimaban un 100% de derrota para ti
+ no puede ser que haya perdido
+
+ He ganado, jajaja
+ no te sientas mal tu derrota estaba asegurada.
+
+ Esto es todo ha llegado el momento más esperado
+ combate final Yugi vs
+ Hola nos volvemos a encontrar
+ ahora si quiero ver todo tu potencial en este duelo
+ prepara tu juego y empecemos.
+
+ Tienes mucha experiencia en los duelos, seguro que estás en la profecía.
+ Hola
+ hemos vuelto a mi época, no me he equivocado tienes mucho potencial
+ mientras no estuviste los grandes magos dominaron los altares del oceano, desierto, pradera, montaña y bosque
+ son magos con mucha habilidad en los duelos de monstruos entrenados por CJET
+ cuando quieras te puedo llevar a cada uno de los altares, será una gran prueba para ti.
+
+ No lo hiciste mal pero necesito que sientas el corazón de las cartas para que me puedas vencer.
+
+ ¿A que altar quieres ir?
+ Hola, estoy algo nervioso de dejarte entrar al altar del oceano
+ ahí se guarda el poder de un artículo milenario
+ es mejor no dejarte entrar
+ preparate para la derrota.
+
+ No puede ser que haya perdido contra ti
+ Secmenton perdoname
+ ¿Quieres proceder?
+
+Tu derrota estaba asegurada
+vete por donde viniste.
+
+Soy el gran mago Secmenton...
+acá se protege el poder de uno de los 7 artículos milenarios
+no dejaré que le pongas un dedo encima
+preparate para enfrentar el peor de los destinos.
+
+ Tu... eres ... poderoso
+no tienes ninguna posibilidad contra el maestro CJET pero abono tu esfuerzo
+te doy el collar del milenio, pero no te servirá de mucho jajaja.
+
+ Era simple lógica
+ una persona como tú no puede vencer a un mazo de agua poderoso como el mío jajaja
+ vete de acá.
+
+ Creo que he esperado mucho este momento
+ los artículos del milenio son nuestra fuente de poder
+ este altar de desierto sera tu último lugar.
+
+ No ... no puedo perder
+ no de esta manera...
+ ¿Quieres proceder?
+
+Este altar sera tu eterno descanso
+nunca tendrás el poder de los artículos milenarios.
+
+Soy el gran mago Martis... señor de los desiertos
+es mi destino eliminarte
+este altar será tu tumba
+defiendete...
+
+ Este día el desierto me tomó a mi
+te doy la balanza del milenio, pero no te servirá de mucho jajaja.
+
+Te lo dije
+este altar es tu nueva tumba.
+
+ Quien...
+ no se ni quien eres pero...
+ desafiarme fue lo último que contaras.
+
+He sido derrotado
+pero muy pronto conocerás al gran mago
+ ¿Quieres proceder?
+
+No tienes mucho más que decir
+esto no es un juego.
+
+Soy el gran mago Anubisius... jefe de todo el bosque
+acá cuido uno de los grandes artículos del milenio
+prepara tu mazo...
+y prepara tu derrota...
+
+Esto no puede ser... la furia de tu deck aplaco al bosque
+te doy la llave del milenio, pero no te servirá de mucho jajaja.
+
+Que confianza la que tenías al llegar acá
+por desgracia para ti eso no se volverá a repetir jajaja.
+
+ Te doy las felicidades por llegar hasta acá
+ acá se encuentra el altar de la montaña donde guardo un gran tesoro
+ lo protegeré con mi vida, preparate.
+
+Que! esto no puede ser...
+ ¿Quieres proceder?
+
+Jaaa siente el poder del deck de las montañas.
+
+Soy el gran mago Atenza... protector de las montañas
+si tú quieres ver el artículo del milenio que se guarda en este altar deberas enfrentarte a mi increíble deck de las montañas
+preparado para la batalla...
+
+Esto no puede ser... yo derrotado ?
+te doy la sortija del milenio, pero no te servirá de mucho jajaja.
+
+Debes entender que no me podrás vencer
+es mejor que te rindas.
+
+Te doy las felicitaciones por llegar hasta acá
+pero al gran mago kepura no le gusta las interrupciones
+preparate para perder...
+
+No estés tan feliz
+ahora el gran mago Kepura te está esperando
+¿Quieres proceder?
+
+Me mostraste habilidades interesantes
+pero al gran mago Kepura no le gustan los juegos
+esfumate.
+
+Soy el gran mago Kepura protector de las praderas
+el gran maestro CJET confía en mi para defender estas tierras 
+prepara tu derrota...
+
+Imposible que me hayas ganado
+te he fallado maestro CJET
+te doy el ojo del milenio, pero no te servirá de mucho jajaja.
+
+Patético tu esfuerzo de ganarme
+bueno al menos me divertí un poco.
+
+Este es el altar sagrado
+parece que no hay nadie.
+
+Hola 
+sigo teniendo una duda contigo
+no se si eres realmente la persona elegida
+lo vamos a comprobar en este momento.
+
+No lo haces mal, pero todavía te queda mucho recorrido
+
+jaaa
+sabía que no estába equivocado
+asi nunca podras desafiar a CJET.
+
+ya no tengo dudas que tienes una gran habilidad
+pudiste derrotar a los grandes magos y liberaste los altares de su poder
+te mandaré donde Seto el te guiará en tu última prueba.
+Hola
+estamos cerca de donde se encuentra CJET 
+la única persona que puede enfrentarlo y tener una leve probabilidad es quien posea todos los artículos milenarios
+yo tengo el centro del milenio y vuestro faraón el rompecabezas del milenio
+explicandote esto entenderás que debemos saber todo tu potencial
+y este es tú primer reto así que prepara tu juego
+
+No estás en la profecía
+con ese nivel no puedes enfrentar a CJET.
+
+Increíble creo que Atem no se ha equivocado
+tienes mucho talento así que acá tienes el centro del milenio
+pudiste derrotar a Seto, no tengo ninguna duda que estás en la profecía
+ahora necesito que me derrotes y así comprobar que puedes desafiar a CJET.
+
+Lamentablemente así no puedes enfrentar a CJET
+debes prepararte aun más.
+
+Tienes todo lo necesario para enfrentar a CJET
+te entrego el rompecabezas del milenio
+ahora te llevaré donde se encuentra CJET 
+mucha suerte 
+Y tú quien eres y cómo has llegado hasta acá ?
+la única forma de poder llegar es teniendo los artículos milenarios, así que los has conseguido
+bueno no lo has puesto fácil a mi hermano y a mi 
+preparate porque esta será tu tumba, pero te agradeceremos lo que nos has ayudado.
+
+Jaaa no te lo dije
+gracias a ti tenemos los artículos milenarios y dominaremos este mundo y el futuro.
+
+Nooooooo hermano ayuda...
+...
+JAJAJAJA quien eres ?
+si derrotaste a mi hermano no eres cualquier duelista
+soy el gran CJET 
+no vas a arruinar mis planes de conquistar el mundo
+preparate para caer en las sombras.
+
+JAJAJAJAJAJA
+QUE INUTIL DE VES CONTRA MI
+ESFUMATE Y GRACIAS POR LOS ARTICULOS
+JAJAJA.
+
+AHHHHHHHHHHHHHHHHHHHHHHHH....
+sabía que eras de la profecía
+gracias a ti todo volverá a la normalidad tanto acá como en tu época
+ya puedes regresas a tu época
+te mereces esto como premio
+Has obtenido 
+
+Ya derrotaste este altar.

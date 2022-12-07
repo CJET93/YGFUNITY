@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a2d13967c05ea194595acd4106ffddeb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - fichero: {fileID: 4900000, guid: 59cd508abf3b6264192217c61e732f34, type: 3}
+  - atk: {fileID: 4900000, guid: 69c79b54447616d4b84aceee05935470, type: 3}
+  - def: {fileID: 4900000, guid: 35899a62367aad54084c1abf2486db89, type: 3}
+  - nombres: {fileID: 4900000, guid: f900c31f317c35d4cbdf4cc115019a23, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

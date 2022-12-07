@@ -1,0 +1,11 @@
+0
+Sol
+Mercurio
+Venus
+Luna
+Marte
+Jupiter
+Saturno
+Urano
+Neptuno
+Plutón

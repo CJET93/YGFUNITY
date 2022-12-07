@@ -1,0 +1,22 @@
+0
+Dragon
+Fiend
+Spellcaster
+Beast-Warrior
+Plant
+Zombie
+Dinosaur
+Warrior
+Winged Beast
+Beast
+Pyro
+Thunder
+Reptile
+Insect
+Fish
+Sea Serpent
+Rock
+Fairy
+Machine
+Aqua
+Divine
