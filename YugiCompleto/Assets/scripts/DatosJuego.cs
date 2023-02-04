@@ -40,10 +40,12 @@ public class DatosJuego : MonoBehaviour
     public int[] duelosJugados = new int[40];
     //si se completo el modo historia
     public bool modoHistoriaCompleto = false;
-    //la suerte que cambia cuando se cambia de deck o se consigue carta de pot1(tratando de simular el drop original)
-    private int numSuerte ;
+    private float descuento=0;
 
     public bool esJugadorUno = true;
+
+    public float Descuento { get => descuento; set => descuento = value; }
+
     private void Awake()
     {
         if(datosJuego != null)
@@ -54,17 +56,22 @@ public class DatosJuego : MonoBehaviour
         datosJuego = this;
         GameObject.DontDestroyOnLoad(gameObject);
     }
+
+    private void Update()
+    {
+        if (Descuento > 0)
+        {
+            Descuento -= Time.deltaTime;
+        }
+        else
+        {
+            Descuento = 0;
+        }
+       
+    }
     private void OnDestroy()
     {
         Debug.LogWarning("me auto destuyo");
-    }
-    public void SetNumSuerte(int num)
-    {
-        numSuerte = num;
-    }
-    public int GetNumSuerte()
-    {
-        return numSuerte;
     }
     public void SetDeckUsuario(List<int>deck)
     {

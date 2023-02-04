@@ -22,12 +22,24 @@ public class RevisarDatos : MonoBehaviour
     public GameObject packs;
     public GameObject musica;
     TouchScreenKeyboard keyboard;
+    private GameObject objetoDatosDuelo;
+    private DatosDuelo datosDuelo;
 
     private void Awake()
     {
         objetoDatosJuego = GameObject.Find("DatosJuego");
         datosJuego = objetoDatosJuego.GetComponent<DatosJuego>();
-        if (datosJuego.GetModoHistoriaCompleto()==false)
+        objetoDatosDuelo = GameObject.Find("DatosDuelo");
+        MenusOcultos();
+    }
+    private void Update()
+    {
+       
+
+    }
+    public void MenusOcultos()
+    {
+        if (datosJuego.GetModoHistoriaCompleto() == false)
         {
             if (packs != null && musica != null)
             {
@@ -44,13 +56,6 @@ public class RevisarDatos : MonoBehaviour
             }
 
         }
-
-  
-    }
-    private void Update()
-    {
-       
-
     }
     public void RevisarGuardado()
     {
@@ -67,8 +72,23 @@ public class RevisarDatos : MonoBehaviour
 
         }
     }
+    public void reinicarMusica()
+    {
+        if (objetoDatosDuelo != null)
+        {
+            datosDuelo = objetoDatosDuelo.GetComponent<DatosDuelo>();
+            datosDuelo.SetMusicaDueloLibre(0);
+        }
+    }
     public void RevisarCargado1()
     {
+        datosJuego.Descuento = 0;
+        reinicarMusica();
+        if (objetoDatosDuelo != null)
+        {
+            datosDuelo = objetoDatosDuelo.GetComponent<DatosDuelo>();
+            datosDuelo.SetMusicaDueloLibre(0);
+        }
         if (SistemaGuardado.PrepararCargado1() == true)
         {
             efectosSonido.SeleccionarCarta();
@@ -90,7 +110,6 @@ public class RevisarDatos : MonoBehaviour
             datosJuego.SetDeckUsuario(datos.deckUsuario);
             datosJuego.SetCantidadCofre(datos.cantidadCofre);
             datosJuego.SetEsModoHistoriaCompleto(datos.completoModoHistoria);
-            datosJuego.SetNumSuerte(Random.Range(1, 10));
             transicion.CargarEscena("MenuContinuar");
 
         }
@@ -101,6 +120,8 @@ public class RevisarDatos : MonoBehaviour
     }
     public void RevisarCargado2()
     {
+        datosJuego.Descuento = 0;
+        reinicarMusica();
         if (SistemaGuardado.PrepararCargado2() == true)
         {
             efectosSonido.SeleccionarCarta();
@@ -122,7 +143,6 @@ public class RevisarDatos : MonoBehaviour
             datosJuego.SetDeckUsuario(datos.deckUsuario);
             datosJuego.SetCantidadCofre(datos.cantidadCofre);
             datosJuego.SetEsModoHistoriaCompleto(datos.completoModoHistoria);
-            datosJuego.SetNumSuerte(Random.Range(1, 10));
             transicion.CargarEscena("MenuContinuar");
 
         }
@@ -133,6 +153,8 @@ public class RevisarDatos : MonoBehaviour
     }
     public void RevisarCargado3()
     {
+        datosJuego.Descuento = 0;
+        reinicarMusica();
         if (SistemaGuardado.PrepararCargado3() == true)
         {
             efectosSonido.SeleccionarCarta();
@@ -154,7 +176,6 @@ public class RevisarDatos : MonoBehaviour
             datosJuego.SetDeckUsuario(datos.deckUsuario);
             datosJuego.SetCantidadCofre(datos.cantidadCofre);
             datosJuego.SetEsModoHistoriaCompleto(datos.completoModoHistoria);
-            datosJuego.SetNumSuerte(Random.Range(1, 10));
             transicion.CargarEscena("MenuContinuar");
 
         }
@@ -175,6 +196,7 @@ public class RevisarDatos : MonoBehaviour
             claves.SetActive(true);
             volver.SetActive(true);
             botonGuardar.SetActive(true);
+            MenusOcultos();
         }
       
     }
@@ -189,6 +211,8 @@ public class RevisarDatos : MonoBehaviour
             claves.SetActive(false);
             volver.SetActive(false);
             botonGuardar.SetActive(false);
+            packs.SetActive(false);
+            musica.SetActive(false);
         }
       
         SistemaGuardado.Guardar(datosJuego);

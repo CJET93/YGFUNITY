@@ -92,7 +92,8 @@ public class Interfaz : MonoBehaviour
     public TextMeshProUGUI condicionesVictoria;
     public GameObject tec;
     public GameObject pow;
-
+    public GameObject descuento;
+    public GameObject imagenDueloRapido;
     private bool esWoboku;
 
     void Start()
@@ -2228,6 +2229,14 @@ public class Interfaz : MonoBehaviour
         textoDuelista.text = juego.GetDuelistaDuelo();
         textoEstrellas.text = "Estrellas " + juego.GetEstrellas();
         textoRango.text = juego.GetRango();
+        if (juego.getActivarDueloRapido())
+        {
+            imagenDueloRapido.gameObject.SetActive(true);
+        }
+        if (juego.activarTextoDescuento) { 
+            descuento.SetActive(true);
+            textoNombreCarta.color = Color.green;
+        }
         string numeroCarta = juego.GetIdCarta().ToString();
         if (numeroCarta.Length == 1)
         {

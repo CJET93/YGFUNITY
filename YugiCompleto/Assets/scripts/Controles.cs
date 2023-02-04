@@ -756,6 +756,13 @@ public class Controles : MonoBehaviour
                 apuntador.MoverCursorAbajo();
             }
         }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (fase.Equals("resultadoDuelo"))
+            {
+                juego.DueloRapido();
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Z))
         {
 

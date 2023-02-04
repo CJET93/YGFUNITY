@@ -70,6 +70,8 @@ public class PreDuelo : MonoBehaviour
     public Image ataqueDeck;
     public Image defensaDeck;
     public Image orTipoDeck;
+    private bool iniciar;
+    public TextMeshProUGUI descripcionCarta;
 
 
 
@@ -153,8 +155,15 @@ public class PreDuelo : MonoBehaviour
         CrearInstanciasDeck();
         OrdenarCofre();
         OrdenarDeck();
+        iniciar = false;
+        StartCoroutine(Inicio());
 
 
+    }
+    IEnumerator Inicio()
+    {
+        yield return new WaitForSeconds(1f);
+        iniciar = true;
     }
     public void CrearInstancias()
     {
@@ -225,6 +234,8 @@ public class PreDuelo : MonoBehaviour
                 {
                     fase = "cerrar";
                     panelCarta.transform.Find("imgcarta").GetComponent<Image>().sprite = (Sprite)txt.cartasBatalla.GetValue(cartasCofre[cartaReemplazo]);
+                    Debug.LogError(txt.GetDescripcionCarta().GetValue(cartasCofre[cartaReemplazo]).ToString());
+                    panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = txt.GetDescripcionCarta().GetValue(cartasCofre[cartaReemplazo]).ToString();
 
                     if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Monstruo"))
                     {
@@ -753,12 +764,13 @@ public class PreDuelo : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) && iniciar)
         {
             if (!fase.Equals("cerrar"))
             {
                 if (deck.Count == 40)
                 {
+                    iniciar = false;
                     datosJuego.SetDeckUsuario(deck);
                     datosJuego.SetCofre(cartasCofre);
                     datosJuego.SetCantidadCofre(cantidadCartasCofre);

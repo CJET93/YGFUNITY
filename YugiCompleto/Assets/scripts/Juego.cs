@@ -9,6 +9,7 @@ public class Juego : MonoBehaviour
     private Fade fade;
     private ClonCarta clon;
     private ImportadorTextos txt;
+    private ImportadorHistoria importadorHistoria;
     private List<int> defensasAltas = new List<int>();
     private List<int> cartasCampo = new List<int>();
     public Interfaz interfaz;
@@ -73,6 +74,8 @@ public class Juego : MonoBehaviour
     private static string VICTORIA_EXODIA = "Victoria por Exodia";
     private static string VICTORIA_NORMAL = "Aniquilación Total";
     private static string VICTORIA_TECNICA = "Victora por Desgaste";
+    public bool activarTextoDescuento;
+    private bool activarDueloRapido;
 
     public int AtaquesEfectivos { get => ataquesEfectivos; set => ataquesEfectivos = value; }
     public int DefensasEfectivas { get => defensasEfectivas; set => defensasEfectivas = value; }
@@ -126,7 +129,8 @@ public class Juego : MonoBehaviour
         }
      
         txt = GameObject.Find("Listas").GetComponent<ImportadorTextos>();
-            fade = GameObject.Find("fade").GetComponent<Fade>();
+        importadorHistoria = GameObject.Find("ListaHistoria").GetComponent<ImportadorHistoria>();
+        fade = GameObject.Find("fade").GetComponent<Fade>();
         clon = GameObject.Find("Clon").GetComponent<ClonCarta>();
 
 
@@ -5509,6 +5513,17 @@ public class Juego : MonoBehaviour
     //IMPLEMENTAR LOS MAGOS Y REVISAR MAS COSAS
     public void LogicaPantallaResultados(int ganar)
     {
+        activarTextoDescuento = false;
+        activarDueloRapido = false;
+        if(datosJuego.Descuento == 0 && !datosDuelo.GetModoHistoria() && datosJuego.GetModoHistoriaCompleto())
+        {
+            int numeroDecuento = Random.Range(0, 100);
+            if(numeroDecuento == 50)
+            {
+                activarTextoDescuento = true;
+                datosJuego.Descuento = 900;
+            }
+        }
         Time.timeScale = 1f;
         duelistaDuelo = datosDuelo.GetDuelistaCpu();
         //perder el duelo
@@ -5537,6 +5552,7 @@ public class Juego : MonoBehaviour
             {
                 datosJuego.SetElementoDuelosJugados(datosDuelo.GetIdDuelista());
                 datosJuego.SetElementoDerrota(datosDuelo.GetIdDuelista());
+                activarDueloRapido = true; 
             }
             rangoObtenido = "F";
             estrellasGanadas = 0;
@@ -5573,6 +5589,7 @@ public class Juego : MonoBehaviour
             {
                 datosJuego.SetElementoDuelosJugados(datosDuelo.GetIdDuelista());
                 datosJuego.SetElementoVictoria(datosDuelo.GetIdDuelista());
+                activarDueloRapido = true;
             }
             Rangos();
             int carta = Random.Range(0, 2048);
@@ -6062,6 +6079,96 @@ public class Juego : MonoBehaviour
             transicion.CargarEscena("DueloLibre");
         }
     }
+    public void DueloRapido()
+    {
+        if (!datosDuelo.GetModoHistoria()){
+            DetenerMusica();
+            List<int> deckTemporal = new List<int>();
+            int[] probabilidadDrop = new int[2048];
+            string[] idDuelistas = importadorHistoria.GetSistema();
+            string[] destinoDeck = importadorHistoria.GetDestinoDeck();
+            string[] dropDeck = importadorHistoria.GetDropDeck();
+            string[] duelistas = importadorHistoria.GetDuelistas();
+
+            for (int i = 0; i < 40; i++)
+            {
+                deckTemporal.Add(0);
+            }
+
+
+            int duelista = 38;
+            //obtener el id duelista 
+            duelista = datosDuelo.GetIdDuelista();
+
+            //obtener el deck
+            int actual = 0;
+            int guardarValor = 0;
+            int indiceDeck = 0;
+            int cartaAdquirir = 0;
+            if (duelista > 1 && duelista < 39)
+            {
+                while (actual != duelista - 1)
+                {
+                    if (destinoDeck[cartaAdquirir].Contains("s"))
+                    {
+                        actual++;
+                    }
+                    cartaAdquirir++;
+                    guardarValor = cartaAdquirir;
+                }
+            }
+            if (duelista < 39)
+            {
+                actual = 0;
+                int actualCarta = 1;
+
+                while (!destinoDeck[cartaAdquirir].Contains("s"))
+                {
+
+                    int numeroDrop = int.Parse(dropDeck[cartaAdquirir]);
+                    for (int i = 0; i < numeroDrop; i++)
+                    {
+
+                        probabilidadDrop[actual] = int.Parse(destinoDeck[cartaAdquirir]);
+                        actual++;
+
+                    }
+                    cartaAdquirir++;
+                }
+                while (deckTemporal.Contains(0))
+                {
+                    actual = 0;
+                    actualCarta = Random.Range(0, 2048);
+                    int contador = 0;
+                    for (int i = 0; i < 40; i++)
+                    {
+                        if (probabilidadDrop[actualCarta] == deckTemporal[i])
+                        {
+                            contador++;
+                        }
+                    }
+                    if (contador < 3)
+                    {
+                        deckTemporal[indiceDeck] = probabilidadDrop[actualCarta];
+                        indiceDeck++;
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 40; i++)
+                {
+                    deckTemporal[i] = (datosJuego.GetDeckUsuario()[i]);
+                }
+
+
+            }
+            datosDuelo.SetDuelistaCpu(duelistas[duelista]);
+            datosDuelo.SetDeckCpu(deckTemporal);
+            cuadroUsuario.terminarAnimacionInfinita = true;
+            transicion.CargarEscena("Juego");
+        }
+    }
     //musica
     public void IniciarMusica()
     {
@@ -6198,5 +6305,10 @@ public class Juego : MonoBehaviour
     {
         efectosSonido.GuardianFavorable();
     }
+    public bool getActivarDueloRapido()
+    {
+        return activarDueloRapido;
+    }
+
 
 }

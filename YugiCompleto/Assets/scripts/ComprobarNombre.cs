@@ -30,7 +30,6 @@ public class ComprobarNombre : MonoBehaviour
             {
                 List<int> nuevoDeck = new List<int>();
                 datosJuego.nombreJugador = textoNombre.text;
-                datosJuego.SetNumSuerte(Random.Range(1, 10));
                 datosJuego.ReiniciarDatos();
                 transicion.CargarEscena("Historia");
               

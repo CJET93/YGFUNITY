@@ -32,6 +32,7 @@ public class ImportadorTextos : MonoBehaviour
     private string[] probFusionCpuTexto;
     private string[] dropSATECTexto;
     private string[] destinoSATECTexto;
+    private string[] descripcionCartaTexto;
     public TextAsset fichero;
     public TextAsset atk;
     public TextAsset def;
@@ -59,6 +60,7 @@ public class ImportadorTextos : MonoBehaviour
     public TextAsset probFusCpu;
     public TextAsset destinoSATEC;
     public TextAsset dropSATEC;
+    public TextAsset descripcionCarta;
     public Texture2D[] cartas;
     public Texture2D[] miniImagens;
     public Texture2D[] guardianes;
@@ -176,6 +178,10 @@ public class ImportadorTextos : MonoBehaviour
         {
             dropSATECTexto = dropSATEC.text.Split('\n');
         }
+        if (descripcionCarta != null)
+        {
+            descripcionCartaTexto = descripcionCarta.text.Split('\n');
+        }
     }
     public void SetTexto(string[] lineaText)
     {
@@ -290,6 +296,11 @@ public class ImportadorTextos : MonoBehaviour
     {
         return dropSATECTexto;
     }
+    public string[] GetDescripcionCarta()
+    {
+        return descripcionCartaTexto;
+    }
+
 
 
 

@@ -35,6 +35,13 @@ public class LogicaTienda : MonoBehaviour
     private string fase;
     public transicion transicion;
     public RevisarDatos revisarDatos;
+    public int valorPack1 = 100;
+    public int valorPack2 = 500;
+    public int valorPack3 = 1000;
+    public TextMeshProUGUI valorPack1Txt;
+    public TextMeshProUGUI valorPack2Txt;
+    public TextMeshProUGUI valorPack3Txt;
+    public TextMeshProUGUI textoDescuento;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +49,7 @@ public class LogicaTienda : MonoBehaviour
         habilitarPack3 = false; 
         clon = new GameObject[6];
         cartas = new int[6];
+        datosJuego.SetEstrellas(datosJuego.GetEstrellas());
         estrellas.text = "Estrellas X"+datosJuego.GetEstrellas();
         desactivarControles = false;
         fase = "packs";
@@ -81,6 +89,30 @@ public class LogicaTienda : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
+        if(datosJuego.Descuento > 0)
+        {
+            valorPack1 = 100/2;
+            valorPack1Txt.color = Color.yellow;
+            valorPack2Txt.color = Color.yellow;
+            valorPack3Txt.color = Color.yellow;
+            valorPack2 = 500/2;
+            valorPack3 = 1000/2;
+            textoDescuento.text = "TIEMPO DESCUENTO EN PACKS "+datosJuego.Descuento.ToString("0");
+        }
+        else
+        {
+            valorPack1Txt.color = Color.blue;
+            valorPack2Txt.color = Color.blue;
+            valorPack3Txt.color = Color.blue;
+            textoDescuento.text = "";
+            valorPack1 = 100;
+            valorPack2 =500;
+            valorPack3 = 1000;
+        }
+        valorPack1Txt.text = "x"+valorPack1;
+        valorPack2Txt.text = "x"+valorPack2;
+        valorPack3Txt.text = "x"+valorPack3;
         if (!desactivarControles)
         {
             if (Input.GetKeyDown(KeyCode.C))
@@ -129,11 +161,11 @@ public class LogicaTienda : MonoBehaviour
         {
             if (habilitarPack2)
             {
-                if (datosJuego.GetEstrellas() >= valor)
+                if (datosJuego.GetEstrellas() >= valorPack2)
                 {
                     efectosSonido.SeleccionarCarta();
                     desactivarControles = true;
-                    datosJuego.SetEstrellas(datosJuego.GetEstrellas() - valor);
+                    datosJuego.SetEstrellas(datosJuego.GetEstrellas() - valorPack2);
                     EsconderTodo();
                     llenarListaCartas(500);
                     guardarCartas();
@@ -153,11 +185,11 @@ public class LogicaTienda : MonoBehaviour
         {
             if (habilitarPack3)
             {
-                if (datosJuego.GetEstrellas() >= valor)
+                if (datosJuego.GetEstrellas() >= valorPack3)
                 {
                     efectosSonido.SeleccionarCarta();
                     desactivarControles = true;
-                    datosJuego.SetEstrellas(datosJuego.GetEstrellas() - valor);
+                    datosJuego.SetEstrellas(datosJuego.GetEstrellas() - valorPack3);
                     EsconderTodo();
                     llenarListaCartas(1000);
                     guardarCartas();
@@ -175,11 +207,11 @@ public class LogicaTienda : MonoBehaviour
         }
         if (valor == 100)
         {          
-                if (datosJuego.GetEstrellas() >= valor)
+                if (datosJuego.GetEstrellas() >= valorPack1)
                 {
                     efectosSonido.SeleccionarCarta();
                     desactivarControles = true;
-                    datosJuego.SetEstrellas(datosJuego.GetEstrellas() - valor);
+                    datosJuego.SetEstrellas(datosJuego.GetEstrellas() - valorPack1);
                     EsconderTodo();                    
                     llenarListaCartas(100);
                     guardarCartas();
@@ -231,11 +263,12 @@ public class LogicaTienda : MonoBehaviour
         imagenPack2.SetActive(false);
         imagenPack3.SetActive(false);
         logoTienda.SetActive(false);
+        textoDescuento.gameObject.SetActive(false);
         estrellas.gameObject.SetActive(false);
     }
     public void HabilitarTodo()
     {
-       
+        textoDescuento.gameObject.SetActive(true);
         imagenPack1.SetActive(true);
         imagenPack2.SetActive(true);
         imagenPack3.SetActive(true);
