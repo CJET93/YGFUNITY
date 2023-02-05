@@ -80,7 +80,7 @@ MonoBehaviour:
   probFusCpu: {fileID: 4900000, guid: a39a5a05b6ec0f9478b1e05f9110cb3e, type: 3}
   destinoSATEC: {fileID: 4900000, guid: ad71b0d4f6de9bf41a1688601f2942f0, type: 3}
   dropSATEC: {fileID: 4900000, guid: c4c746053769e274c8f4bafb9b7652f4, type: 3}
-  descripcionCarta: {fileID: 4900000, guid: 41f760b3f362e054d82a028f9ee1ee4e, type: 3}
+  descripcionCarta: {fileID: 4900000, guid: 4bc502eadb6842443b9a2c5af2ba93d5, type: 3}
   cartas:
   - {fileID: 2800000, guid: 4a6d2ac07f8b3b148be04c319e18167c, type: 3}
   - {fileID: 2800000, guid: 4a6d2ac07f8b3b148be04c319e18167c, type: 3}

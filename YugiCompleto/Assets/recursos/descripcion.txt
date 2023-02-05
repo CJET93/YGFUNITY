@@ -1,5 +1,5 @@
 0
-Este legendario dragÛn es una poderosa m·quina de destrucciÛn. Virtualmente invencible, muy pocos se han enfrentado a esta impresionante criatura y han vivido para contarlo.
+Este legendario drag√≥n es una poderosa m√°quina de destrucci√≥n con grandes poderes en ataque y defensa.
 0
 0
 0
@@ -99,7 +99,7 @@ Este legendario dragÛn es una poderosa m·quina de destrucciÛn. Virtualmente inve
 0
 0
 0
-Un elfo delicado que carece de ataque, pero que tiene una defensa fant·stica respaldada por poderes mÌsticos.
+Un elfo delicado que carece de ataque, pero que tiene una defensa fant√°stica respaldada por poderes m√≠sticos.
 0
 0
 0
@@ -630,94 +630,94 @@ Una bestia colosal de un solo ojo, con gruesos y poderosos brazos para propinar 
 0
 0
 0
-0
-0
-0
-0
-0
-0
-0
+Aumenta el poder de todos los monstruos con atirbuto "Dragon", "Winged Beast" o "Thunder".
+Aumenta el poder de todos los monstruos con atirbuto "Aqua", "Sea Serpent", "Thunder" o "Fish" y reduce el poder de todos los monstruos con atributo "Machine" o "Pyro".
+Aumenta el poder de todos los monstruos con atirbuto "Warrior" o "Beast-Warrior".
+Aumenta el poder de todos los monstruos con atirbuto "Fiend" o "Spellcaster" y reduce el poder de todos los monstruos con atributo "Fairy".
+Aumenta el poder de todos los monstruos con atirbuto "Zombie", "Dinosaur" o "Rock".
+Aumenta el poder de todos los monstruos con atirbuto "Beast", "Beast-Warrior", "Plant" o "Insect".
+Destruye todos los monstruos de tu oponente.
 Incrementa el ataque y defensa del monstruo equipado en 1000.
 Incrementa el ataque y defensa del monstruo equipado en 500.
-0
-0
-0
-Inflige 1000 puntos de daÒo a los puntos de vida de tu adversario.
+Los monstruos enemigos se revelan y tu oponente no puede atacar durante tres turnos.
+Revela todos los monstruos de tu oponente.
+Reduce el ataque y defensa de todos los monstruos de tu oponente en 500.
+Inflige 1000 puntos de da√±o a los puntos de vida de tu oponente.
 Aumenta tus puntos de vida en 5000.
 Destruye todos los monstruos en el Campo.
-0
-0
-0
-0
-0
-Un tesoro legendario que aumenta el poder de los monstruos con atributo "Dragon".
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-Destruye todos los monstruos de atributo "Machine" de tu adversario.
-Destruye todos los monstruos de atributo "Insect" de tu adversario.
-Destruye todos los monstruos de atributo "Rock" de tu adversario.
-Destruye todos los monstruos de tu adversario con ataque mayor o igual a 1500.
-Destruye todos los monstruos de atributo "Dragon" de tu adversario.
-Destruye todas las cartas en la zona de cartas m·gicas de tu adversario.
+Un boomerang con los efectos de dos cartas: la espada legendaria y la espada de la destrucci√≥n oscura.
+Las fuerzas oscuras aumentan el poder de los Demonios y otros monstruos de la Oscuridad.
+Permite que los insectos disparen una intensa r√°faga de fuego.
+Los viles microbios aumentan el poder de las plantas en el bosque.
+El arco y la flecha plateados realzan el poder de las hadas.
+Un tesoro legendario que aumenta el poder de los dragones.
+La luz de la luna aumenta el poder de las Bestias.
+Las fuerzas m√≠sticas del cristal aumentan el poder de los zombis.
+Aumenta el poder de los monstruos Thunder, Rock y Pyro.
+Una planta de fabricaci√≥n que afina todos los monstruos de M√°quina.
+Absorbe la energ√≠a del sol para aumentar el poder de los dinosaurios
+Los vientos brindan apoyo para aumentar el poder de las bestias aladas y otros monstruos voladores.
+La fuerza de Poseid√≥n se comparte para aumentar el poder de los monstruos Aqua, Fish y Sea Serpent
+Un libro de magia para aumentar el poder de los usuarios de magia. No puede ser utilizado por hechiceros de mal coraz√≥n.
+Aumenta el poder de las Bestias y otros monstruos con colmillos.
+Las fuerzas oscuras aumentan el poder de los Guerreros.
+Una espada que saca lo mejor de los guerreros. No puede ser usado por sirvientes de la oscuridad.
+Este colgante otorga poder extra a los hechiceros oscuros
+Aumenta la fuerza de quienes controlan el poder de Salamandra.
+Las fuerzas diab√≥licas act√∫an para aumentar el poder de los monstruos femeninos y oscuros.
+Aumenta el poder de los monstruos oscuros con cuernos.
+Destruye todos los monstruos de atributo "Machine" de tu oponente.
+Destruye todos los monstruos de atributo "Insect" de tu oponente.
+Destruye todos los monstruos de atributo "Rock" de tu oponente.
+Destruye todos los monstruos de tu oponente con ataque mayor o igual a 1500.
+Destruye todos los monstruos de atributo "Dragon" de tu oponente.
+Destruye todas las cartas en la zona de cartas m√°gicas de tu oponente.
 Aumenta tus puntos de vida en 500.
-Reduce el ataque y defensa de todos los monstruos de tu adversario en 1000.
-Cambia a posiciÛn de ataque todos los monstruos de tu adversario.
+Reduce el ataque y defensa de todos los monstruos de tu oponente en 1000.
+Cambia a posici√≥n de ataque todos los monstruos de tu oponente.
 Aumenta tus puntos de vida en 2000.
-Destruye todos los monstruos de atributo "Warrior" de tu adversario.
-Destruye todos los monstruos de atributo "Zombie" de tu adversario.
-Destruye el monstruo que atacÛ con ataque menor o igual a 3000.
-Destruye el monstruo que atacÛ con ataque menor o igual a 1000.
-Carta que evita que el monstruo atacante daÒe tu campo.
-Destruye el monstruo que atacÛ con ataque menor o igual a 500.
-El ataque del monstruo atacante se reflejar· y este perder· la mitad de su ataque.
-Destruye el monstruo que atacÛ.
-Con sus poderes m·gicos regresa el ataque recibido directo hacia el adversario.
+Destruye todos los monstruos de atributo "Warrior" de tu oponente.
+Destruye todos los monstruos de atributo "Zombie" de tu oponente.
+Destruye el monstruo que atac√≥ con ataque menor o igual a 3000.
+Destruye el monstruo que atac√≥ con ataque menor o igual a 1000.
+Carta que evita que el monstruo atacante da√±e tu campo.
+Destruye el monstruo que atac√≥ con ataque menor o igual a 500.
+El ataque del monstruo atacante se reflejar√° y este perder√° la mitad de su ataque.
+Destruye el monstruo que atac√≥.
+Con sus poderes m√°gicos regresa el ataque recibido directo hacia el oponente.
 Poderoso escudo que absorbe una cantidad del ataque del monstruo atacante y lo transforma en puntos de vida.
-Una carta que inverte los efectos de cartas de daÒo hacia el adversario.
-Absorbe el ataque del monstruo de tu adversario y los transforma en puntos de vida, entre m·s poder tenga el monstruo m·s poder absorbera.
-Destruye el monstruo que atacÛ con atributo "Winged Beast".
-Destruye el monstruo que atacÛ con atributo "Machine", "Plant" o "Insect".
-Destruye el monstruo que atacÛ con atributo "Spellcaster" o "Thunder".
-Destruye el monstruo que atacÛ con atributo "Fiend" o "Zombie".
-Destruye el monstruo que atacÛ con atributo "Fish", "Sea Serpent" o "Aqua".
+Una carta que inverte los efectos de cartas de da√±o hacia el oponente.
+Absorbe el ataque del monstruo de tu oponente y los transforma en puntos de vida, entre m√°s poder tenga el monstruo m√°s poder absorbera.
+Destruye el monstruo que atac√≥ con atributo "Winged Beast".
+Destruye el monstruo que atac√≥ con atributo "Machine", "Plant" o "Insect".
+Destruye el monstruo que atac√≥ con atributo "Spellcaster" o "Thunder".
+Destruye el monstruo que atac√≥ con atributo "Fiend" o "Zombie".
+Destruye el monstruo que atac√≥ con atributo "Fish", "Sea Serpent" o "Aqua".
 Javalina encantada que absorbe el ataque del monstruo atacante y lo transforma en puntos de vida.
-Una carta que inverte los efectos de cartas curativas y los transforma en daÒo.
-Destruye el monstruo que atacÛ con ataque menor o igual a 2500.
-Una carta que invierte los efectos de las cartas que aumentan puntos y los transforma en reducciÛn.
-Destruye el monstruo que atacÛ con atributo "Warrior", "Beast-Warrior" o "Beast".
-Frena a los monstruos de tu adversario.
-Cambia a posiciÛn de defensa todos los monstruos de tu adversario.
+Una carta que inverte los efectos de cartas curativas y los transforma en da√±o.
+Destruye el monstruo que atac√≥ con ataque menor o igual a 2500.
+Una carta que invierte los efectos de las cartas que aumentan puntos y los transforma en reducci√≥n.
+Destruye el monstruo que atac√≥ con atributo "Warrior", "Beast-Warrior" o "Beast".
+Frena a los monstruos de tu oponente.
+Cambia a posici√≥n de defensa todos los monstruos de tu oponente.
 Dado poderoso que incrementa el ataque y defensa de todos los monstruos de tu campo en un rango de 100 a 600.
-Dado poderoso que reduce el ataque y defensa de todos los monstruos de tu adversario en un rango de 100 a 600.
+Dado poderoso que reduce el ataque y defensa de todos los monstruos de tu oponente en un rango de 100 a 600.
 Aumenta tus puntos de vida en 1000.
 Aumenta tus puntos de vida en 2500.
-Reduce los puntos de vida de tu adversario en 400 por cada monstruo que tenga en el campo.
-Destruye todos los monstruos de tu adversario que estÈn en posiciÛn de defensa.
-Se equipa a un monstruo con ataque menor a 1000 y lo vuelve inmune a la destrucciÛn.
-Inflige 50 puntos de daÒo a los puntos de vida de tu adversario.
-Inflige 100 puntos de daÒo a los puntos de vida de tu adversario.
-Inflige 200 puntos de daÒo a los puntos de vida de tu adversario.
-Inflige 500 puntos de daÒo a los puntos de vida de tu adversario.
+Reduce los puntos de vida de tu oponente en 400 por cada monstruo que tenga en el campo.
+Destruye todos los monstruos de tu oponente que est√©n en posici√≥n de defensa.
+Se equipa a un monstruo con ataque menor a 1000 y lo vuelve inmune a la destrucci√≥n.
+Inflige 50 puntos de da√±o a los puntos de vida de tu oponente.
+Inflige 100 puntos de da√±o a los puntos de vida de tu oponente.
+Inflige 200 puntos de da√±o a los puntos de vida de tu oponente.
+Inflige 500 puntos de da√±o a los puntos de vida de tu oponente.
 Aumenta tus puntos de vida en 200.
-Destruye el monstruo que atacÛ con ataque menor o igual a 1500.
-Destruye el monstruo que atacÛ con ataque menor o igual a 2000.
+Destruye el monstruo que atac√≥ con ataque menor o igual a 1500.
+Destruye el monstruo que atac√≥ con ataque menor o igual a 2000.
 Destruye los dioses egipcios.
 Aumenta o reduce los puntos de ataque y defensa de todos los monstruos de tu campo en 700.
-Destruye todos los monstruos de tu adversario que tengan una defensa mayor o igual a 2000.
-Reduce los puntos de vida de tu adversario en 500 por cada monstruo que tenga en el campo.
-Reduce el ataque y defensa de todos los monstruos de tu adversario, entre m·s poder tenga el monstruo, m·s se reducir·.
-0
+Destruye el monstruo que atac√≥ con una defensa mayor o igual a 2000.
+Reduce los puntos de vida de tu oponente en 500 por cada monstruo que tenga en el campo.
+Reduce el ataque y defensa de todos los monstruos de tu oponente, entre m√°s poder tenga el monstruo, m√°s se reducir√°.
+Esta poderosa carta aumenta la fuerza del monstruo equipado entre m√°s monstruos hallan de tu lado m√°s poder tendr√°.
 Esta carta se puede equipar con cualquier carta tipo equipo en el juego.

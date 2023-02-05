@@ -234,8 +234,15 @@ public class PreDuelo : MonoBehaviour
                 {
                     fase = "cerrar";
                     panelCarta.transform.Find("imgcarta").GetComponent<Image>().sprite = (Sprite)txt.cartasBatalla.GetValue(cartasCofre[cartaReemplazo]);
-                    Debug.LogError(txt.GetDescripcionCarta().GetValue(cartasCofre[cartaReemplazo]).ToString());
-                    panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = txt.GetDescripcionCarta().GetValue(cartasCofre[cartaReemplazo]).ToString();
+                    if (txt.GetDescripcionCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("0"))
+                    {
+                        panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = "Sin Descripción";
+                    }
+                    else
+                    {
+                        panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = txt.GetDescripcionCarta().GetValue(cartasCofre[cartaReemplazo]).ToString();
+                    }
+                   
 
                     if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Monstruo"))
                     {
@@ -289,6 +296,15 @@ public class PreDuelo : MonoBehaviour
                 {
                     fase = "cerrar";
                     panelCarta.transform.Find("imgcarta").GetComponent<Image>().sprite = (Sprite)txt.cartasBatalla.GetValue(deck[indiceDeck]);
+                    if (txt.GetDescripcionCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("0"))
+                    {
+                        panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = "Sin Descripción";
+                    }
+                    else
+                    {
+                        panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = txt.GetDescripcionCarta().GetValue(deck[indiceDeck]).ToString();
+                    }
+
 
                     if (txt.GetTipoCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("Monstruo"))
                     {
