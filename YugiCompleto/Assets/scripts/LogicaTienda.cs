@@ -69,13 +69,13 @@ public class LogicaTienda : MonoBehaviour
         {
             habilitarPack2 = false;
             habilitarPack3 = false;
-            if (datosJuego.GetVictorias()[i]+ datosJuego.GetDerrotas()[1] >= 100)
+            if (datosJuego.GetVictorias()[i] >= 100)
             {
                 
                 habilitarPack2 = true;
                 habilitarPack3 = true;
             }
-            else if (datosJuego.GetVictorias()[i] + datosJuego.GetDerrotas()[i] >= 25)
+            else if (datosJuego.GetVictorias()[i] >= 25)
             {
                 habilitarPack2 = true;
             }
