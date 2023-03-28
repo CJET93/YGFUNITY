@@ -1416,8 +1416,6 @@ public class Interfaz : MonoBehaviour
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
-                        clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
                     }
                     yield return new WaitForSeconds(0.01f);
                 }
@@ -1623,7 +1621,7 @@ public class Interfaz : MonoBehaviour
                         }
                     }
                 }
-                clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
+                clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
                 particulaTrampa.gameObject.SetActive(false);
                 yield return new WaitForSeconds(0.2f);
                 clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorReverso.SetActive(false);

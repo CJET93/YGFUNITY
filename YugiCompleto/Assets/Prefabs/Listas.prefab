@@ -807,8 +807,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: ef74726e866b9fc4991ef63dcdd00c86, type: 3}
   - {fileID: 2800000, guid: 77f4591c6e3661f4abbdb2226e315265, type: 3}
   miniImagens:
-  - {fileID: 2800000, guid: 50bb78b950e2fa24b8534e06e69e506f, type: 3}
-  - {fileID: 2800000, guid: 50bb78b950e2fa24b8534e06e69e506f, type: 3}
+  - {fileID: 2800000, guid: 0ae0dc1703aca9746b7e53ee513b1a2c, type: 3}
+  - {fileID: 2800000, guid: 0ae0dc1703aca9746b7e53ee513b1a2c, type: 3}
   - {fileID: 2800000, guid: ae59f3ae60439cd4e97811b691c60078, type: 3}
   - {fileID: 2800000, guid: bf4cb41280b24e84bb6b6ca1d10dd5a2, type: 3}
   - {fileID: 2800000, guid: ad9b6759cf29bd740b797e78fc69add3, type: 3}

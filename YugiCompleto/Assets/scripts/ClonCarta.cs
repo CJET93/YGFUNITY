@@ -1736,13 +1736,13 @@ public class ClonCarta : MonoBehaviour
 
             camara.DevolverCamara(true);
             yield return AnimacionDevolverCamara(true, false);
-            Vector3 final = new Vector3(18f, 310f, 0f);
-            while (Vector3.Distance(clon[pos].transform.localPosition, final) > Time.deltaTime * 2000)
+            Vector3 final1 = new Vector3(18f, 310f, 0f);
+            while (Vector3.Distance(clon[pos].transform.localPosition, final1) > Time.deltaTime * 2000)
             {
-                clon[pos].transform.localPosition = Vector3.MoveTowards(clon[pos].transform.localPosition, final, Time.deltaTime * 2000);
+                clon[pos].transform.localPosition = Vector3.MoveTowards(clon[pos].transform.localPosition, final1, Time.deltaTime * 2000);
                 yield return null;
             }
-            clon[pos].transform.localPosition = final;
+            clon[pos].transform.localPosition = final1;
 
         }
         yield return null;
@@ -1850,12 +1850,18 @@ public class ClonCarta : MonoBehaviour
         }
 
         //bajarCarta hasta 0,071
-        while (campoU[indice].transform.localPosition.y >= 0.071)
+        Vector3 final = new Vector3(campoU[indice].transform.localPosition.x, 1.071f, campoU[indice].transform.localPosition.z);
+        while (Vector3.Distance(campoU[indice].transform.localPosition, final) > Time.deltaTime * 2)
+        {
+            campoU[indice].transform.localPosition = Vector3.MoveTowards(campoU[indice].transform.localPosition, final, Time.deltaTime * 2);
+            yield return null;
+        }
+       /* while (campoU[indice].transform.localPosition.y >= 0.071)
         {
             campoU[indice].transform.Translate(0f * Time.deltaTime, 0f * Time.deltaTime, 7f * Time.deltaTime);
             yield return null;
-        }
-        campoU[indice].transform.localPosition = new Vector3(posicionarX, 0.071f, posicionarZ);
+        }*/
+        campoU[indice].transform.localPosition = new Vector3(posicionarX, 1.071f, posicionarZ);
         camara.MoverCamara(false);
         yield return AnimacionMoverCamara(true,true);
         campo.SetCampoUsuario(indice, campo.GetManoUsuario(pos));
@@ -3107,9 +3113,10 @@ public class ClonCarta : MonoBehaviour
         }
 
         //bajarCarta hasta 0,071
-        while (campoCpu[pos].transform.localPosition.y >= 0.071)
+        Vector3 final1 = new Vector3(campoCpu[pos].transform.localPosition.x, 0.071f, campoCpu[pos].transform.localPosition.z);
+        while (Vector3.Distance(campoCpu[pos].transform.localPosition, final1) > Time.deltaTime * 7)
         {
-            campoCpu[pos].transform.Translate(0f * Time.deltaTime, 0f * Time.deltaTime, 7f * Time.deltaTime);
+            campoCpu[pos].transform.localPosition = Vector3.MoveTowards(campoCpu[pos].transform.localPosition, final1, Time.deltaTime * 7);
             yield return null;
         }
         campoCpu[pos].transform.localPosition = new Vector3(posicionarX, 0.071f, posicionarZ);
@@ -4857,11 +4864,12 @@ public class ClonCarta : MonoBehaviour
         {
             campoU[indiceMonstruo].GetComponent<muestraCarta>().panelDatos.texture = campoU[indiceMonstruo].GetComponent<muestraCarta>().color[3];
         }
-        
+
         //bajarCarta hasta 0,071
-        while (campoU[indiceMonstruo].transform.localPosition.y >= 0.071)
+        Vector3 final1 = new Vector3(campoU[indiceMonstruo].transform.localPosition.x, 0.071f, campoU[indiceMonstruo].transform.localPosition.z);
+        while (Vector3.Distance(campoU[indiceMonstruo].transform.localPosition, final1) > Time.deltaTime * 7)
         {
-            campoU[indiceMonstruo].transform.Translate(0f * Time.deltaTime, 0f * Time.deltaTime, 7f * Time.deltaTime);
+            campoU[indiceMonstruo].transform.localPosition = Vector3.MoveTowards(campoU[indiceMonstruo].transform.localPosition, final1, Time.deltaTime * 7);
             yield return null;
         }
         campoU[indiceMonstruo].transform.localPosition = new Vector3(posicionarX, 0.071f, posicionarZ);
@@ -5937,9 +5945,10 @@ public class ClonCarta : MonoBehaviour
         }
 
         //bajarCarta hasta 0,071
-        while (campoCpu[indiceMonstruo].transform.localPosition.y >= 0.071)
+        Vector3 final1 = new Vector3(campoCpu[indiceMonstruo].transform.localPosition.x, 0.071f, campoCpu[indiceMonstruo].transform.localPosition.z);
+        while (Vector3.Distance(campoCpu[indiceMonstruo].transform.localPosition, final1) > Time.deltaTime * 7)
         {
-            campoCpu[indiceMonstruo].transform.Translate(0f * Time.deltaTime, 0f * Time.deltaTime, 7f * Time.deltaTime);
+            campoCpu[indiceMonstruo].transform.localPosition = Vector3.MoveTowards(campoCpu[indiceMonstruo].transform.localPosition, final1, Time.deltaTime * 7);
             yield return null;
         }
         campoCpu[indiceMonstruo].transform.localPosition = new Vector3(posicionarX, 0.071f, posicionarZ);
