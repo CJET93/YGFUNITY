@@ -1850,10 +1850,10 @@ public class ClonCarta : MonoBehaviour
         }
 
         //bajarCarta hasta 0,071
-        Vector3 final = new Vector3(campoU[indice].transform.localPosition.x, 1.071f, campoU[indice].transform.localPosition.z);
+        Vector3 final = new Vector3(campoU[indice].transform.localPosition.x, 0.071f, campoU[indice].transform.localPosition.z);
         while (Vector3.Distance(campoU[indice].transform.localPosition, final) > Time.deltaTime * 2)
         {
-            campoU[indice].transform.localPosition = Vector3.MoveTowards(campoU[indice].transform.localPosition, final, Time.deltaTime * 2);
+            campoU[indice].transform.localPosition = Vector3.MoveTowards(campoU[indice].transform.localPosition, final, Time.deltaTime * 7);
             yield return null;
         }
        /* while (campoU[indice].transform.localPosition.y >= 0.071)
@@ -1861,7 +1861,7 @@ public class ClonCarta : MonoBehaviour
             campoU[indice].transform.Translate(0f * Time.deltaTime, 0f * Time.deltaTime, 7f * Time.deltaTime);
             yield return null;
         }*/
-        campoU[indice].transform.localPosition = new Vector3(posicionarX, 1.071f, posicionarZ);
+        campoU[indice].transform.localPosition = new Vector3(posicionarX, 0.071f, posicionarZ);
         camara.MoverCamara(false);
         yield return AnimacionMoverCamara(true,true);
         campo.SetCampoUsuario(indice, campo.GetManoUsuario(pos));
