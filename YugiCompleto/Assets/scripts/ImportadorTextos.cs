@@ -65,6 +65,10 @@ public class ImportadorTextos : MonoBehaviour
     public Texture2D[] miniImagens;
     public Texture2D[] guardianes;
     public Texture2D[]atirbutos;
+    public Sprite[] cartas1;
+
+    public TextAsset cardImages;
+
     // no supe como pasar de texture2d a sprite por lo que me toco crear una nueva lista de cartas
     public Sprite[] cartasBatalla;
     //inicializa todas las listas ya cargadas
@@ -182,6 +186,17 @@ public class ImportadorTextos : MonoBehaviour
         {
             descripcionCartaTexto = descripcionCarta.text.Split('\n');
         }
+
+        if (cardImages != null)
+        {
+            string[] cardImagesTxt = cardImages.text.Split('\n');
+            for (int i = 0; i < cardImagesTxt.Length; i++)
+            {
+                cartas.SetValue(Resources.Load<Texture2D>("cards/miniImages/"+cardImagesTxt.GetValue(i).ToString().Trim()), i);
+                cartas1.SetValue(Resources.Load<Sprite>("cards/miniImages/" + cardImagesTxt.GetValue(i).ToString().Trim()), i);
+            }
+        }
+
     }
     public void SetTexto(string[] lineaText)
     {

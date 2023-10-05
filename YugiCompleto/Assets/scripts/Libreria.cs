@@ -60,11 +60,24 @@ public class Libreria : MonoBehaviour
                 GameObject clonCarta = Instantiate(original, new Vector3(original.transform.position.x + posX, original.transform.position.y+posY, original.transform.position.z), original.transform.rotation);
                 if (datosJuego.GetCofre().Contains(contador))
                 {
-                    clonCarta.GetComponent<RawImage>().texture = (Texture2D)txt.cartas.GetValue(contador);
+                    if (txt.GetTipoCarta().GetValue(contador).ToString().Trim().Equals("Monstruo"))
+                    {
+                        
+                        clonCarta.transform.Find("cardContainer/monsterContainer/cardAtk").GetComponent<TextMeshProUGUI>().text = "Atk " + (string)txt.getatk().GetValue(contador);
+                        clonCarta.transform.Find("cardContainer/monsterContainer/cardDef").GetComponent<TextMeshProUGUI>().text = "Def " + (string)txt.getdef().GetValue(contador);
+                    }
+                    else
+                    {
+                        clonCarta.transform.Find("cardContainer/monsterContainer").GetComponent<Image>().gameObject.SetActive(false);
+                        clonCarta.transform.Find("cardContainer/magicContainer").GetComponent<Image>().gameObject.SetActive(true);
+                    }
+                    clonCarta.transform.Find("cardContainer/cardImage").GetComponent<Image>().sprite = (Sprite)txt.cartas1.GetValue(contador);
+                    clonCarta.transform.Find("cardContainer/cardText").GetComponent<TextMeshProUGUI>().text =(string)txt.getnom().GetValue(contador);
+                   
                 }
                 else
                 {
-                    clonCarta.GetComponent<RawImage>().texture = (Texture2D)txt.cartas.GetValue(723);
+                    clonCarta.transform.Find("cardContainer").gameObject.SetActive(false);
                 }
                
                 clonCarta.transform.SetParent(contenedor.transform, false);
