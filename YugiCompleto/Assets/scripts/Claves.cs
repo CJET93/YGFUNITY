@@ -38,6 +38,15 @@ public class Claves : MonoBehaviour
         sonido.MusicaClaves();
         estrellasTexto.text = "X" + datosJuego.GetEstrellas();
     }
+    private void initialValues()
+    {
+        imagenCarta.transform.Find("backCard").gameObject.SetActive(true);
+        imagenCarta.transform.Find("cardContainer/monsterContainer").gameObject.SetActive(true);
+        imagenCarta.transform.Find("cardContainer/specialContainer").gameObject.SetActive(false);
+        imagenCarta.transform.Find("cardContainer/specialContainer/magicContainer").gameObject.SetActive(true);
+        imagenCarta.transform.Find("cardContainer/specialContainer/trapContainer").gameObject.SetActive(false);
+        imagenCarta.transform.Find("cardContainer").gameObject.SetActive(false);
+    }
     public void obtenerCarta()
     {
         clave = claveTexto.text.Trim((char)8203);
@@ -86,24 +95,63 @@ public class Claves : MonoBehaviour
         {
 
 
-            imagenCarta.GetComponent<RawImage>().transform.Rotate(0 * Time.fixedDeltaTime, 2400 * Time.fixedDeltaTime, 0 * Time.fixedDeltaTime);
+            imagenCarta.GetComponent<Image>().transform.Rotate(0 * Time.fixedDeltaTime, 2400 * Time.fixedDeltaTime, 0 * Time.fixedDeltaTime);
 
 
-            if (imagenCarta.GetComponent<RawImage>().transform.rotation.eulerAngles.y > 90 && animacion1 == false)
+            if (imagenCarta.GetComponent<Image>().transform.rotation.eulerAngles.y > 90 && animacion1 == false)
             {
-                imagenCarta.GetComponent<RawImage>().transform.eulerAngles = new Vector3(0, -90, 0);
+                imagenCarta.GetComponent<Image>().transform.eulerAngles = new Vector3(0, -90, 0);
+                imagenCarta.transform.Find("backCard").gameObject.SetActive(false);
+                imagenCarta.transform.Find("cardContainer").gameObject.SetActive(true);
+                getStars();
+                imagenCarta.transform.Find("cardContainer/monsterContainer/cardAtk").GetComponent<TextMeshProUGUI>().text = "Atk " + (string)txt.getatk().GetValue(idCarta);
+                imagenCarta.transform.Find("cardContainer/monsterContainer/cardDef").GetComponent<TextMeshProUGUI>().text = "Def " + (string)txt.getdef().GetValue(idCarta);
+                imagenCarta.transform.Find("cardContainer/cardImage").GetComponent<Image>().sprite = (Sprite)txt.cartas1.GetValue(idCarta);
+                imagenCarta.transform.Find("cardContainer/cardName").GetComponent<TextMeshProUGUI>().text = (string)txt.getnom().GetValue(idCarta);
+                string name = txt.attributeText[idCarta];
+                int indice = -1;
+
+                for (int i = 0; i < txt.attributeImages.Length; i++)
+                {
+                    if (txt.attributeImages[i].name == name)
+                    {
+                        indice = i;
+                        break;
+                    }
+                }
+
+                if (indice != -1)
+                {
+                    imagenCarta.transform.Find("cardContainer/cardAttribute").GetComponent<Image>().sprite = txt.attributeImages[indice];
+                }
+                else
+                {
+                    Debug.LogError($"Sprite con nombre '{name}' no encontrado en txt.attributeImages.");
+                }
+                if (!txt.GetTipoCarta().GetValue(idCarta).ToString().Trim().Equals("Monstruo"))
+                {
+                    imagenCarta.transform.Find("cardContainer/monsterContainer").GetComponent<Image>().gameObject.SetActive(false);
+                    imagenCarta.transform.Find("cardContainer/specialContainer").GetComponent<Image>().gameObject.SetActive(true);
+                    if (txt.GetTipoCarta().GetValue(idCarta).ToString().Trim().Equals("Trampa"))
+                    {
+
+                        imagenCarta.transform.Find("cardContainer/specialContainer/trapContainer").gameObject.SetActive(true);
+                    }
+                }
+              
+                
 
                 ///clon.GetClonCpu(j).GetComponent<Transform>().eulerAngles = new Vector3(-200, 360, 180);
-                imagenCarta.GetComponent<RawImage>().texture = (Texture2D)txt.cartas.GetValue(idCarta);
+                //imagenCarta.GetComponent<Image>().sprite = (Sprite)txt.cartas1.GetValue(idCarta);
                 //cartaCpu.GetComponent<Transform>().eulerAngles = new Vector3(0, -240, 180);
                 //cartaCpu.GetComponent<MeshRenderer>().material.mainTexture = (Texture2D)cartaCpu.txt.cartas.GetValue(campo.GetCpuPos());
                 animacion1 = true;
 
 
             }
-            if (imagenCarta.GetComponent<RawImage>().transform.rotation.eulerAngles.y < 180 && animacion1 == true)
+            if (imagenCarta.GetComponent<Image>().transform.rotation.eulerAngles.y < 180 && animacion1 == true)
             {
-                imagenCarta.GetComponent<RawImage>().transform.rotation = (Quaternion.Euler(0, 0, 0));
+                imagenCarta.GetComponent<Image>().transform.rotation = (Quaternion.Euler(0, 0, 0));
                 realizada = true;
             }
 
@@ -233,6 +281,9 @@ public class Claves : MonoBehaviour
         }
         StartCoroutine(EmpezarAnimacionSaleCarta());
     }
+
+ 
+
     IEnumerator EmpezarAnimacionSaleCarta()
     {
         bool realizada = false;
@@ -242,20 +293,18 @@ public class Claves : MonoBehaviour
         {
 
 
-            imagenCarta.GetComponent<RawImage>().transform.Rotate(0 * Time.fixedDeltaTime, 2400 * Time.fixedDeltaTime, 0 * Time.fixedDeltaTime);
-
-
-            if (imagenCarta.GetComponent<RawImage>().transform.rotation.eulerAngles.y > 90 && animacion1 == false)
+            imagenCarta.GetComponent<Image>().transform.Rotate(0 * Time.fixedDeltaTime, 2400 * Time.fixedDeltaTime, 0 * Time.fixedDeltaTime);
+                if (imagenCarta.GetComponent<Image>().transform.rotation.eulerAngles.y > 90 && animacion1 == false)
             {
-                imagenCarta.GetComponent<RawImage>().transform.eulerAngles = new Vector3(0, -90, 0);
-                imagenCarta.GetComponent<RawImage>().texture = (Texture2D)txt.cartas.GetValue(723);
+                initialValues();
+                imagenCarta.GetComponent<Image>().transform.eulerAngles = new Vector3(0, -90, 0);
                 animacion1 = true;
 
 
             }
-            if (imagenCarta.GetComponent<RawImage>().transform.rotation.eulerAngles.y < 180 && animacion1 == true)
+            if (imagenCarta.GetComponent<Image>().transform.rotation.eulerAngles.y < 180 && animacion1 == true)
             {
-                imagenCarta.GetComponent<RawImage>().transform.rotation = (Quaternion.Euler(0, 0, 0));
+                imagenCarta.GetComponent<Image>().transform.rotation = (Quaternion.Euler(0, 0, 0));
                 realizada = true;
             }
 
@@ -283,6 +332,17 @@ public class Claves : MonoBehaviour
     {
         efectosSonido.CancelarAccion();
         transicion.CargarEscena("MenuContinuar");
+    }
+
+    public void getStars()
+    {
+        int numberOfStarsToShow = int.Parse((string)txt.GetStars().GetValue(idCarta));
+        int stars = imagenCarta.transform.Find("cardContainer/monsterContainer/starsContainer").childCount;
+        for (int i = 0; i < stars; i++)
+        {
+            Transform star = imagenCarta.transform.Find("cardContainer/monsterContainer/starsContainer").GetChild(i);
+            star.gameObject.SetActive(i < numberOfStarsToShow);
+        }
     }
 
 

@@ -33,6 +33,8 @@ public class ImportadorTextos : MonoBehaviour
     private string[] dropSATECTexto;
     private string[] destinoSATECTexto;
     private string[] descripcionCartaTexto;
+    private string[] starsText;
+    public string[] attributeText;
     public TextAsset fichero;
     public TextAsset atk;
     public TextAsset def;
@@ -61,13 +63,16 @@ public class ImportadorTextos : MonoBehaviour
     public TextAsset destinoSATEC;
     public TextAsset dropSATEC;
     public TextAsset descripcionCarta;
+    public TextAsset stars;
     public Texture2D[] cartas;
     public Texture2D[] miniImagens;
     public Texture2D[] guardianes;
     public Texture2D[]atirbutos;
     public Sprite[] cartas1;
+    public TextAsset attributes;
 
     public TextAsset cardImages;
+    public Sprite[] attributeImages;
 
     // no supe como pasar de texture2d a sprite por lo que me toco crear una nueva lista de cartas
     public Sprite[] cartasBatalla;
@@ -192,9 +197,24 @@ public class ImportadorTextos : MonoBehaviour
             string[] cardImagesTxt = cardImages.text.Split('\n');
             for (int i = 0; i < cardImagesTxt.Length; i++)
             {
-                cartas.SetValue(Resources.Load<Texture2D>("cards/miniImages/"+cardImagesTxt.GetValue(i).ToString().Trim()), i);
-                cartas1.SetValue(Resources.Load<Sprite>("cards/miniImages/" + cardImagesTxt.GetValue(i).ToString().Trim()), i);
+                //cartas.SetValue(Resources.Load<Texture2D>("cards/images/"+cardImagesTxt.GetValue(i).ToString().Trim()), i);
+                cartas1.SetValue(Resources.Load<Sprite>("cards/images/" + cardImagesTxt.GetValue(i).ToString().Trim()), i);
             }
+        }
+
+        if(stars != null)
+        {
+            starsText = stars.text.Split('\n');
+        }
+
+        if(attributes != null)
+        {
+            attributeText = attributes.text.Split('\n');
+            for(int i = 0; i < attributeText.Length; i++)
+            {
+                attributeText[i] = attributeText[i].Trim();
+            }
+            attributeImages = (Resources.LoadAll<Sprite>("cards/attributes"));
         }
 
     }
@@ -314,6 +334,11 @@ public class ImportadorTextos : MonoBehaviour
     public string[] GetDescripcionCarta()
     {
         return descripcionCartaTexto;
+    }
+
+    public string[] GetStars()
+    {
+        return starsText;
     }
 
 

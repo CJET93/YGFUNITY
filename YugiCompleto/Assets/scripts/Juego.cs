@@ -16,9 +16,9 @@ public class Juego : MonoBehaviour
     private List<int> deckUsuario = new List<int>();
     public List<int> deckCpu = new List<int>();
     private bool turnoUsuario = true;
-    private int cantDecksUario = 40;
+    private int cantDecksUario = Constants.CARDS_IN_DECK;
     private int cantTurnos = 0;
-    private int cantDeckCpu = 40;
+    private int cantDeckCpu = Constants.CARDS_IN_DECK;
     private int vidaUsuario = 0;
     private int vidaCpu = 0;
     public int rankPoints;
@@ -145,7 +145,7 @@ public class Juego : MonoBehaviour
         defensaPromedioCpu = 0;
         rankPoints = 50;
         Cursor.visible = false;
-        for (int i = 0; i < 40; i++)
+        for (int i = 0; i < Constants.CARDS_IN_DECK; i++)
         {
             deckUsuario.Add(datosJuego.GetDeckUsuario()[i]);
             AtaquePromedioDeck += int.Parse((string)txt.getatk().GetValue(deckUsuario[i]));
@@ -153,8 +153,8 @@ public class Juego : MonoBehaviour
 
 
         }
-        AtaquePromedioDeck /= 40;
-        defensaPromedioDeck /= 40;
+        AtaquePromedioDeck /= Constants.CARDS_IN_DECK;
+        defensaPromedioDeck /= Constants.CARDS_IN_DECK;
         deckCpu = datosDuelo.GetDeckCpu();
         // ordenar cartas en ataque del campo usuario
         //organizar los ataques del usuario y ponerlos en un nuevo array temporal
@@ -281,7 +281,7 @@ public class Juego : MonoBehaviour
     }
     public void OrdenarPorMT()
     {
-        int[] ataqueTemp = new int[40];
+        int[] ataqueTemp = new int[Constants.CARDS_IN_DECK];
         int cantidad = deckCpu.Count;
         //carta c = GetComponent<carta>();
         for (int i = 0; i < cantidad; i++)
@@ -5592,7 +5592,7 @@ public class Juego : MonoBehaviour
                 activarDueloRapido = true;
             }
             Rangos();
-            int carta = Random.Range(0, 2048);
+            int carta = Random.Range(0, Constants.DROP_SUM);
             //obtener la carta del drop cpu
             //RANGO SA 
             List<int> probabilidadDrop = new List<int>();
@@ -5711,10 +5711,10 @@ public class Juego : MonoBehaviour
                        
                         if (aleatorio !=2)
                         {
-                            actual = Random.Range(0, 2048);
+                            actual = Random.Range(0, Constants.DROP_SUM);
                             while (int.Parse(txt.GetPots()[probabilidadDrop[actual]]) == 1)
                             {
-                                actual = Random.Range(0, 2048);
+                                actual = Random.Range(0, Constants.DROP_SUM);
                             }
                         }
                         else
@@ -5791,7 +5791,7 @@ public class Juego : MonoBehaviour
             rankPoints -= 12;
         }
         //cartas usadas
-        int cartasUsadas = 40 - GetCantDeckUsuario();
+        int cartasUsadas = Constants.CARDS_IN_DECK - GetCantDeckUsuario();
         if (cartasUsadas >= 0 && cartasUsadas < 9)
         {
             rankPoints += 15;
@@ -6084,13 +6084,13 @@ public class Juego : MonoBehaviour
         if (!datosDuelo.GetModoHistoria()){
             DetenerMusica();
             List<int> deckTemporal = new List<int>();
-            int[] probabilidadDrop = new int[2048];
+            int[] probabilidadDrop = new int[Constants.DROP_SUM];
             string[] idDuelistas = importadorHistoria.GetSistema();
             string[] destinoDeck = importadorHistoria.GetDestinoDeck();
             string[] dropDeck = importadorHistoria.GetDropDeck();
             string[] duelistas = importadorHistoria.GetDuelistas();
 
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < Constants.CARDS_IN_DECK; i++)
             {
                 deckTemporal.Add(0);
             }
@@ -6138,9 +6138,9 @@ public class Juego : MonoBehaviour
                 while (deckTemporal.Contains(0))
                 {
                     actual = 0;
-                    actualCarta = Random.Range(0, 2048);
+                    actualCarta = Random.Range(0, Constants.DROP_SUM);
                     int contador = 0;
-                    for (int i = 0; i < 40; i++)
+                    for (int i = 0; i < Constants.CARDS_IN_DECK; i++)
                     {
                         if (probabilidadDrop[actualCarta] == deckTemporal[i])
                         {
@@ -6156,7 +6156,7 @@ public class Juego : MonoBehaviour
             }
             else
             {
-                for (int i = 0; i < 40; i++)
+                for (int i = 0; i < Constants.CARDS_IN_DECK; i++)
                 {
                     deckTemporal[i] = (datosJuego.GetDeckUsuario()[i]);
                 }

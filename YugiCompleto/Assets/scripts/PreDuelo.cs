@@ -93,12 +93,13 @@ public class PreDuelo : MonoBehaviour
         datosJuego = objetoDatosJuego.GetComponent<DatosJuego>();
         objetoDatosDuelo = GameObject.Find("DatosDuelo");
         datosDuelo = objetoDatosDuelo.GetComponent<DatosDuelo>();
+
     }
     void Start()
     {
         deslizadoRapido = false;
-        clonCarta = new GameObject[723];
-        clonDeck = new GameObject[40];
+        clonCarta = new GameObject[Constants.TOTAL_CARDS+1];
+        clonDeck = new GameObject[Constants.CARDS_IN_DECK];
         Cursor.visible = false;
         sonido.MusicaCrearDuelo();
 
@@ -168,7 +169,7 @@ public class PreDuelo : MonoBehaviour
     public void CrearInstancias()
     {
         int posY = 0;
-        for (int i = 0; i < 723; i++)
+        for (int i = 0; i < Constants.TOTAL_CARDS+1; i++)
         {
 
             clonCarta[i] = Instantiate(original, new Vector3(original.transform.localPosition.x, original.transform.localPosition.y - posY, original.transform.localPosition.z), original.transform.rotation);
@@ -181,7 +182,7 @@ public class PreDuelo : MonoBehaviour
     public void CrearInstanciasDeck()
     {
         int posY = 0;
-        for (int i = 0; i < 40; i++)
+        for (int i = 0; i < Constants.CARDS_IN_DECK; i++)
         {
 
             clonDeck[i] = Instantiate(originalDeck, new Vector3(originalDeck.transform.localPosition.x, originalDeck.transform.localPosition.y - posY, originalDeck.transform.localPosition.z), originalDeck.transform.rotation);
@@ -232,56 +233,7 @@ public class PreDuelo : MonoBehaviour
 
                 if (cartaReemplazo != -1)
                 {
-                    fase = "cerrar";
-                    panelCarta.transform.Find("imgcarta").GetComponent<Image>().sprite = (Sprite)txt.cartasBatalla.GetValue(cartasCofre[cartaReemplazo]);
-                    if (txt.GetDescripcionCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("0"))
-                    {
-                        panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = "Sin Descripción";
-                    }
-                    else
-                    {
-                        panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = txt.GetDescripcionCarta().GetValue(cartasCofre[cartaReemplazo]).ToString();
-                    }
-                   
-
-                    if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Monstruo"))
-                    {
-                        panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = (string)txt.GetNombreTipoCarta().GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString()));
-                        panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString()));
-                    }
-
-                    else if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Equipo"))
-                    {
-                        panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "EQUIPO";
-                        panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(22);
-
-                    }
-                    else if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Campo"))
-                    {
-                        panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "CAMPO";
-                        panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
-                    }
-                    else if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Magica"))
-                    {
-                        panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "MAGICA";
-                        panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
-                    }
-                    else
-                    {
-                        panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "TRAMPA";
-                        panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(23);
-                    }
-
-
-                    if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Monstruo"))
-                    {
-                        panelGuardian.SetActive(true);
-                        panelGuardian.transform.Find("imgua1").GetComponent<RawImage>().texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos1().GetValue(cartasCofre[cartaReemplazo]).ToString()));
-                        panelGuardian.transform.Find("imgua2").GetComponent<RawImage>().texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos2().GetValue(cartasCofre[cartaReemplazo]).ToString()));
-                        panelGuardian.transform.Find("textogua1").GetComponent<TextMeshProUGUI>().text = (string)txt.GetNomAtributo().GetValue(int.Parse(txt.GetAtributos1().GetValue(cartasCofre[cartaReemplazo]).ToString()));
-                        panelGuardian.transform.Find("textogua2").GetComponent<TextMeshProUGUI>().text = (string)txt.GetNomAtributo().GetValue(int.Parse(txt.GetAtributos2().GetValue(cartasCofre[cartaReemplazo]).ToString()));
-                    }
-                    panelCarta.SetActive(true);
+                    updateContainer(cartasCofre[cartaReemplazo]);
 
                 }
             }
@@ -294,62 +246,14 @@ public class PreDuelo : MonoBehaviour
                 int cantidadReemplazo = indice - 1;
                 if (deck.Count > 0 && indiceDeck < deck.Count)
                 {
-                    fase = "cerrar";
-                    panelCarta.transform.Find("imgcarta").GetComponent<Image>().sprite = (Sprite)txt.cartasBatalla.GetValue(deck[indiceDeck]);
-                    if (txt.GetDescripcionCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("0"))
-                    {
-                        panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = "Sin Descripción";
-                    }
-                    else
-                    {
-                        panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = txt.GetDescripcionCarta().GetValue(deck[indiceDeck]).ToString();
-                    }
-
-
-                    if (txt.GetTipoCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("Monstruo"))
-                    {
-                        panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = (string)txt.GetNombreTipoCarta().GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(deck[indiceDeck]).ToString()));
-                        panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(deck[indiceDeck]).ToString()));
-                    }
-
-                    else if (txt.GetTipoCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("Equipo"))
-                    {
-                        panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "EQUIPO";
-                        panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(22);
-
-                    }
-                    else if (txt.GetTipoCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("Campo"))
-                    {
-                        panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "CAMPO";
-                        panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
-                    }
-                    else if (txt.GetTipoCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("Magica"))
-                    {
-                        panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "MAGICA";
-                        panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
-                    }
-                    else
-                    {
-                        panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "TRAMPA";
-                        panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(23);
-                    }
-
-
-                    if (txt.GetTipoCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("Monstruo"))
-                    {
-                        panelGuardian.SetActive(true);
-                        panelGuardian.transform.Find("imgua1").GetComponent<RawImage>().texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos1().GetValue(deck[indiceDeck]).ToString()));
-                        panelGuardian.transform.Find("imgua2").GetComponent<RawImage>().texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos2().GetValue(deck[indiceDeck]).ToString()));
-                        panelGuardian.transform.Find("textogua1").GetComponent<TextMeshProUGUI>().text = (string)txt.GetNomAtributo().GetValue(int.Parse(txt.GetAtributos1().GetValue(deck[indiceDeck]).ToString()));
-                        panelGuardian.transform.Find("textogua2").GetComponent<TextMeshProUGUI>().text = (string)txt.GetNomAtributo().GetValue(int.Parse(txt.GetAtributos2().GetValue(deck[indiceDeck]).ToString()));
-                    }
-                    panelCarta.SetActive(true);
+                    updateContainer(deck[indiceDeck]);
 
                 }
             }
             else if (fase.Equals("cerrar"))
             {
                 panelCarta.SetActive(false);
+                getInitPanelValues();
                 if (estaEnDeck)
                 {
                     fase = "deck";
@@ -366,7 +270,7 @@ public class PreDuelo : MonoBehaviour
         {
             if (fase.Equals("cofre"))
             {
-                //validar que hay menos de 40 cartas en deck
+                //validar que hay menos de Constants.CARDS_IN_DECK cartas en deck
                 numeroEnDeck = 0;
                 int cartaReemplazo = indice - 1;
                 int cantidadReemplazo = indice - 1;
@@ -389,7 +293,7 @@ public class PreDuelo : MonoBehaviour
 
 
 
-                    if (deck.Count < 40 && cantidadCartasCofre[cantidadReemplazo] > 0 && numeroEnDeck < 3)
+                    if (deck.Count < Constants.CARDS_IN_DECK && cantidadCartasCofre[cantidadReemplazo] > 0 && numeroEnDeck < 3)
                     {
 
                         cantidadCartasCofre[cantidadReemplazo] = cantidadCartasCofre[cantidadReemplazo] - 1;
@@ -409,7 +313,7 @@ public class PreDuelo : MonoBehaviour
                         }
                         OrdenarDeck();
 
-                        if (deck.Count == 40)
+                        if (deck.Count == Constants.CARDS_IN_DECK)
                         {
                             totalDeck.color = Color.white;
                             totalDeckEnDeck.color = Color.white;
@@ -505,7 +409,7 @@ public class PreDuelo : MonoBehaviour
             StartCoroutine(FlechaAbajoArriba());
             if (fase.Equals("cofre"))
             {
-                if (indice < 722)
+                if (indice < Constants.TOTAL_CARDS)
                 {
                     efectosSonido.moverCarta();
                     indiceApCofre++;
@@ -564,7 +468,7 @@ public class PreDuelo : MonoBehaviour
         {
             if (fase.Equals("cofre"))
             {
-                if (indice < 722)
+                if (indice < Constants.TOTAL_CARDS)
                 {
                     efectosSonido.moverCarta();
                     indiceApCofre++;
@@ -784,7 +688,7 @@ public class PreDuelo : MonoBehaviour
         {
             if (!fase.Equals("cerrar"))
             {
-                if (deck.Count == 40)
+                if (deck.Count == Constants.CARDS_IN_DECK)
                 {
                     iniciar = false;
                     datosJuego.SetDeckUsuario(deck);
@@ -884,22 +788,22 @@ public class PreDuelo : MonoBehaviour
         }
         else if (txt.GetTipoCarta().GetValue(id).ToString().Trim().Equals("Equipo"))
         {
-            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = "EQUIPO";
+            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.EQUIP_NAME;
             clonCarta[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(22);
         }
         else if (txt.GetTipoCarta().GetValue(id).ToString().Trim().Equals("Campo"))
         {
-            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = "CAMPO";
+            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.FIELD_NAME;
             clonCarta[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
         }
         else if (txt.GetTipoCarta().GetValue(id).ToString().Trim().Equals("Magica"))
         {
-            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = "MAGICA";
+            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.MAGIC_NAME;
             clonCarta[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
         }
         else
         {
-            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = "TRAMPA";
+            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.TRAP_NAME;
             clonCarta[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(23);
         }
 
@@ -961,22 +865,22 @@ public class PreDuelo : MonoBehaviour
         }
         else if (txt.GetTipoCarta().GetValue(id).ToString().Trim().Equals("Equipo"))
         {
-            clonDeck[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = "EQUIPO";
+            clonDeck[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.EQUIP_NAME;
             clonDeck[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(22);
         }
         else if (txt.GetTipoCarta().GetValue(id).ToString().Trim().Equals("Campo"))
         {
-            clonDeck[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = "CAMPO";
+            clonDeck[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.FIELD_NAME;
             clonDeck[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
         }
         else if (txt.GetTipoCarta().GetValue(id).ToString().Trim().Equals("Magica"))
         {
-            clonDeck[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = "MAGICA";
+            clonDeck[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.MAGIC_NAME;
             clonDeck[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
         }
         else
         {
-            clonDeck[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = "TRAMPA";
+            clonDeck[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.TRAP_NAME;
             clonDeck[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(23);
         }
 
@@ -1566,16 +1470,113 @@ public class PreDuelo : MonoBehaviour
 
 
     }
+
+    public void getStars(GameObject container, int cardNumber)
+    {
+        int numberOfStarsToShow = int.Parse((string)txt.GetStars().GetValue(cardNumber));
+        int stars = container.transform.Find("cardContainer/monsterContainer/starsContainer").childCount;
+        for (int i = 0; i < stars; i++)
+        {
+            Transform star = container.transform.Find("cardContainer/monsterContainer/starsContainer").GetChild(i);
+            star.gameObject.SetActive(i < numberOfStarsToShow);
+        }
+    }
+
+    public void getInitPanelValues()
+    {
+        panelCarta.transform.Find("cardContainer/specialContainer").gameObject.SetActive(false);
+        panelCarta.transform.Find("cardContainer/specialContainer/trapContainer").gameObject.SetActive(true);
+    }
+
+    private void updateContainer(int cardNumber)
+    {
+        fase = "cerrar";
+        //panelCarta.transform.Find("imgcarta").GetComponent<Image>().sprite = (Sprite)txt.cartasBatalla.GetValue(cartasCofre[cartaReemplazo]);
+        if (txt.GetDescripcionCarta().GetValue(cardNumber).ToString().Trim().Equals("0"))
+        {
+            panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = "Sin Descripción";
+        }
+        else
+        {
+            panelCarta.transform.Find("panelDescripcion").Find("descripcionCarta").GetComponent<TextMeshProUGUI>().text = txt.GetDescripcionCarta().GetValue(cardNumber).ToString();
+        }
+        string name = txt.attributeText[cardNumber];
+        int indice = -1;
+
+        for (int i = 0; i < txt.attributeImages.Length; i++)
+        {
+            if (txt.attributeImages[i].name == name)
+            {
+                indice = i;
+                break;
+            }
+        }
+
+        if (indice != -1)
+        {
+            panelCarta.transform.Find("cardContainer/cardAttribute").GetComponent<Image>().sprite = txt.attributeImages[indice];
+        }
+        else
+        {
+            Debug.LogError($"Sprite con nombre '{name}' no encontrado en txt.attributeImages.");
+        }
+        panelCarta.transform.Find("cardContainer/cardName").GetComponent<TextMeshProUGUI>().text = txt.getnom().GetValue(cardNumber).ToString();
+        panelCarta.transform.Find("cardContainer/imgCard").GetComponent<Image>().sprite = (Sprite)txt.cartas1.GetValue(cardNumber);
+
+        if (txt.GetTipoCarta().GetValue(cardNumber).ToString().Trim().Equals("Monstruo"))
+        {
+            panelCarta.transform.Find("cardContainer/monsterContainer/cardAtk").GetComponent<TextMeshProUGUI>().text = "Atk " + txt.getatk().GetValue(cardNumber).ToString();
+            panelCarta.transform.Find("cardContainer/monsterContainer/cardDef").GetComponent<TextMeshProUGUI>().text = "Def " + txt.getdef().GetValue(cardNumber).ToString();
+            getStars(panelCarta, cardNumber);
+            panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(cardNumber).ToString()));
+            panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = (string)txt.GetNombreTipoCarta().GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(cardNumber).ToString()));
+            panelGuardian.SetActive(true);
+            panelGuardian.transform.Find("imgua1").GetComponent<RawImage>().texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos1().GetValue(cardNumber).ToString()));
+            panelGuardian.transform.Find("imgua2").GetComponent<RawImage>().texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos2().GetValue(cardNumber).ToString()));
+            panelGuardian.transform.Find("textogua1").GetComponent<TextMeshProUGUI>().text = (string)txt.GetNomAtributo().GetValue(int.Parse(txt.GetAtributos1().GetValue(cardNumber).ToString()));
+            panelGuardian.transform.Find("textogua2").GetComponent<TextMeshProUGUI>().text = (string)txt.GetNomAtributo().GetValue(int.Parse(txt.GetAtributos2().GetValue(cardNumber).ToString()));
+        }
+
+        else if (txt.GetTipoCarta().GetValue(cardNumber).ToString().Trim().Equals("Equipo"))
+        {
+            panelCarta.transform.Find("cardContainer/specialContainer").gameObject.SetActive(true);
+            panelCarta.transform.Find("cardContainer/specialContainer/trapContainer").gameObject.SetActive(false);
+            panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.EQUIP_NAME;
+            panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(22);
+
+        }
+        else if (txt.GetTipoCarta().GetValue(cardNumber).ToString().Trim().Equals("Campo"))
+        {
+            panelCarta.transform.Find("cardContainer/specialContainer").gameObject.SetActive(true);
+            panelCarta.transform.Find("cardContainer/specialContainer/trapContainer").gameObject.SetActive(false);
+            panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.FIELD_NAME;
+            panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
+        }
+        else if (txt.GetTipoCarta().GetValue(cardNumber).ToString().Trim().Equals("Magica"))
+        {
+            panelCarta.transform.Find("cardContainer/specialContainer").gameObject.SetActive(true);
+            panelCarta.transform.Find("cardContainer/specialContainer/trapContainer").gameObject.SetActive(false);
+            panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.MAGIC_NAME;
+            panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
+        }
+        else
+        {
+            panelCarta.transform.Find("cardContainer/specialContainer").gameObject.SetActive(true);
+            panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.TRAP_NAME;
+            panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(23);
+        }
+        panelCarta.SetActive(true);
+    }
     public void ActualizarDeckCpu()
     {
         List<int> deckTemporal = new List<int>();
-        int[] probabilidadDrop = new int[2048];
+        int[] probabilidadDrop = new int[Constants.DROP_SUM];
         string[] idDuelistas = importadorHistoria.GetSistema();
         string[] destinoDeck = importadorHistoria.GetDestinoDeck();
         string[] dropDeck = importadorHistoria.GetDropDeck();
         string[] duelistas = importadorHistoria.GetDuelistas();
 
-        for (int i = 0; i < 40; i++)
+        for (int i = 0; i < Constants.CARDS_IN_DECK; i++)
         {
             deckTemporal.Add(0);
         }
@@ -1623,9 +1624,9 @@ public class PreDuelo : MonoBehaviour
             while (deckTemporal.Contains(0))
             {
                 actual = 0;
-                actualCarta = Random.Range(0, 2048);
+                actualCarta = Random.Range(0, Constants.DROP_SUM);
                 int contador = 0;
-                for (int i = 0; i < 40; i++)
+                for (int i = 0; i < Constants.CARDS_IN_DECK; i++)
                 {
                     if (probabilidadDrop[actualCarta] == deckTemporal[i])
                     {
@@ -1641,7 +1642,7 @@ public class PreDuelo : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < Constants.CARDS_IN_DECK; i++)
             {
                 deckTemporal[i] = (datosJuego.GetDeckUsuario()[i]);
             }
@@ -1662,7 +1663,7 @@ public class PreDuelo : MonoBehaviour
     {
         if (!fase.Equals("cerrar"))
         {
-            if (deck.Count == 40)
+            if (deck.Count == Constants.CARDS_IN_DECK)
             {
                 datosJuego.SetDeckUsuario(deck);
                 datosJuego.SetCofre(cartasCofre);
@@ -1709,7 +1710,7 @@ public class PreDuelo : MonoBehaviour
             StartCoroutine(FlechaAbajoArriba());
             if (fase.Equals("cofre"))
             {
-                if (indice < 722)
+                if (indice < Constants.TOTAL_CARDS)
                 {
                     efectosSonido.moverCarta();
                     indiceApCofre++;
@@ -1765,7 +1766,7 @@ public class PreDuelo : MonoBehaviour
         {
             if (fase.Equals("cofre"))
             {
-                if (indice < 722)
+                if (indice < Constants.TOTAL_CARDS)
                 {
                     efectosSonido.moverCarta();
                     indiceApCofre++;
@@ -2016,23 +2017,23 @@ public class PreDuelo : MonoBehaviour
 
                 else if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Equipo"))
                 {
-                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "EQUIPO";
+                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.EQUIP_NAME;
                     panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(22);
 
                 }
                 else if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Campo"))
                 {
-                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "CAMPO";
+                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.FIELD_NAME;
                     panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
                 }
                 else if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Magica"))
                 {
-                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "MAGICA";
+                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.MAGIC_NAME;
                     panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
                 }
                 else
                 {
-                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "TRAMPA";
+                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.TRAP_NAME;
                     panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(23);
                 }
 
@@ -2069,23 +2070,23 @@ public class PreDuelo : MonoBehaviour
 
                 else if (txt.GetTipoCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("Equipo"))
                 {
-                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "EQUIPO";
+                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.EQUIP_NAME;
                     panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(22);
 
                 }
                 else if (txt.GetTipoCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("Campo"))
                 {
-                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "CAMPO";
+                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.FIELD_NAME;
                     panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
                 }
                 else if (txt.GetTipoCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("Magica"))
                 {
-                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "MAGICA";
+                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.MAGIC_NAME;
                     panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
                 }
                 else
                 {
-                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = "TRAMPA";
+                    panel1.transform.Find("textotipo").GetComponent<TextMeshProUGUI>().text = Constants.TRAP_NAME;
                     panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(23);
                 }
 
@@ -2120,7 +2121,7 @@ public class PreDuelo : MonoBehaviour
     {
         if (fase.Equals("cofre"))
         {
-            //validar que hay menos de 40 cartas en deck
+            //validar que hay menos de Constants.CARDS_IN_DECK cartas en deck
             numeroEnDeck = 0;
             int cartaReemplazo = indice - 1;
             int cantidadReemplazo = indice - 1;
@@ -2143,7 +2144,7 @@ public class PreDuelo : MonoBehaviour
 
 
 
-                if (deck.Count < 40 && cantidadCartasCofre[cantidadReemplazo] > 0 && numeroEnDeck < 3)
+                if (deck.Count < Constants.CARDS_IN_DECK && cantidadCartasCofre[cantidadReemplazo] > 0 && numeroEnDeck < 3)
                 {
 
                     cantidadCartasCofre[cantidadReemplazo] = cantidadCartasCofre[cantidadReemplazo] - 1;
@@ -2163,7 +2164,7 @@ public class PreDuelo : MonoBehaviour
                     }
                     OrdenarDeck();
 
-                    if (deck.Count == 40)
+                    if (deck.Count == Constants.CARDS_IN_DECK)
                     {
                         totalDeck.color = Color.white;
                         totalDeckEnDeck.color = Color.white;

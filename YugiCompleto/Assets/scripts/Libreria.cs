@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
+using System;
 
 public class Libreria : MonoBehaviour
 {
@@ -68,12 +69,16 @@ public class Libreria : MonoBehaviour
                     }
                     else
                     {
+                        if (txt.GetTipoCarta().GetValue(contador).ToString().Trim().Equals("Trampa"))
+                        {
+
+                            clonCarta.transform.Find("cardContainer/specialContainer/trapContainer").gameObject.SetActive(true);
+                        }
                         clonCarta.transform.Find("cardContainer/monsterContainer").GetComponent<Image>().gameObject.SetActive(false);
-                        clonCarta.transform.Find("cardContainer/magicContainer").GetComponent<Image>().gameObject.SetActive(true);
+                        clonCarta.transform.Find("cardContainer/specialContainer").GetComponent<Image>().gameObject.SetActive(true);
                     }
                     clonCarta.transform.Find("cardContainer/cardImage").GetComponent<Image>().sprite = (Sprite)txt.cartas1.GetValue(contador);
                     clonCarta.transform.Find("cardContainer/cardText").GetComponent<TextMeshProUGUI>().text =(string)txt.getnom().GetValue(contador);
-                   
                 }
                 else
                 {
@@ -83,7 +88,7 @@ public class Libreria : MonoBehaviour
                 clonCarta.transform.SetParent(contenedor.transform, false);
                 posX += 75;
                 contador++;
-                if(contador == 723)
+                if(contador == Constants.TOTAL_CARDS+1)
                 {
                     break;
                 }
@@ -97,14 +102,14 @@ public class Libreria : MonoBehaviour
     public void TotalYPorcentaje()
     {
         float cartas = 0;
-        for(int i = 1; i < 723; i++)
+        for(int i = 1; i < (Constants.TOTAL_CARDS)+1; i++)
         {
             if (datosJuego.GetCofre().Contains(i))
             {
                 cartas++;
             }
         }
-        float porcentajeDecim = 100 * (cartas / 722f);
+        float porcentajeDecim = 100 * (cartas / Constants.TOTAL_CARDS);
         int porcentaje = (int)porcentajeDecim;
         if(porcentaje < 30)
         {
@@ -127,7 +132,7 @@ public class Libreria : MonoBehaviour
             totalCartas.color = Color.blue;
         }
         porcentajeCartas.text = porcentaje + "%";
-        totalCartas.text = cartas + "/722";
+        totalCartas.text = cartas + "/"+Constants.TOTAL_CARDS;
     }
 
     public void BotonC()

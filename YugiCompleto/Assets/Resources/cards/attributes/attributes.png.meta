@@ -1,0 +1,646 @@
+fileFormatVersion: 2
+guid: 2ee6c8d2dc07cbf4a87f89d0f1891449
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1669488804268134744
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_0
+  - first:
+      213: -8984792794694318807
+    second: normalCard
+  - first:
+      213: 1074214496802940161
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_1
+  - first:
+      213: -1644684762804542062
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_2
+  - first:
+      213: -3800936193277296452
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_3
+  - first:
+      213: 7974616824073234022
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_4
+  - first:
+      213: 4313133262827470711
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_5
+  - first:
+      213: -1658212952080614900
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_6
+  - first:
+      213: -2872094755613216767
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_7
+  - first:
+      213: -6923104058516482769
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_8
+  - first:
+      213: -3233734625435880561
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_9
+  - first:
+      213: -6838835358275952306
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_10
+  - first:
+      213: 5405163166860472175
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_11
+  - first:
+      213: -4256436534005515850
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_12
+  - first:
+      213: 1100403700919407269
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_13
+  - first:
+      213: -9116095527293348279
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_14
+  - first:
+      213: 7702794205541394255
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_15
+  - first:
+      213: -9120159894292893367
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_16
+  - first:
+      213: -41829706458824391
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_17
+  - first:
+      213: -8713304005259299098
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_18
+  - first:
+      213: 1011246533925883838
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_19
+  - first:
+      213: 8898626639788300766
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_20
+  - first:
+      213: 5989050661861624104
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_21
+  - first:
+      213: -2537441925070409036
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_22
+  - first:
+      213: 6781757892552996941
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_23
+  - first:
+      213: -4834958688428764855
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_24
+  - first:
+      213: 2338546352877390662
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_25
+  - first:
+      213: 3089715991828102695
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_26
+  - first:
+      213: -4302598237126568203
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_27
+  - first:
+      213: 8080311024234090677
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_28
+  - first:
+      213: -6608083715202930627
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_29
+  - first:
+      213: -4277234484163578935
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_30
+  - first:
+      213: 1919097221493056271
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_31
+  - first:
+      213: 8598462379009149167
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_32
+  - first:
+      213: 6049067848598559988
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_33
+  - first:
+      213: -2965590118192520128
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_34
+  - first:
+      213: 5543232457493563551
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_35
+  - first:
+      213: 4150920812970698038
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_36
+  - first:
+      213: -1351320202089384843
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_37
+  - first:
+      213: -6391068764560653076
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_38
+  - first:
+      213: -7287576725180278006
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_39
+  - first:
+      213: -7986696650345149203
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_40
+  - first:
+      213: 3132554460496972416
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_41
+  - first:
+      213: -8539628868925830789
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_42
+  - first:
+      213: 5934194478581188746
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_43
+  - first:
+      213: 905522099908103811
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_44
+  - first:
+      213: 432492016630242029
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_45
+  - first:
+      213: 424190071159534629
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_46
+  - first:
+      213: -2254816267905237944
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_47
+  - first:
+      213: 5028528760689145025
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_48
+  - first:
+      213: 4623413262270869558
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_49
+  - first:
+      213: 1685566132523993533
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_50
+  - first:
+      213: -3255066037738888280
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_51
+  - first:
+      213: 7114842749070407089
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_52
+  - first:
+      213: 5216842054897704037
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_53
+  - first:
+      213: 7777577188237657807
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_54
+  - first:
+      213: -1574580127588363633
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_55
+  - first:
+      213: 1323832832362508816
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_56
+  - first:
+      213: -7521631662100125764
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_57
+  - first:
+      213: 3060006485344022726
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_58
+  - first:
+      213: 8464469409097616622
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_59
+  - first:
+      213: -2661272602556407482
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_60
+  - first:
+      213: 8205504545973616913
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_61
+  - first:
+      213: 4148791613418867235
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_62
+  - first:
+      213: -4185995594387389954
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_63
+  - first:
+      213: 2284773780100898187
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_64
+  - first:
+      213: -2064925000825864923
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_65
+  - first:
+      213: -7688544576292606806
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_66
+  - first:
+      213: 3753082528404874842
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_67
+  - first:
+      213: 7903660949030213211
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_68
+  - first:
+      213: 5586300093404368978
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_69
+  - first:
+      213: -3536530828480665286
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_70
+  - first:
+      213: 6093892280972675324
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_71
+  - first:
+      213: 6071875300181841266
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_72
+  - first:
+      213: -8624718393870846756
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_73
+  - first:
+      213: -1359775526072378535
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_74
+  - first:
+      213: 950348536237004126
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_75
+  - first:
+      213: -2050338188961528920
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_76
+  - first:
+      213: 3114600053194808136
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_77
+  - first:
+      213: -6933100317976979727
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_78
+  - first:
+      213: -8161952448560199151
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_79
+  - first:
+      213: -4432029274929294524
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_80
+  - first:
+      213: -5540800467020845333
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_81
+  - first:
+      213: 2042384146777591228
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_82
+  - first:
+      213: 3615517686560491230
+    second: Light
+  - first:
+      213: -4613575159778403008
+    second: Dark
+  - first:
+      213: -3310827096228133328
+    second: Earth
+  - first:
+      213: -3296437394599271781
+    second: Water
+  - first:
+      213: -7737386194978731966
+    second: Fire
+  - first:
+      213: 6374788238677969958
+    second: Wind
+  - first:
+      213: -4642936089790351900
+    second: Spell
+  - first:
+      213: -4090503011255162040
+    second: Trap
+  - first:
+      213: 2695480041736249019
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_91
+  - first:
+      213: -300037033159259706
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_92
+  - first:
+      213: -4258684884867554305
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_93
+  - first:
+      213: -4643386309548502965
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_94
+  - first:
+      213: -7160514390258213208
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_95
+  - first:
+      213: -2349775257224584286
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_96
+  - first:
+      213: 2008223733117848812
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_97
+  - first:
+      213: -753235437437174590
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_98
+  - first:
+      213: 5174974112310672673
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_99
+  - first:
+      213: -5222165532177945138
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_100
+  - first:
+      213: 4607827828471275178
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_101
+  - first:
+      213: 8076606100517304709
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_102
+  - first:
+      213: 715561121014803754
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_103
+  - first:
+      213: -4045177891247904963
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_104
+  - first:
+      213: 4935674219162452698
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_105
+  - first:
+      213: -7945139426293894932
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_106
+  - first:
+      213: -8235882273200707265
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_107
+  - first:
+      213: 434802784165551893
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_108
+  - first:
+      213: 3603818030906619134
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_109
+  - first:
+      213: -5912200783561950595
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_110
+  - first:
+      213: -2269959481225953833
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_111
+  - first:
+      213: -3344538325313239562
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_112
+  - first:
+      213: 5199114574669993201
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_113
+  - first:
+      213: -18514950691986532
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_114
+  - first:
+      213: -1754138746081763542
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_115
+  - first:
+      213: 6379041724597383616
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_116
+  - first:
+      213: -7971804185563170660
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_117
+  - first:
+      213: -3278207065739105377
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_118
+  - first:
+      213: -7328012253034371032
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_119
+  - first:
+      213: 3615517686560491230
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_83
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dark
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526ea357e7a18194b824953580769ac0
+      internalID: -4613575159778403008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Earth
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff8b932ffca4a2448b4017012c839fb
+      internalID: -3310827096228133328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbdccc00f9056164c9693cec0acb7723
+      internalID: -3296437394599271781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bbbd494a086c840bb2fe8d133d4a85
+      internalID: -7737386194978731966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wind
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139798c259d7abe4a940fead46629b48
+      internalID: 6374788238677969958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spell
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f5e3d4807a5e844a50ea1795b0d28e
+      internalID: -4642936089790351900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trap
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5906c92270ed091448568bc01d783935
+      internalID: -4090503011255162040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 99
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9891a02ecdaf96d488405da983658068
+      internalID: 3615517686560491230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 13ede9a1a78102943bbbffffbbcc0dc0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

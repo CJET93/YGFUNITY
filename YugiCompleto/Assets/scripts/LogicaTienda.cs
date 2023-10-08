@@ -398,7 +398,7 @@ public class LogicaTienda : MonoBehaviour
         }
         else if (valor == 500)
         {
-            int random = Random.Range(1, 722);
+            int random = Random.Range(1, Constants.TOTAL_CARDS);
             int valorTotal = int.Parse(txt.getatk()[random]);
             int probabilidad = Random.Range(1, 100);
             for (int i = 0; i < cartas.Length - 1; i++)
@@ -407,7 +407,7 @@ public class LogicaTienda : MonoBehaviour
                 {
                     while (valorTotal < 3000)
                     {
-                        random = Random.Range(1, 722);
+                        random = Random.Range(1, Constants.TOTAL_CARDS);
                         valorTotal = (int.Parse(txt.getatk()[random]));
                     }
                 }
@@ -415,21 +415,21 @@ public class LogicaTienda : MonoBehaviour
                 {
                     while (valorTotal > 3000)
                     {
-                        random = Random.Range(1, 722);
+                        random = Random.Range(1, Constants.TOTAL_CARDS);
                         valorTotal = (int.Parse(txt.getatk()[random]));
                     }
                 }
                 Debug.LogWarning(probabilidad);
                 cartas[i] = random;
-                random = Random.Range(1, 722);
+                random = Random.Range(1, Constants.TOTAL_CARDS);
                 valorTotal = (int.Parse(txt.getatk()[random]));
                 probabilidad = Random.Range(1, 100);
             }
-            random = Random.Range(1, 722);
+            random = Random.Range(1, Constants.TOTAL_CARDS);
             valorTotal = (int.Parse(txt.getatk()[random]));
             while (valorTotal <1800 || valorTotal > 3500)
             {
-                random = Random.Range(1, 722);
+                random = Random.Range(1, Constants.TOTAL_CARDS);
                 valorTotal = (int.Parse(txt.getatk()[random]));
             }
             cartas[5] = random;
@@ -437,7 +437,7 @@ public class LogicaTienda : MonoBehaviour
         }
         else if (valor == 1000)
         {
-            int random = Random.Range(1, 722);
+            int random = Random.Range(1, Constants.TOTAL_CARDS);
             int valorTotal = int.Parse(txt.getatk()[random]);
             int probabilidad = Random.Range(1, 100);
             for (int i = 0; i < cartas.Length - 1; i++)
@@ -447,7 +447,7 @@ public class LogicaTienda : MonoBehaviour
                     Debug.LogWarning(probabilidad);
                     while (valorTotal < 3000 || int.Parse(txt.GetPots()[random]) > 3)
                     {
-                        random = Random.Range(1, 722);
+                        random = Random.Range(1, Constants.TOTAL_CARDS);
                         valorTotal = (int.Parse(txt.getatk()[random]));
 
                     }
@@ -456,21 +456,21 @@ public class LogicaTienda : MonoBehaviour
                 {
                     while (valorTotal > 4000 || int.Parse(txt.GetPots()[random]) > 3)
                     {
-                        random = Random.Range(1, 722);
+                        random = Random.Range(1, Constants.TOTAL_CARDS);
                         valorTotal = (int.Parse(txt.getatk()[random]));
                     }
                 }
                 cartas[i] = random;
-                random = Random.Range(1, 722);
+                random = Random.Range(1, Constants.TOTAL_CARDS);
                 valorTotal = (int.Parse(txt.getatk()[random]));
                 probabilidad = Random.Range(1, 100);
             }
-            random = Random.Range(1, 722);
+            random = Random.Range(1, Constants.TOTAL_CARDS);
             valorTotal = (int.Parse(txt.getatk()[random]));
      
             while (valorTotal < 2400 || valorTotal >4900)
             {
-                random = Random.Range(1, 722);
+                random = Random.Range(1, Constants.TOTAL_CARDS);
                 valorTotal = (int.Parse(txt.getatk()[random]));
             }
             cartas[5] = random;

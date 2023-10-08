@@ -1,0 +1,2281 @@
+fileFormatVersion: 2
+guid: f540aee4a179b6d49a7d2443ecc80890
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1669488804268134744
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_0
+  - first:
+      213: -8984792794694318807
+    second: normalCard
+  - first:
+      213: 1074214496802940161
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_1
+  - first:
+      213: -1644684762804542062
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_2
+  - first:
+      213: -3800936193277296452
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_3
+  - first:
+      213: 7974616824073234022
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_4
+  - first:
+      213: 4313133262827470711
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_5
+  - first:
+      213: -1658212952080614900
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_6
+  - first:
+      213: -2872094755613216767
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_7
+  - first:
+      213: -6923104058516482769
+    second: normalCard
+  - first:
+      213: -3233734625435880561
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_9
+  - first:
+      213: -6838835358275952306
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_10
+  - first:
+      213: 5405163166860472175
+    second: magic
+  - first:
+      213: -4256436534005515850
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_12
+  - first:
+      213: 1100403700919407269
+    second: trap
+  - first:
+      213: -9116095527293348279
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_14
+  - first:
+      213: 7702794205541394255
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_15
+  - first:
+      213: -9120159894292893367
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_16
+  - first:
+      213: -41829706458824391
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_17
+  - first:
+      213: -8713304005259299098
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_18
+  - first:
+      213: 1011246533925883838
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_19
+  - first:
+      213: 8898626639788300766
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_20
+  - first:
+      213: 5989050661861624104
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_21
+  - first:
+      213: -2537441925070409036
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_22
+  - first:
+      213: 6781757892552996941
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_23
+  - first:
+      213: -4834958688428764855
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_24
+  - first:
+      213: 2338546352877390662
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_25
+  - first:
+      213: 3089715991828102695
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_26
+  - first:
+      213: -4302598237126568203
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_27
+  - first:
+      213: 8080311024234090677
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_28
+  - first:
+      213: -6608083715202930627
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_29
+  - first:
+      213: -4277234484163578935
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_30
+  - first:
+      213: 1919097221493056271
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_31
+  - first:
+      213: 8598462379009149167
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_32
+  - first:
+      213: 6049067848598559988
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_33
+  - first:
+      213: -2965590118192520128
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_34
+  - first:
+      213: 5543232457493563551
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_35
+  - first:
+      213: 4150920812970698038
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_36
+  - first:
+      213: -1351320202089384843
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_37
+  - first:
+      213: -6391068764560653076
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_38
+  - first:
+      213: -7287576725180278006
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_39
+  - first:
+      213: -7986696650345149203
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_40
+  - first:
+      213: 3132554460496972416
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_41
+  - first:
+      213: -8539628868925830789
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_42
+  - first:
+      213: 5934194478581188746
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_43
+  - first:
+      213: 905522099908103811
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_44
+  - first:
+      213: 432492016630242029
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_45
+  - first:
+      213: 424190071159534629
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_46
+  - first:
+      213: -2254816267905237944
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_47
+  - first:
+      213: 5028528760689145025
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_48
+  - first:
+      213: 4623413262270869558
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_49
+  - first:
+      213: 1685566132523993533
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_50
+  - first:
+      213: -3255066037738888280
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_51
+  - first:
+      213: 7114842749070407089
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_52
+  - first:
+      213: 5216842054897704037
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_53
+  - first:
+      213: 7777577188237657807
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_54
+  - first:
+      213: -1574580127588363633
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_55
+  - first:
+      213: 1323832832362508816
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_56
+  - first:
+      213: -7521631662100125764
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_57
+  - first:
+      213: 3060006485344022726
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_58
+  - first:
+      213: 8464469409097616622
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_59
+  - first:
+      213: -2661272602556407482
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_60
+  - first:
+      213: 8205504545973616913
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_61
+  - first:
+      213: 4148791613418867235
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_62
+  - first:
+      213: -4185995594387389954
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_63
+  - first:
+      213: 2284773780100898187
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_64
+  - first:
+      213: -2064925000825864923
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_65
+  - first:
+      213: -7688544576292606806
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_66
+  - first:
+      213: 3753082528404874842
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_67
+  - first:
+      213: 7903660949030213211
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_68
+  - first:
+      213: 5586300093404368978
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_69
+  - first:
+      213: -3536530828480665286
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_70
+  - first:
+      213: 6093892280972675324
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_71
+  - first:
+      213: 6071875300181841266
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_72
+  - first:
+      213: -8624718393870846756
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_73
+  - first:
+      213: -1359775526072378535
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_74
+  - first:
+      213: 950348536237004126
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_75
+  - first:
+      213: -2050338188961528920
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_76
+  - first:
+      213: 3114600053194808136
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_77
+  - first:
+      213: -6933100317976979727
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_78
+  - first:
+      213: -8161952448560199151
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_79
+  - first:
+      213: -4432029274929294524
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_80
+  - first:
+      213: -5540800467020845333
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_81
+  - first:
+      213: 2042384146777591228
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_82
+  - first:
+      213: 3615517686560491230
+    second: Light
+  - first:
+      213: -4613575159778403008
+    second: Dark
+  - first:
+      213: -3310827096228133328
+    second: Earth
+  - first:
+      213: -3296437394599271781
+    second: Water
+  - first:
+      213: -7737386194978731966
+    second: Fire
+  - first:
+      213: 6374788238677969958
+    second: Wind
+  - first:
+      213: -4642936089790351900
+    second: Spell
+  - first:
+      213: -4090503011255162040
+    second: Trap
+  - first:
+      213: 2695480041736249019
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_91
+  - first:
+      213: -300037033159259706
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_92
+  - first:
+      213: -4258684884867554305
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_93
+  - first:
+      213: -4643386309548502965
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_94
+  - first:
+      213: -7160514390258213208
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_95
+  - first:
+      213: -2349775257224584286
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_96
+  - first:
+      213: 2008223733117848812
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_97
+  - first:
+      213: -753235437437174590
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_98
+  - first:
+      213: 5174974112310672673
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_99
+  - first:
+      213: -5222165532177945138
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_100
+  - first:
+      213: 4607827828471275178
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_101
+  - first:
+      213: 8076606100517304709
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_102
+  - first:
+      213: 715561121014803754
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_103
+  - first:
+      213: -4045177891247904963
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_104
+  - first:
+      213: 4935674219162452698
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_105
+  - first:
+      213: -7945139426293894932
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_106
+  - first:
+      213: -8235882273200707265
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_107
+  - first:
+      213: 434802784165551893
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_108
+  - first:
+      213: 3603818030906619134
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_109
+  - first:
+      213: -5912200783561950595
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_110
+  - first:
+      213: -2269959481225953833
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_111
+  - first:
+      213: -3344538325313239562
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_112
+  - first:
+      213: 5199114574669993201
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_113
+  - first:
+      213: -18514950691986532
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_114
+  - first:
+      213: -1754138746081763542
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_115
+  - first:
+      213: 6379041724597383616
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_116
+  - first:
+      213: -7971804185563170660
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_117
+  - first:
+      213: -3278207065739105377
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_118
+  - first:
+      213: -7328012253034371032
+    second: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_119
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 458
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea49402ac9a6514e9592429f93f9b10
+      internalID: 1669488804268134744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 458
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f522c8c44652fe749a4e9e5355bcc02f
+      internalID: 1074214496802940161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 457
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3d4d88cfdedcd4cb0cc4f58029f58a
+      internalID: -1644684762804542062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 458
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3ca29534038604eba5e83413fcedee
+      internalID: -3800936193277296452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_4
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 457
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4375d06ca5756494eb89e067a8d63c4d
+      internalID: 7974616824073234022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_5
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 458
+        width: 30
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b1efc9b691bf74aa6dcd3f669144bf
+      internalID: 4313133262827470711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_6
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 457
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e158013939358a44e926b111ed097fda
+      internalID: -1658212952080614900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_7
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 251
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09a446d2deeedb48a40fe5cb02f3b19
+      internalID: -2872094755613216767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: normalCard
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 251
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eeadb6d005cf2441b206918010c28c6
+      internalID: -6923104058516482769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_9
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 251
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41097e73c9d8ce840a6e80fa5c68ea7e
+      internalID: -3233734625435880561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_10
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 251
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1802692e2055da0418cd490b0306d305
+      internalID: -6838835358275952306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 251
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0accea66e608f4ba3b2ce4d38a0240
+      internalID: 5405163166860472175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_12
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 251
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9540c9f935b674c4fab98012dfb27d42
+      internalID: -4256436534005515850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trap
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 251
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee62940b6dc434f449ac8e281b12686c
+      internalID: 1100403700919407269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_14
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 251
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e578cab16c3efb4094b27bd85040bdd
+      internalID: -9116095527293348279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_15
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 251
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9eceef6b513ea44a91b5c4a8a5d025b
+      internalID: 7702794205541394255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_16
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 217
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dedf7ad917dd3f440bf371d2a49b1728
+      internalID: -9120159894292893367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_17
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 216
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda4488f0cda9ae4da8a87272a962b96
+      internalID: -41829706458824391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_18
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 217
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcac6fe40d74f5c468de1c638fd9ee58
+      internalID: -8713304005259299098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_19
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 217
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4681c1629d91759478eb6d643c899c91
+      internalID: 1011246533925883838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_20
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 218
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360b6b8231b71c7408aa735214753696
+      internalID: 8898626639788300766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_21
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 218
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed25f50d354dae84aae60833715d0184
+      internalID: 5989050661861624104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_22
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 218
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91416667fb711034ba217426b03e010c
+      internalID: -2537441925070409036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_23
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 218
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947696f077b608f48aa8620a9f9f9c4d
+      internalID: 6781757892552996941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_24
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 218
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ec7e9116f1c24429daa2a010117c51
+      internalID: -4834958688428764855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_25
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 218
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c732b78d97da5488da838c54b5cfe0
+      internalID: 2338546352877390662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_26
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 218
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa25c0fce5f30048b96c4fe68def904
+      internalID: 3089715991828102695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_27
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 218
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799cfb6299b353640b9edb00a2fca314
+      internalID: -4302598237126568203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_28
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 215
+        width: 8
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49722e3e467487542ac32aa5d98d370c
+      internalID: 8080311024234090677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_29
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 217
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d8ed960c55e5cc409a2dc5cb7b4c590
+      internalID: -6608083715202930627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_30
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 215
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52bb3de235490eb46bd103037c7824dd
+      internalID: -4277234484163578935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_31
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 216
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 931ee144072a8c24b9796a0c85dabc63
+      internalID: 1919097221493056271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_32
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 217
+        width: 45
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48765b06531ad445a3ae1da44043444
+      internalID: 8598462379009149167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_33
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 217
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7993d89d56773f04088ef7c3a902f920
+      internalID: 6049067848598559988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_34
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 216
+        width: 59
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3653bc72aff4643ba9147161878a18
+      internalID: -2965590118192520128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_35
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 216
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950d0785c7709784b88b3eac93c0935c
+      internalID: 5543232457493563551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_36
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 10
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cdce6eb1f0b4e4499315cb5ab3f79cb
+      internalID: 4150920812970698038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_37
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 10
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11556c5d3a83eee49be9e2c2ef76b0d0
+      internalID: -1351320202089384843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_38
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 10
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4576010f6f73242b88e4add77855eb
+      internalID: -6391068764560653076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_39
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 10
+        width: 140
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6304229bbee6df44fa5107d8df6739b3
+      internalID: -7287576725180278006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_40
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6cd189dcc5d1c04bb7b18abc03e7e7c
+      internalID: -7986696650345149203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_41
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dae6606f109da14e9e519b39f5826a6
+      internalID: 3132554460496972416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_42
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd82a398c9e5a946b93cd041108ce8e
+      internalID: -8539628868925830789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_43
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6545c5e74d4235649ac3b4d7b08efb61
+      internalID: 5934194478581188746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_44
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c0f94eaa2d84742ab10f80f17a061b
+      internalID: 905522099908103811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_45
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9444ebbbe9b0d9408b1c44afbbb84e6
+      internalID: 432492016630242029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_46
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a34cd49bef45d646b698c4ee015a2fc
+      internalID: 424190071159534629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_47
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e99cc49ea8716645889f1db2d82fdab
+      internalID: -2254816267905237944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_48
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca4e9d6a0ba73f44ace97a08d154f3c
+      internalID: 5028528760689145025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_49
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c112778117d614bb27db0ade5aa70b
+      internalID: 4623413262270869558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_50
+      rect:
+        serializedVersion: 2
+        x: 1125
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fabfef0b6bb806d4c8d1b154c03bcb76
+      internalID: 1685566132523993533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_51
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e714f06797e37e479fd02c5a1c689a9
+      internalID: -3255066037738888280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_52
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 150
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4c29c3b9593b1341a57ae83fa2a8a16
+      internalID: 7114842749070407089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_53
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 84
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f9df37d8cad67042b954e6cf8ef993a
+      internalID: 5216842054897704037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_54
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 84
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb063a1f920b1444788439d228b5fbe4
+      internalID: 7777577188237657807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_55
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 84
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c0d69ad24a2a040a1ae0d395c7de67
+      internalID: -1574580127588363633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_82
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 125
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b301433da3d5da94192d7e1195af36a5
+      internalID: 2042384146777591228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_91
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 45
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a2169470e9a114bbbd2b8f4f59f35e
+      internalID: 2695480041736249019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_92
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 45
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77646b85fdc17954695bcbfc974ed06a
+      internalID: -300037033159259706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_93
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 45
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2db86bf2901cee34c90f51880cb585ef
+      internalID: -4258684884867554305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_94
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 45
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7ff4b57f3b3ec4fb811a98b7ccac2e
+      internalID: -4643386309548502965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_95
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 45
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e3d927999cf754fa7a6265253f177d
+      internalID: -7160514390258213208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_96
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 45
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452b7bed0a4970d408636be5da233e48
+      internalID: -2349775257224584286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_97
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 45
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c234e799b0b6f4099023f8ee990637
+      internalID: 2008223733117848812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_98
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 45
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958068fa3d675fa42806949a37b3a477
+      internalID: -753235437437174590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_99
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 45
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b74fbde55e2ba449cf480ed3926182
+      internalID: 5174974112310672673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_100
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 44
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c627bcdaf7cb0d04fbad1ecafce47a59
+      internalID: -5222165532177945138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_101
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 42
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a21dafa9ffc5824c90071a7f7745fd6
+      internalID: 4607827828471275178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_102
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 44
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9c45aadae8815439394273563ccc39
+      internalID: 8076606100517304709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_103
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 45
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b397cf19653d69942b3f7040594020ce
+      internalID: 715561121014803754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_104
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 44
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d082e3f4004faf49a34ecc98bbd7f7e
+      internalID: -4045177891247904963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_105
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 42
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8785c5fd696e48545a88a1847e3af3bb
+      internalID: 4935674219162452698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_106
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 11
+        width: 36
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54e005527d34594dbf5437b1988fc3e
+      internalID: -7945139426293894932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_107
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 10
+        width: 51
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff1ec8be47c167b48ad7ac631169f182
+      internalID: -8235882273200707265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_108
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 11
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 808882f11ea5d84458c5fcdcc95ae536
+      internalID: 434802784165551893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_109
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 11
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6303f311105dc47b49a41358126fb9
+      internalID: 3603818030906619134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_110
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 11
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1eb8f79b8c1334fa67f6a7acda927a
+      internalID: -5912200783561950595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_111
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 11
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78535a2b4bb87494cb1ad3af45967c19
+      internalID: -2269959481225953833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_112
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 11
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d1bc99c7444b744a9c375b87cdd5b94
+      internalID: -3344538325313239562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_113
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 11
+        width: 54
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd9f8eca31c0124a9759bb2288e7421
+      internalID: 5199114574669993201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_114
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 8
+        width: 40
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12569a0b36e1a34396300fdd4ac8967
+      internalID: -18514950691986532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_115
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 11
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bfe100d0c9d7c46a76ee1882e59311
+      internalID: -1754138746081763542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_116
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 11
+        width: 37
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2924578a3589ab542af62043f4bf4b88
+      internalID: 6379041724597383616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_117
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 11
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce5361d14ba98bf43be3446c33d85976
+      internalID: -7971804185563170660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_118
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 10
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e4ad17171b4ab4d944eb6f7d9dc928
+      internalID: -3278207065739105377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Yu-Gi-Oh Forbidden Memories - Cards Frames_119
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 10
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00922a6ca55de2942a32114998835ecc
+      internalID: -7328012253034371032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 13ede9a1a78102943bbbffffbbcc0dc0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

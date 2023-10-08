@@ -17,9 +17,9 @@ public class JuegoOnline : MonoBehaviourPun
     private List<int> deckUsuario = new List<int>();
     public List<int> deckCpu = new List<int>();
     private bool turnoUsuario = true;
-    private int cantDecksUario = 40;
+    private int cantDecksUario = Constants.CARDS_IN_DECK;
     private int cantTurnos = 0;
-    private int cantDeckCpu = 40;
+    private int cantDeckCpu = Constants.CARDS_IN_DECK;
     private int vidaUsuario = 0;
     private int vidaCpu = 0;
     public int rankPoints;
@@ -187,8 +187,8 @@ public class JuegoOnline : MonoBehaviourPun
 
 
         }
-        AtaquePromedioDeck /= 40;
-        defensaPromedioDeck /= 40;
+        AtaquePromedioDeck /= Constants.CARDS_IN_DECK;
+        defensaPromedioDeck /= Constants.CARDS_IN_DECK;
        // deckCpu = datosJuego.GetDeckUsuario();
         // ordenar cartas en ataque del campo usuario
         //organizar los ataques del usuario y ponerlos en un nuevo array temporal
@@ -315,7 +315,7 @@ public class JuegoOnline : MonoBehaviourPun
     }
     public void OrdenarPorMT()
     {
-        int[] ataqueTemp = new int[40];
+        int[] ataqueTemp = new int[Constants.CARDS_IN_DECK];
         int cantidad = deckCpu.Count;
         //carta c = GetComponent<carta>();
         for (int i = 0; i < cantidad; i++)
@@ -5623,7 +5623,7 @@ public class JuegoOnline : MonoBehaviourPun
                 datosJuego.SetElementoVictoria(datosDuelo.GetIdDuelista());
             }
             Rangos();
-            int carta = Random.Range(0, 2048);
+            int carta = Random.Range(0, Constants.DROP_SUM);
             //obtener la carta del drop cpu
             //RANGO SA 
             List<int> probabilidadDrop = new List<int>();
@@ -5742,10 +5742,10 @@ public class JuegoOnline : MonoBehaviourPun
 
                         if (aleatorio != 2)
                         {
-                            actual = Random.Range(0, 2048);
+                            actual = Random.Range(0, Constants.DROP_SUM);
                             while (int.Parse(txt.GetPots()[probabilidadDrop[actual]]) == 1)
                             {
-                                actual = Random.Range(0, 2048);
+                                actual = Random.Range(0, Constants.DROP_SUM);
                             }
                         }
                         else
@@ -5823,7 +5823,7 @@ public class JuegoOnline : MonoBehaviourPun
             rankPoints -= 12;
         }
         //cartas usadas
-        int cartasUsadas = 40 - GetCantDeckUsuario();
+        int cartasUsadas = Constants.CARDS_IN_DECK - GetCantDeckUsuario();
         if (cartasUsadas >= 0 && cartasUsadas < 9)
         {
             rankPoints += 15;

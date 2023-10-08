@@ -723,7 +723,7 @@ PrefabInstance:
     - target: {fileID: 8402041702754472876, guid: 9fe2d629ee1a33f41a84bbcb48d24a9e,
         type: 3}
       propertyPath: cartas1.Array.size
-      value: 722
+      value: 723
       objectReference: {fileID: 0}
     - target: {fileID: 8402041702754472876, guid: 9fe2d629ee1a33f41a84bbcb48d24a9e,
         type: 3}

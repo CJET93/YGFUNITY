@@ -2207,7 +2207,7 @@ public class Interfaz : MonoBehaviour
     //resulados del duelo
     public void MostrarTextoGanaPierde(string perdio)
     {
-        int cantDeckUsuario = 40 - juego.GetCantDeckUsuario();
+        int cantDeckUsuario = Constants.CARDS_IN_DECK - juego.GetCantDeckUsuario();
         ataquesEfectivos.text = juego.AtaquesEfectivos.ToString();
         defensaEfectivo.text = juego.DefensasEfectivas.ToString();
         fusionesCorrectas.text = juego.FusionCorrecta.ToString();
@@ -2219,7 +2219,7 @@ public class Interfaz : MonoBehaviour
         atquePromedioDeck.text = juego.AtaquePromedioDeck.ToString();
         defensaPromedioDeck.text = juego.DefensaPromedioDeck.ToString();
         condicionesVictoria.text = juego.CondicionVictoria;
-        int cantDeckCpu = 40 - juego.GetCantDeckCpu();
+        int cantDeckCpu = Constants.CARDS_IN_DECK - juego.GetCantDeckCpu();
         textoAtaquePromedioCpu.text = "" + juego.ataquePromedioCpu;
         textoAtaquePromedioUsuario.text = "" + juego.ataquePromedio;
         textoCantCartasUsuario.text = "" + cantDeckUsuario;

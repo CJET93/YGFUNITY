@@ -2094,7 +2094,7 @@ public class ClonCarta : MonoBehaviour
             juego.OrdenarPorAtaqueCpu();
             if (int.Parse((string)txt.getatk().GetValue(campo.GetManoCpu(0))) < juego.ObtenerAtaqueMasAlto())
             {
-                int aleatorio = Random.Range(0, 40);
+                int aleatorio = Random.Range(0, Constants.CARDS_IN_DECK);
 
                 if (aleatorio != 1)
                 {
@@ -2733,7 +2733,7 @@ public class ClonCarta : MonoBehaviour
                     clonCpu[i].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetManoCpu(i));
                     if (!clonCpu[i].GetComponent<carta>().GetTipoCarta().Equals("Monstruo")){
                         clonCpu[i].GetComponent<muestraCarta>().textoMT.gameObject.SetActive(true);
-                        clonCpu[i].GetComponent<muestraCarta>().textoMT.text = "EQUIPO";
+                        clonCpu[i].GetComponent<muestraCarta>().textoMT.text = Constants.EQUIP_NAME;
                         clonCpu[i].GetComponent<muestraCarta>().panelDatos.texture = clonCpu[i].GetComponent<muestraCarta>().color[1];
                     }
                     else
