@@ -86,6 +86,8 @@ public class PreDuelo : MonoBehaviour
     private GameObject objetoDatosDuelo;
     private DatosJuego datosJuego;
     private DatosDuelo datosDuelo;
+  
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -93,7 +95,6 @@ public class PreDuelo : MonoBehaviour
         datosJuego = objetoDatosJuego.GetComponent<DatosJuego>();
         objetoDatosDuelo = GameObject.Find("DatosDuelo");
         datosDuelo = objetoDatosDuelo.GetComponent<DatosDuelo>();
-
     }
     void Start()
     {
@@ -295,7 +296,7 @@ public class PreDuelo : MonoBehaviour
 
                     if (deck.Count < Constants.CARDS_IN_DECK && cantidadCartasCofre[cantidadReemplazo] > 0 && numeroEnDeck < 3)
                     {
-
+                        int conteo = cartasCofre.IndexOf(cartasCofre[cantidadReemplazo]);
                         cantidadCartasCofre[cantidadReemplazo] = cantidadCartasCofre[cantidadReemplazo] - 1;
                         cantidadCofre--;
                         deck.Add(cartasCofre[cartaReemplazo]);
@@ -305,12 +306,7 @@ public class PreDuelo : MonoBehaviour
                         totalDeckEnDeck.text = "" + deck.Count;
                         cantidadCofreTexto.text = "" + cantidadCofre;
                         cantidadCofreTextoDeck.text = "" + cantidadCofre;
-                        LimpiarLista();
-                        for (int i = 0; i < cartasCofre.Count; i++)
-                        {
-                            ObtenerDatosCarta(cartasCofre[i], i);
-
-                        }
+                        UpdateOneCard(conteo);
                         OrdenarDeck();
 
                         if (deck.Count == Constants.CARDS_IN_DECK)
@@ -345,7 +341,8 @@ public class PreDuelo : MonoBehaviour
 
                     }
 
-                    OrdenarCofre();
+                    //OrdenarCofre();
+                    UpdateOneCard(conteo);
                     if (indiceDeck != 0)
                     {
 
@@ -435,7 +432,6 @@ public class PreDuelo : MonoBehaviour
                     }
                     indice++;
                 }
-
             }
             else if (fase.Equals("deck"))
             {
@@ -722,94 +718,6 @@ public class PreDuelo : MonoBehaviour
 
         }
     }
-    public void ObtenerDatosCarta(int id, int idCantCofre)
-    {
-
-        int idCantidad = id - 1;
-        numeroEnDeck = 0;
-        if (idOrden != 1)
-        {
-            idCantidad = idCantCofre;
-        }
-        for (int i = 0; i < deck.Count; i++)
-        {
-            if (cartasCofre[idCantCofre].Equals(deck[i]))
-            {
-                numeroEnDeck++;
-            }
-        }
-        clonCarta[idCantidad].transform.Find("atributo").GetComponent<RawImage>().enabled = true;
-        clonCarta[idCantidad].transform.Find("nombre").GetComponent<TextMeshProUGUI>().text = txt.getnom().GetValue(id).ToString();
-
-        clonCarta[idCantidad].transform.Find("enCofre").GetComponent<TextMeshProUGUI>().text = "" + cantidadCartasCofre[idCantCofre];
-
-        clonCarta[idCantidad].transform.Find("enDeck").GetComponent<TextMeshProUGUI>().text = "" + numeroEnDeck;
-        if (numeroEnDeck == 3)
-        {
-            clonCarta[idCantidad].transform.Find("enDeck").GetComponent<TextMeshProUGUI>().color = Color.red;
-        }
-
-        if (id.ToString().Length == 1)
-        {
-            clonCarta[idCantidad].transform.Find("numero").GetComponent<TextMeshProUGUI>().text = "00" + id;
-        }
-        else if (id.ToString().Length == 2)
-        {
-
-            clonCarta[idCantidad].transform.Find("numero").GetComponent<TextMeshProUGUI>().text = "0" + id;
-        }
-        else
-        {
-            clonCarta[idCantidad].transform.Find("numero").GetComponent<TextMeshProUGUI>().text = "" + id;
-
-        }
-        if (cantidadCartasCofre[idCantCofre] == 0)
-        {
-            clonCarta[idCantidad].transform.Find("numero").GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 0.5f);
-            clonCarta[idCantidad].transform.Find("enCofre").GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 0.5f);
-            clonCarta[idCantidad].transform.Find("enDeck").GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 0.5f);
-            clonCarta[idCantidad].transform.Find("nombre").GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 0.5f);
-            clonCarta[idCantidad].transform.Find("ataque").GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 0.5f);
-            clonCarta[idCantidad].transform.Find("defensa").GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 0.5f);
-            clonCarta[idCantidad].transform.Find("espada").GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.5f);
-            clonCarta[idCantidad].transform.Find("escudo").GetComponent<Image>().color = new Color(1f, 1f, 1f, 0.5f);
-        }
-        if (txt.GetTipoCarta().GetValue(id).ToString().Trim().Equals("Monstruo"))
-        {
-            clonCarta[idCantidad].transform.Find("espada").GetComponent<Image>().enabled = true;
-            clonCarta[idCantidad].transform.Find("escudo").GetComponent<Image>().enabled = true;
-            clonCarta[idCantidad].transform.Find("ataque").GetComponent<TextMeshProUGUI>().text = txt.getatk().GetValue(id).ToString();
-            clonCarta[idCantidad].transform.Find("defensa").GetComponent<TextMeshProUGUI>().text = txt.getdef().GetValue(id).ToString();
-            clonCarta[idCantidad].transform.Find("guar1").GetComponent<RawImage>().enabled = true;
-            clonCarta[idCantidad].transform.Find("guar1").GetComponent<RawImage>().texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos1().GetValue(id).ToString()));
-            clonCarta[idCantidad].transform.Find("guar2").GetComponent<RawImage>().enabled = true;
-            clonCarta[idCantidad].transform.Find("guar2").GetComponent<RawImage>().texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos2().GetValue(id).ToString()));
-            clonCarta[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(id).ToString()));
-        }
-        else if (txt.GetTipoCarta().GetValue(id).ToString().Trim().Equals("Equipo"))
-        {
-            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.EQUIP_NAME;
-            clonCarta[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(22);
-        }
-        else if (txt.GetTipoCarta().GetValue(id).ToString().Trim().Equals("Campo"))
-        {
-            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.FIELD_NAME;
-            clonCarta[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
-        }
-        else if (txt.GetTipoCarta().GetValue(id).ToString().Trim().Equals("Magica"))
-        {
-            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.MAGIC_NAME;
-            clonCarta[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(24);
-        }
-        else
-        {
-            clonCarta[idCantidad].transform.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.TRAP_NAME;
-            clonCarta[idCantidad].transform.Find("atributo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(23);
-        }
-
-
-
-    }
     public void ObtenerDatosCartaDeck(int id, int idCantCofre)
     {
 
@@ -946,251 +854,41 @@ public class PreDuelo : MonoBehaviour
         if (idOrden == 1)
         {
             numero.color = new Color(1f, 1f, 1f, 1f);
-            List<int> poderTemp = new List<int>();
-            //cartasCofre;
-            for (int i = 0; i < cartasCofre.Count; i++)
-            {
-                poderTemp.Add((cartasCofre[i]));
-            }
-            for (int i = 0; i < cartasCofre.Count - 1; i++)
-            {
-                for (int j = 0; j < cartasCofre.Count - 1 - i; j++)
-                {
-                    if (poderTemp[j] > poderTemp[j + 1])
-                    {
-                        int actualPoder = poderTemp[j];
-                        int actualPos = cartasCofre[j];
-                        int actualCantCarta = cantidadCartasCofre[j];
-                        cantidadCartasCofre[j] = cantidadCartasCofre[j + 1];
-                        cantidadCartasCofre[j + 1] = actualCantCarta;
-                        int actualIdCarta = idNuevasCartas[j];
-                        idNuevasCartas[j] = idNuevasCartas[j + 1];
-                        idNuevasCartas[j + 1] = actualIdCarta;
-                        cartasCofre[j] = cartasCofre[j + 1];
-                        poderTemp[j] = poderTemp[j + 1];
+            OrdenarId();
 
-                        poderTemp[j + 1] = actualPoder;
-                        cartasCofre[j + 1] = actualPos;
-
-                    }
-                }
-
-            }
         }
 
         else if (idOrden == 2)
         {
             nombre.color = new Color(1f, 1f, 1f, 1f);
-            List<string> nombreTemp = new List<string>();
-            //cartasCofre;
-            for (int i = 0; i < cartasCofre.Count; i++)
-            {
-                nombreTemp.Add(txt.getnom().GetValue(cartasCofre[i]).ToString());
-            }
-            //ataqueTemp.Sort(Compare);
-            for (int i = 0; i < nombreTemp.Count - 1; i++)
-            {
-                for (int j = 0; j < nombreTemp.Count - 1 - i; j++)
-                {
-                    //int c=string.Compare()
-                    if (string.Compare(nombreTemp[j], nombreTemp[j + 1]) == 1)
-                    {
-                        string actualAtaque = nombreTemp[j];
-
-                        int actualCantCarta = cantidadCartasCofre[j];
-                        cantidadCartasCofre[j] = cantidadCartasCofre[j + 1];
-                        cantidadCartasCofre[j + 1] = actualCantCarta;
-                        nombreTemp[j] = nombreTemp[j + 1];
-                        int actualPos = cartasCofre[j];
-                        cartasCofre[j] = cartasCofre[j + 1];
-
-                        nombreTemp[j + 1] = actualAtaque;
-                        cartasCofre[j + 1] = actualPos;
-                        int actualIdnueva = idNuevasCartas[j];
-                        idNuevasCartas[j] = idNuevasCartas[j + 1];
-                        idNuevasCartas[j + 1] = actualIdnueva;
-
-
-                    }
-                }
-
-            }
-
-
+            Ordenar();
+          
 
         }
         else if (idOrden == 3)
         {
             poder.color = new Color(1f, 1f, 1f, 1f);
-            List<int> poderTemp = new List<int>();
-            //cartasCofre;
-            for (int i = 0; i < cartasCofre.Count; i++)
-            {
-                if (txt.GetTipoCarta().GetValue(cartasCofre[i]).ToString().Trim().Equals("Monstruo"))
-                {
-                    poderTemp.Add(int.Parse(txt.getatk().GetValue(cartasCofre[i]).ToString()) + int.Parse(txt.getdef().GetValue(cartasCofre[i]).ToString()));
-                }
-                else
-                {
-                    poderTemp.Add(0);
-                }
+            Ordenar();
 
 
-            }
-            for (int i = 0; i < cartasCofre.Count - 1; i++)
-            {
-                for (int j = 0; j < cartasCofre.Count - 1 - i; j++)
-                {
-                    if (poderTemp[j] < poderTemp[j + 1])
-                    {
-                        int actualPoder = poderTemp[j];
-                        int actualPos = cartasCofre[j];
-                        cartasCofre[j] = cartasCofre[j + 1];
-                        poderTemp[j] = poderTemp[j + 1];
-                        int actualCantCarta = cantidadCartasCofre[j];
-                        cantidadCartasCofre[j] = cantidadCartasCofre[j + 1];
-                        cantidadCartasCofre[j + 1] = actualCantCarta;
-                        int actualIdCarta = idNuevasCartas[j];
-                        idNuevasCartas[j] = idNuevasCartas[j + 1];
-                        idNuevasCartas[j + 1] = actualIdCarta;
-                        poderTemp[j + 1] = actualPoder;
-                        cartasCofre[j + 1] = actualPos;
-
-                    }
-                }
-
-            }
         }
         else if (idOrden == 4)
         {
             ataque.color = new Color(1f, 1f, 1f, 1f);
-            List<int> ataqueTemp = new List<int>();
-            //cartasCofre;
-            for (int i = 0; i < cartasCofre.Count; i++)
-            {
-                if (txt.GetTipoCarta().GetValue(cartasCofre[i]).ToString().Trim().Equals("Monstruo"))
-                {
-                    ataqueTemp.Add(int.Parse(txt.getatk().GetValue(cartasCofre[i]).ToString()));
-                }
-                else
-                {
-                    ataqueTemp.Add(0);
-                }
+            Ordenar();
+          
 
-
-            }
-            for (int i = 0; i < cartasCofre.Count - 1; i++)
-            {
-                for (int j = 0; j < cartasCofre.Count - 1 - i; j++)
-                {
-                    if (ataqueTemp[j] < ataqueTemp[j + 1])
-                    {
-                        int actualPoder = ataqueTemp[j];
-                        int actualPos = cartasCofre[j];
-                        cartasCofre[j] = cartasCofre[j + 1];
-                        ataqueTemp[j] = ataqueTemp[j + 1];
-                        int actualCantCarta = cantidadCartasCofre[j];
-                        cantidadCartasCofre[j] = cantidadCartasCofre[j + 1];
-                        cantidadCartasCofre[j + 1] = actualCantCarta;
-                        int actualIdCarta = idNuevasCartas[j];
-                        idNuevasCartas[j] = idNuevasCartas[j + 1];
-                        idNuevasCartas[j + 1] = actualIdCarta;
-                        ataqueTemp[j + 1] = actualPoder;
-                        cartasCofre[j + 1] = actualPos;
-
-                    }
-                }
-
-            }
         }
         else if (idOrden == 5)
         {
             defensa.color = new Color(1f, 1f, 1f, 1f);
-            List<int> defensaTemp = new List<int>();
-            //cartasCofre;
-            for (int i = 0; i < cartasCofre.Count; i++)
-            {
-                if (txt.GetTipoCarta().GetValue(cartasCofre[i]).ToString().Trim().Equals("Monstruo"))
-                {
-                    defensaTemp.Add(int.Parse(txt.getdef().GetValue(cartasCofre[i]).ToString()));
-                }
-                else
-                {
-                    defensaTemp.Add(0);
-                }
+            Ordenar();
 
-
-            }
-            for (int i = 0; i < cartasCofre.Count - 1; i++)
-            {
-                for (int j = 0; j < cartasCofre.Count - 1 - i; j++)
-                {
-                    if (defensaTemp[j] < defensaTemp[j + 1])
-                    {
-                        int actualPoder = defensaTemp[j];
-                        int actualPos = cartasCofre[j];
-                        cartasCofre[j] = cartasCofre[j + 1];
-                        defensaTemp[j] = defensaTemp[j + 1];
-                        int actualCantCarta = cantidadCartasCofre[j];
-                        cantidadCartasCofre[j] = cantidadCartasCofre[j + 1];
-                        cantidadCartasCofre[j + 1] = actualCantCarta;
-                        int actualIdCarta = idNuevasCartas[j];
-                        idNuevasCartas[j] = idNuevasCartas[j + 1];
-                        idNuevasCartas[j + 1] = actualIdCarta;
-                        defensaTemp[j + 1] = actualPoder;
-                        cartasCofre[j + 1] = actualPos;
-
-                    }
-                }
-
-            }
         }
         else if (idOrden == 6)
         {
             orTipo.color = new Color(1f, 1f, 1f, 1f);
-            List<string> nombreTemp = new List<string>();
-            //cartasCofre;
-            for (int i = 0; i < cartasCofre.Count; i++)
-            {
-                if (txt.GetTipoCarta().GetValue(cartasCofre[i]).ToString().Trim().Equals("Monstruo"))
-                {
-                    nombreTemp.Add(txt.GetNombreTipoCarta().GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(cartasCofre[i]).ToString())).ToString());
-                }
-                else
-                {
-                    nombreTemp.Add("z");
-                }
-            }
-            //ataqueTemp.Sort(Compare);
-            for (int i = 0; i < nombreTemp.Count - 1; i++)
-            {
-                for (int j = 0; j < nombreTemp.Count - 1 - i; j++)
-                {
-                    //int c=string.Compare()
-                    if (string.Compare(nombreTemp[j], nombreTemp[j + 1]) == 1)
-                    {
-                        string actualAtaque = nombreTemp[j];
-                        nombreTemp[j] = nombreTemp[j + 1];
-                        int actualPos = cartasCofre[j];
-                        cartasCofre[j] = cartasCofre[j + 1];
-                        int actualCantCarta = cantidadCartasCofre[j];
-                        cantidadCartasCofre[j] = cantidadCartasCofre[j + 1];
-                        cantidadCartasCofre[j + 1] = actualCantCarta;
-                        int actualIdCarta = idNuevasCartas[j];
-                        idNuevasCartas[j] = idNuevasCartas[j + 1];
-                        idNuevasCartas[j + 1] = actualIdCarta;
-                        nombreTemp[j + 1] = actualAtaque;
-                        cartasCofre[j + 1] = actualPos;
-
-
-
-                    }
-                }
-
-            }
-
-
-
+            Ordenar();
         }
         else
         {
@@ -1201,7 +899,6 @@ public class PreDuelo : MonoBehaviour
             {
                 nuevaTemp.Add((idNuevasCartas[i]));
             }
-
             for (int i = 0; i < nuevaTemp.Count - 1; i++)
             {
                 for (int j = 0; j < nuevaTemp.Count - 1 - i; j++)
@@ -1224,6 +921,7 @@ public class PreDuelo : MonoBehaviour
 
 
 
+
                     }
                 }
 
@@ -1232,12 +930,324 @@ public class PreDuelo : MonoBehaviour
 
         }
         LimpiarLista();
-        for (int i = 0; i < cartasCofre.Count; i++)
+        LoadCardsCorrutine();
+    }
+
+    private void QuickSort(List<int> cartas, int izquierda, int derecha)
+    {
+        if (izquierda < derecha)
         {
-            ObtenerDatosCarta(cartasCofre[i], i);
+            int indiceParticion = Particionar(cartas, izquierda, derecha);
+
+            QuickSort(cartas, izquierda, indiceParticion - 1);
+            QuickSort(cartas, indiceParticion + 1, derecha);
+        }
+    }
+
+    private int Particionar(List<int> cartas, int izquierda, int derecha)
+    {
+        int pivote = cartas[derecha];
+        int indiceMenor = izquierda - 1;
+
+       
+        for (int j = izquierda; j < derecha; j++)
+        {
+         
+       
+           if (idOrden == 2)
+        {
+            if (string.Compare(ObtenerNombre(cartas[j]),ObtenerNombre(pivote)) != 1)
+            {
+                indiceMenor++;
+                Swap(cartas, indiceMenor, j);
+            }
+        }
+        else if (idOrden == 3)
+            {
+                if (ObtenerPoder(cartas[j]) >= ObtenerPoder(pivote))
+                {
+                    indiceMenor++;
+                    Swap(cartas, indiceMenor, j);
+                }
+            }
+            else if (idOrden == 4)
+            {
+                if (ObtenerAtaque(cartas[j]) >= ObtenerAtaque(pivote))
+                {
+                    indiceMenor++;
+                    Swap(cartas, indiceMenor, j);
+                }
+            }
+            else if (idOrden == 5)
+            {
+                if (ObtenerDefensa(cartas[j]) >= ObtenerDefensa(pivote))
+                {
+                    indiceMenor++;
+                    Swap(cartas, indiceMenor, j);
+                }
+            }
+            if (idOrden == 6)
+            {
+                if (string.Compare(ObtenerAtributo(cartas[j]), ObtenerAtributo(pivote)) != 1)
+                {
+                    indiceMenor++;
+                    Swap(cartas, indiceMenor, j);
+                }
+            }
+
         }
 
+        Swap(cartas, indiceMenor + 1, derecha);
+        return indiceMenor + 1;
+    }
 
+    private void Swap(List<int> cartas, int i, int j)
+    {
+        int temp = cartas[i];
+        cartas[i] = cartas[j];
+        cartas[j] = temp;
+
+        // También intercambia elementos en cantidadCartasCofre e idNuevasCartas
+        int tempCantidad = cantidadCartasCofre[i];
+        cantidadCartasCofre[i] = cantidadCartasCofre[j];
+        cantidadCartasCofre[j] = tempCantidad;
+
+        int tempIdNuevasCartas = idNuevasCartas[i];
+        idNuevasCartas[i] = idNuevasCartas[j];
+        idNuevasCartas[j] = tempIdNuevasCartas;
+
+
+
+    }
+
+    private void OrdenarId()
+    {
+        // Crear un diccionario que asocie cada ID con su posición original
+        Dictionary<int, int> idPosicionesOriginales = new Dictionary<int, int>();
+        if(idOrden == 1)
+        {
+            for (int i = 0; i < cartasCofre.Count; i++)
+            {
+                idPosicionesOriginales[cartasCofre[i]] = i;
+            }
+            cartasCofre.Sort();
+            ReorganizarLista(idNuevasCartas, idPosicionesOriginales);
+        }
+        else
+        {
+            for (int i = 0; i < idNuevasCartas.Count; i++)
+            {
+                idPosicionesOriginales[idNuevasCartas[i]] = i;
+            }
+            idNuevasCartas.Sort();
+            ReorganizarLista(cartasCofre, idPosicionesOriginales);
+        }
+        ReorganizarLista(cantidadCartasCofre, idPosicionesOriginales);
+        
+    }
+
+    private void ReorganizarLista(List<int> lista, Dictionary<int, int> idPosicionesOriginales)
+    {
+        List<int> listaOrdenada = new List<int>(lista.Count);
+
+        foreach (int id in cartasCofre)
+        {
+            int posicionOriginal = idPosicionesOriginales[id];
+            listaOrdenada.Add(lista[posicionOriginal]);
+        }
+
+        lista.Clear();
+        lista.AddRange(listaOrdenada);
+    }
+
+
+    private int ObtenerAtaque(int cartaId)
+    {
+        return int.Parse(txt.getatk().GetValue(cartaId).ToString());
+    }
+
+    private int ObtenerPoder(int cartaId)
+    {
+        return ObtenerAtaque(cartaId) + ObtenerDefensa(cartaId);
+    }
+
+    private int ObtenerDefensa(int cartaId)
+    {
+        return int.Parse(txt.getdef().GetValue(cartaId).ToString());
+    }
+
+    private int ObtenerId(int cartaId)
+    {
+        return cartaId;
+    }
+
+    private string ObtenerNombre(int cartaId)
+    {
+        return txt.getnom().GetValue(cartaId).ToString();
+    }
+
+    private string ObtenerAtributo(int cartaId)
+    {
+        return txt.GetNombreTipoCarta().GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(cartaId).ToString())).ToString();
+    }
+
+
+    public void Ordenar()
+    {
+        QuickSort(cartasCofre, 0, cartasCofre.Count - 1);
+    }
+
+
+    private void LoadCardsCorrutine()
+    {
+        for (int j = 0; j < cartasCofre.Count; j++)
+        {
+            int id = cartasCofre[j];
+            int idCantidad = idOrden == 1 ? id - 1 : j;
+            int numeroEnDeck = 0;
+
+            foreach (int deckId in deck)
+            {
+                if (deckId == cartasCofre[j])
+                {
+                    numeroEnDeck++;
+                }
+            }
+
+            var carta = clonCarta[idCantidad].transform;
+            var atributo = carta.Find("atributo").GetComponent<RawImage>();
+            var nombre = carta.Find("nombre").GetComponent<TextMeshProUGUI>();
+            var enCofre = carta.Find("enCofre").GetComponent<TextMeshProUGUI>();
+            var enDeck = carta.Find("enDeck").GetComponent<TextMeshProUGUI>();
+            var numero = carta.Find("numero").GetComponent<TextMeshProUGUI>();
+            var espada = carta.Find("espada").GetComponent<Image>();
+            var escudo = carta.Find("escudo").GetComponent<Image>();
+            var ataque = carta.Find("ataque").GetComponent<TextMeshProUGUI>();
+            var defensa = carta.Find("defensa").GetComponent<TextMeshProUGUI>();
+            var guar1 = carta.Find("guar1").GetComponent<RawImage>();
+            var guar2 = carta.Find("guar2").GetComponent<RawImage>();
+            var atributoRawImage = carta.Find("atributo").GetComponent<RawImage>();
+
+            atributo.enabled = true;
+            nombre.text = txt.getnom().GetValue(id).ToString();
+            enCofre.text = cantidadCartasCofre[j].ToString();
+            enDeck.text = numeroEnDeck.ToString();
+
+            if (numeroEnDeck == 3)
+            {
+                enDeck.color = Color.red;
+            }
+
+            numero.text = id.ToString().PadLeft(3, '0');
+
+            if (cantidadCartasCofre[j] == 0)
+            {
+                var textColor = new Color(1f, 1f, 1f, 0.5f);
+                numero.color = textColor;
+                enCofre.color = textColor;
+                enDeck.color = textColor;
+                nombre.color = textColor;
+                ataque.color = textColor;
+                defensa.color = textColor;
+                espada.color = textColor;
+                escudo.color = textColor;
+            }
+
+            var tipoCarta = txt.GetTipoCarta().GetValue(id).ToString().Trim();
+
+            if (tipoCarta.Equals("Monstruo"))
+            {
+                espada.enabled = true;
+                escudo.enabled = true;
+                ataque.text = txt.getatk().GetValue(id).ToString();
+                defensa.text = txt.getdef().GetValue(id).ToString();
+                guar1.enabled = true;
+                guar1.texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos1().GetValue(id).ToString()));
+                guar2.enabled = true;
+                guar2.texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos2().GetValue(id).ToString()));
+                atributoRawImage.texture = (Texture2D)txt.atirbutos.GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(id).ToString()));
+            }
+            else if (tipoCarta.Equals("Equipo"))
+            {
+                carta.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.EQUIP_NAME;
+                atributoRawImage.texture = (Texture2D)txt.atirbutos.GetValue(22);
+            }
+            else if (tipoCarta.Equals("Campo"))
+            {
+                carta.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.FIELD_NAME;
+                atributoRawImage.texture = (Texture2D)txt.atirbutos.GetValue(24);
+            }
+            else if (tipoCarta.Equals("Magica"))
+            {
+                carta.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.MAGIC_NAME;
+                atributoRawImage.texture = (Texture2D)txt.atirbutos.GetValue(24);
+            }
+            else
+            {
+                carta.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.TRAP_NAME;
+                atributoRawImage.texture = (Texture2D)txt.atirbutos.GetValue(23);
+            }
+        }
+    }
+
+    private void UpdateOneCard(int idCard)
+    {
+        Debug.LogError("id de la carta es" + idCard + "pero id reemplazo es" + cartasCofre[idCard]);
+        int id = cartasCofre[idCard];
+        int idCantidad = idOrden == 1 ? id-1  : idCard;
+
+
+        var carta = clonCarta[idCantidad].transform;
+        var nombre = carta.Find("nombre").GetComponent<TextMeshProUGUI>();
+        var enCofre = carta.Find("enCofre").GetComponent<TextMeshProUGUI>();
+        var enDeck = carta.Find("enDeck").GetComponent<TextMeshProUGUI>();
+        var numero = carta.Find("numero").GetComponent<TextMeshProUGUI>();
+        var espada = carta.Find("espada").GetComponent<Image>();
+        var escudo = carta.Find("escudo").GetComponent<Image>();
+        var ataque = carta.Find("ataque").GetComponent<TextMeshProUGUI>();
+        var defensa = carta.Find("defensa").GetComponent<TextMeshProUGUI>();
+        int numeroEnDeck = 0;
+        foreach (int deckId in deck)
+        {
+            if (deckId == cartasCofre[idCard])
+            {
+                numeroEnDeck++;
+            }
+        }
+        enCofre.text = cantidadCartasCofre[idCard].ToString();
+        enDeck.text = numeroEnDeck.ToString();
+
+     
+        var textColor = new Color(1f, 1f, 1f, 1f);
+        if (cantidadCartasCofre[idCard] == 0)
+        {
+            textColor = new Color(1f, 1f, 1f, 0.5f);
+        }
+        numero.color = textColor;
+        enCofre.color = textColor;
+        enDeck.color = textColor;
+        nombre.color = textColor;
+        ataque.color = textColor;
+        defensa.color = textColor;
+        espada.color = textColor;
+        escudo.color = textColor;
+        if (numeroEnDeck == 3)
+        {
+            enDeck.color = Color.red;
+        }
+
+    }
+
+
+    private void refreshChest()
+    {
+        
+        yOffset = 50;
+        yScroll = 0.00133257f;
+        Vector3 pos = apuntador.transform.localPosition;
+        pos.y = 135.5f;
+        apuntador.transform.localPosition = pos;
+        scroll.verticalNormalizedPosition = 0.9529243f;
     }
 
     public void OrdenarDeck()
@@ -2157,11 +2167,7 @@ public class PreDuelo : MonoBehaviour
                     cantidadCofreTexto.text = "" + cantidadCofre;
                     cantidadCofreTextoDeck.text = "" + cantidadCofre;
                     LimpiarLista();
-                    for (int i = 0; i < cartasCofre.Count; i++)
-                    {
-                        ObtenerDatosCarta(cartasCofre[i], i);
-
-                    }
+                    LoadCardsCorrutine();
                     OrdenarDeck();
 
                     if (deck.Count == Constants.CARDS_IN_DECK)
