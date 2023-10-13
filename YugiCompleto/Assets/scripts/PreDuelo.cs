@@ -16,6 +16,8 @@ public class PreDuelo : MonoBehaviour
     public float indiceScrollDeck = 1;
     public ScrollRect scroll;
     public ScrollRect scrollDeck;
+    public Scrollbar scrollBar;
+    public Scrollbar scrollBarDeck;
     public Image apuntador;
     public Image apuntadorDeck;
     public GameObject original;
@@ -86,6 +88,9 @@ public class PreDuelo : MonoBehaviour
     private GameObject objetoDatosDuelo;
     private DatosJuego datosJuego;
     private DatosDuelo datosDuelo;
+    private int limit = 38;
+    [SerializeField]
+    private int offset = 0;
   
 
     // Start is called before the first frame update
@@ -103,7 +108,6 @@ public class PreDuelo : MonoBehaviour
         clonDeck = new GameObject[Constants.CARDS_IN_DECK];
         Cursor.visible = false;
         sonido.MusicaCrearDuelo();
-
         indiceDeck = 0;
         totalCartasDeck = 1;
         idOrden = 1;
@@ -170,7 +174,7 @@ public class PreDuelo : MonoBehaviour
     public void CrearInstancias()
     {
         int posY = 0;
-        for (int i = 0; i < Constants.TOTAL_CARDS+1; i++)
+        for (int i = 0; i < limit; i++)
         {
 
             clonCarta[i] = Instantiate(original, new Vector3(original.transform.localPosition.x, original.transform.localPosition.y - posY, original.transform.localPosition.z), original.transform.rotation);
@@ -281,6 +285,10 @@ public class PreDuelo : MonoBehaviour
                     cantidadReemplazo = cartaReemplazo;
 
                 }
+                if (cartaReemplazo >= cartasCofre.Count)
+                {
+                    cartaReemplazo = -1;
+                }
 
                 if (cartaReemplazo != -1)
                 {
@@ -306,7 +314,7 @@ public class PreDuelo : MonoBehaviour
                         totalDeckEnDeck.text = "" + deck.Count;
                         cantidadCofreTexto.text = "" + cantidadCofre;
                         cantidadCofreTextoDeck.text = "" + cantidadCofre;
-                        UpdateOneCard(conteo);
+                        UpdateCardPage();
                         OrdenarDeck();
 
                         if (deck.Count == Constants.CARDS_IN_DECK)
@@ -342,7 +350,7 @@ public class PreDuelo : MonoBehaviour
                     }
 
                     //OrdenarCofre();
-                    UpdateOneCard(conteo);
+                    UpdateCardPage();
                     if (indiceDeck != 0)
                     {
 
@@ -406,7 +414,7 @@ public class PreDuelo : MonoBehaviour
             StartCoroutine(FlechaAbajoArriba());
             if (fase.Equals("cofre"))
             {
-                if (indice < Constants.TOTAL_CARDS)
+                if (indice < offset+limit)
                 {
                     efectosSonido.moverCarta();
                     indiceApCofre++;
@@ -428,6 +436,7 @@ public class PreDuelo : MonoBehaviour
 
                         indiceScroll = 8;
                         scroll.verticalNormalizedPosition = scroll.verticalNormalizedPosition - yScroll;
+                        scrollBar.value -= yScroll;
 
                     }
                     indice++;
@@ -451,6 +460,7 @@ public class PreDuelo : MonoBehaviour
                     {
                         indiceScrollDeck = 8;
                         scrollDeck.verticalNormalizedPosition = scrollDeck.verticalNormalizedPosition - yScrollDeck;
+                        scrollBarDeck.value -= yScrollDeck;
 
                     }
                     indiceDeck++;
@@ -464,7 +474,7 @@ public class PreDuelo : MonoBehaviour
         {
             if (fase.Equals("cofre"))
             {
-                if (indice < Constants.TOTAL_CARDS)
+                if (indice < offset + limit)
                 {
                     efectosSonido.moverCarta();
                     indiceApCofre++;
@@ -486,6 +496,7 @@ public class PreDuelo : MonoBehaviour
 
                         indiceScroll = 8;
                         scroll.verticalNormalizedPosition = scroll.verticalNormalizedPosition - yScroll;
+                        scrollBar.value -= yScroll;
 
                     }
                     indice++;
@@ -510,6 +521,7 @@ public class PreDuelo : MonoBehaviour
                     {
                         indiceScrollDeck = 8;
                         scrollDeck.verticalNormalizedPosition = scrollDeck.verticalNormalizedPosition - yScrollDeck;
+                        scrollBarDeck.value -= yScrollDeck;
 
                     }
                     indiceDeck++;
@@ -523,7 +535,7 @@ public class PreDuelo : MonoBehaviour
         {
             if (fase.Equals("cofre"))
             {
-                if (indice != 1)
+                if (indice > offset + 1)
                 {
                     efectosSonido.moverCarta();
                     indiceScroll--;
@@ -548,6 +560,7 @@ public class PreDuelo : MonoBehaviour
                     {
                         indiceScroll = 1;
                         scroll.verticalNormalizedPosition = scroll.verticalNormalizedPosition + yScroll;
+                        scrollBar.value += yScroll;
 
                     }
                     indice--;
@@ -575,6 +588,7 @@ public class PreDuelo : MonoBehaviour
                     {
                         indiceScrollDeck = 1;
                         scrollDeck.verticalNormalizedPosition = scrollDeck.verticalNormalizedPosition + yScrollDeck;
+                        scrollBarDeck.value += yScrollDeck;
 
                     }
                     indiceDeck--;
@@ -585,12 +599,54 @@ public class PreDuelo : MonoBehaviour
 
 
         }
+        if (fase.Equals("cofre"))
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if(idOrden == 1)
+                {
+                    if (offset + limit < Constants.TOTAL_CARDS)
+                    {
+                        efectosSonido.Descarte();
+                        offset += limit;
+                        indice += limit;
+                        LimpiarLista();
+                        UpdateCardPage();
+                    }
+                }
+                else{
+                    if (offset + limit < cartasCofre.Count)
+                    {
+                        efectosSonido.Descarte();
+                        offset += limit;
+                        indice += limit;
+                        LimpiarLista();
+                        UpdateCardPage();
+                    }
+                }
+               
+              
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {            
+             
+                if (offset -limit >= 0)
+                {
+                    efectosSonido.Descarte();
+                    offset -= limit;
+                    indice -= limit;
+                    LimpiarLista();
+                    UpdateCardPage();
+                }
+             
+            }
+        }
         if (Input.GetKeyDown(KeyCode.UpArrow) && !deslizadoRapido)
         {
             StartCoroutine(FlechaAbajoArriba());
             if (fase.Equals("cofre"))
             {
-                if (indice != 1)
+                if (indice > offset+1)
                 {
                     efectosSonido.moverCarta();
                     indiceScroll--;
@@ -615,6 +671,7 @@ public class PreDuelo : MonoBehaviour
                     {
                         indiceScroll = 1;
                         scroll.verticalNormalizedPosition = scroll.verticalNormalizedPosition + yScroll;
+                        scrollBar.value += yScroll;
 
                     }
                     indice--;
@@ -642,6 +699,7 @@ public class PreDuelo : MonoBehaviour
                     {
                         indiceScrollDeck = 1;
                         scrollDeck.verticalNormalizedPosition = scrollDeck.verticalNormalizedPosition + yScrollDeck;
+                        scrollBarDeck.value += yScrollDeck;
 
                     }
                     indiceDeck--;
@@ -718,6 +776,7 @@ public class PreDuelo : MonoBehaviour
 
         }
     }
+
     public void ObtenerDatosCartaDeck(int id, int idCantCofre)
     {
 
@@ -797,7 +856,7 @@ public class PreDuelo : MonoBehaviour
     }
     public void LimpiarLista()
     {
-        for (int i = 0; i < clonCarta.Length; i++)
+        for (int i = 0; i < limit; i++)
         {
             clonCarta[i].transform.Find("enCofre").GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 1f);
             clonCarta[i].transform.Find("enDeck").GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 1f);
@@ -930,7 +989,7 @@ public class PreDuelo : MonoBehaviour
 
         }
         LimpiarLista();
-        LoadCardsCorrutine();
+        UpdateCardPage();
     }
 
     private void QuickSort(List<int> cartas, int izquierda, int derecha)
@@ -1098,9 +1157,9 @@ public class PreDuelo : MonoBehaviour
     }
 
 
-    private void LoadCardsCorrutine()
+    private void LoadCardsCorutine()
     {
-        for (int j = 0; j < cartasCofre.Count; j++)
+        for (int j = 0; j < 3; j++)
         {
             int id = cartasCofre[j];
             int idCantidad = idOrden == 1 ? id - 1 : j;
@@ -1190,7 +1249,129 @@ public class PreDuelo : MonoBehaviour
         }
     }
 
-    private void UpdateOneCard(int idCard)
+    private void UpdateCardPage()
+    {
+        int cardToUpdate = 0;
+        for (int j = offset; j < offset+limit; j++)
+        {
+            int id = 0;
+            int cantidad = 0;
+            if (j < cartasCofre.Count)
+            {
+                id = cartasCofre[j];
+                cantidad = cantidadCartasCofre[j];
+            }
+           
+            int numeroEnDeck = 0;
+            if(idOrden == 1)
+            {
+                id = cartasCofre.IndexOf(j);
+                cantidad = cantidadCartasCofre.IndexOf(j);
+                bool encontro = false;
+                for (int i = 0; i < cartasCofre.Count; i++)
+                {
+                    if ((cartasCofre[i] - 1) == j)
+                    {
+                        encontro = true;
+                        id = cartasCofre[i];
+                        cantidad = cantidadCartasCofre[i];
+                        break;
+                    }
+                }
+                if (!encontro)
+                {
+                    cardToUpdate++;
+                    continue;
+                }
+
+            }
+            if (id== 0){
+                return;
+            }
+            foreach (int deckId in deck)
+            {
+                if (deckId == id)
+                {
+                    numeroEnDeck++;
+                }
+            }
+
+            var carta = clonCarta[cardToUpdate].transform;
+            var atributo = carta.Find("atributo").GetComponent<RawImage>();
+            var nombre = carta.Find("nombre").GetComponent<TextMeshProUGUI>();
+            var enCofre = carta.Find("enCofre").GetComponent<TextMeshProUGUI>();
+            var enDeck = carta.Find("enDeck").GetComponent<TextMeshProUGUI>();
+            var numero = carta.Find("numero").GetComponent<TextMeshProUGUI>();
+            var espada = carta.Find("espada").GetComponent<Image>();
+            var escudo = carta.Find("escudo").GetComponent<Image>();
+            var ataque = carta.Find("ataque").GetComponent<TextMeshProUGUI>();
+            var defensa = carta.Find("defensa").GetComponent<TextMeshProUGUI>();
+            var guar1 = carta.Find("guar1").GetComponent<RawImage>();
+            var guar2 = carta.Find("guar2").GetComponent<RawImage>();
+            var atributoRawImage = carta.Find("atributo").GetComponent<RawImage>();
+
+            atributo.enabled = true;
+            nombre.text = txt.getnom().GetValue(id).ToString();
+            enCofre.text = cantidad.ToString();
+            enDeck.text = numeroEnDeck.ToString();
+
+            numero.text = id.ToString().PadLeft(3, '0');
+            var textColor = new Color(1f, 1f, 1f, 1f);
+            if (cantidad == 0)
+            {
+                textColor = new Color(1f, 1f, 1f, 0.5f);
+            }
+            numero.color = textColor;
+            enCofre.color = textColor;
+            enDeck.color = textColor;
+            nombre.color = textColor;
+            ataque.color = textColor;
+            defensa.color = textColor;
+            espada.color = textColor;
+            escudo.color = textColor;
+            if (numeroEnDeck == 3)
+            {
+                enDeck.color = Color.red;
+            }
+            var tipoCarta = txt.GetTipoCarta().GetValue(id).ToString().Trim();
+
+            if (tipoCarta.Equals("Monstruo"))
+            {
+                espada.enabled = true;
+                escudo.enabled = true;
+                ataque.text = txt.getatk().GetValue(id).ToString();
+                defensa.text = txt.getdef().GetValue(id).ToString();
+                guar1.enabled = true;
+                guar1.texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos1().GetValue(id).ToString()));
+                guar2.enabled = true;
+                guar2.texture = (Texture2D)txt.guardianes.GetValue(int.Parse(txt.GetAtributos2().GetValue(id).ToString()));
+                atributoRawImage.texture = (Texture2D)txt.atirbutos.GetValue(int.Parse(txt.GetNumeroTipoCarta().GetValue(id).ToString()));
+            }
+            else if (tipoCarta.Equals("Equipo"))
+            {
+                carta.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.EQUIP_NAME;
+                atributoRawImage.texture = (Texture2D)txt.atirbutos.GetValue(22);
+            }
+            else if (tipoCarta.Equals("Campo"))
+            {
+                carta.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.FIELD_NAME;
+                atributoRawImage.texture = (Texture2D)txt.atirbutos.GetValue(24);
+            }
+            else if (tipoCarta.Equals("Magica"))
+            {
+                carta.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.MAGIC_NAME;
+                atributoRawImage.texture = (Texture2D)txt.atirbutos.GetValue(24);
+            }
+            else
+            {
+                carta.Find("MT").GetComponent<TextMeshProUGUI>().text = Constants.TRAP_NAME;
+                atributoRawImage.texture = (Texture2D)txt.atirbutos.GetValue(23);
+            }
+            cardToUpdate++;
+        }
+    }
+
+    private void UpdteOneCard(int idCard)
     {
         Debug.LogError("id de la carta es" + idCard + "pero id reemplazo es" + cartasCofre[idCard]);
         int id = cartasCofre[idCard];
@@ -2167,7 +2348,7 @@ public class PreDuelo : MonoBehaviour
                     cantidadCofreTexto.text = "" + cantidadCofre;
                     cantidadCofreTextoDeck.text = "" + cantidadCofre;
                     LimpiarLista();
-                    LoadCardsCorrutine();
+                    //LoadCardsCorrutine();
                     OrdenarDeck();
 
                     if (deck.Count == Constants.CARDS_IN_DECK)

@@ -11,7 +11,7 @@ public class SistemaHistoria : MonoBehaviour
     public ImportadorHistoria importadorHistoria;
     public List<int> deckTemporal = new List<int>();
     public List<int> deckInicio = new List<int>();
-    public int[] probabilidadDrop = new int[2048];
+    public int[] probabilidadDrop = new int[Constants.DROP_SUM];
     public string fase = "";
     public int inicioDialogos = 0;
     public string[] dialogos;
@@ -339,7 +339,7 @@ public class SistemaHistoria : MonoBehaviour
         string[] dropDeck = importadorHistoria.GetDropDeck();
         string[] duelistas = importadorHistoria.GetDuelistas();
        
-        for(int i = 0; i < 40; i++)
+        for(int i = 0; i < Constants.CARDS_IN_DECK; i++)
         {
             deckTemporal.Add(0);
         }
@@ -395,9 +395,9 @@ public class SistemaHistoria : MonoBehaviour
         while (deckTemporal.Contains(0))
         {
             actual = 0;
-            actualCarta = Random.Range(0, 2048);
+            actualCarta = Random.Range(0, Constants.DROP_SUM);
             int contador = 0;
-            for(int i = 0; i<40; i++){
+            for(int i = 0; i<Constants.CARDS_IN_DECK; i++){
                 if (probabilidadDrop[actualCarta] == deckTemporal[i])
                 {
                     contador++;
@@ -463,7 +463,7 @@ public class SistemaHistoria : MonoBehaviour
     {
         int contador = 0;
         string[] deckInicial = importadorHistoria.GetDeckInicial();
-        for(int i = 0; i < 40; i++)
+        for(int i = 0; i < Constants.CARDS_IN_DECK; i++)
         {
             deckInicio.Add(0);
         }
@@ -477,7 +477,7 @@ public class SistemaHistoria : MonoBehaviour
             {
                 contador = 0;
                 aleatorio = int.Parse(deckInicial[Random.Range(1, 43)]);
-                for(int j=0;j<40; j++)
+                for(int j=0;j<Constants.CARDS_IN_DECK; j++)
                 {
                     if (deckInicio[j]==aleatorio){
                         contador++;
@@ -495,7 +495,7 @@ public class SistemaHistoria : MonoBehaviour
             {
                 contador = 0;
                 aleatorio = int.Parse(deckInicial[Random.Range(43, 126)]);
-                for (int j = 0; j < 40; j++)
+                for (int j = 0; j < Constants.CARDS_IN_DECK; j++)
                 {
                     if (deckInicio[j] == aleatorio)
                     {
@@ -514,7 +514,7 @@ public class SistemaHistoria : MonoBehaviour
             {
                 contador = 0;
                 aleatorio = int.Parse(deckInicial[Random.Range(127, 223)]);
-                for (int j = 0; j < 40; j++)
+                for (int j = 0; j < Constants.CARDS_IN_DECK; j++)
                 {
                     if (deckInicio[j] == aleatorio)
                     {
@@ -531,7 +531,7 @@ public class SistemaHistoria : MonoBehaviour
         {
             contador = 0;
             aleatorio = int.Parse(deckInicial[Random.Range(223, 308)]);
-            for (int j = 0; j < 40; j++)
+            for (int j = 0; j < Constants.CARDS_IN_DECK; j++)
             {
                 if (deckInicio[j] == aleatorio)
                 {
@@ -547,7 +547,7 @@ public class SistemaHistoria : MonoBehaviour
         {
             contador = 0;
             aleatorio = int.Parse(deckInicial[Random.Range(308, 310)]);
-            for (int j = 0; j < 40; j++)
+            for (int j = 0; j < Constants.CARDS_IN_DECK; j++)
             {
                 if (deckInicio[j] == aleatorio)
                 {
@@ -563,7 +563,7 @@ public class SistemaHistoria : MonoBehaviour
         {
             contador = 0;
             aleatorio = int.Parse(deckInicial[Random.Range(310, 316)]);
-            for (int j = 0; j < 40; j++)
+            for (int j = 0; j < Constants.CARDS_IN_DECK; j++)
             {
                 if (deckInicio[j] == aleatorio)
                 {
@@ -579,7 +579,7 @@ public class SistemaHistoria : MonoBehaviour
         {
             contador = 0;
             aleatorio = int.Parse(deckInicial[Random.Range(316, 334)]);
-            for (int j = 0; j < 40; j++)
+            for (int j = 0; j < Constants.CARDS_IN_DECK; j++)
             {
                 if (deckInicio[j] == aleatorio)
                 {
