@@ -341,7 +341,11 @@ public class ImportadorTextos : MonoBehaviour
         return starsText;
     }
 
+    public string[] GetAttributes()
+    {
+        return attributeText;
 
+    }
 
 
 }

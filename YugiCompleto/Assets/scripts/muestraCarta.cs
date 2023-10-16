@@ -13,6 +13,8 @@ public class muestraCarta : MonoBehaviour
     public RawImage panelDatos;
     public RawImage reverso;
     public TextMeshProUGUI ataque;
+    public TextMeshProUGUI atkText;
+    public TextMeshProUGUI dfdText;
     public TextMeshProUGUI defensa;
     public TextMeshProUGUI textoMT;
     public Texture2D []color = new Texture2D[3];
@@ -27,4 +29,9 @@ public class muestraCarta : MonoBehaviour
     public RawImage contenedorNombre;
     public TextMeshProUGUI nombreCarta;
     public RawImage imagenMiniCarta;
+    public GameObject monsterContainer;
+    public GameObject specialContainer;
+    public GameObject starsContainer;
+    public Image attribute;
+    public GameObject trapContainer;
 }

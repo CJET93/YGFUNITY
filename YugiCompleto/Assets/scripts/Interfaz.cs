@@ -73,7 +73,7 @@ public class Interfaz : MonoBehaviour
     public TextMeshProUGUI textoEstrellas;
     public TextMeshProUGUI textoRango;
     public TextMeshProUGUI textoNumeroCarta;
-    public TextMeshProUGUI textoNombreCarta;
+    public TextMeshProUGUI textonombreCarta;
     public TextMeshProUGUI textoNuevaCarta;
     public TextMeshProUGUI textoAtaquePromedioUsuario;
     public TextMeshProUGUI textoAtaquePromedioCpu;
@@ -195,7 +195,7 @@ public class Interfaz : MonoBehaviour
 
             magicaTrampa.text = clonCarta.getClon(pos).GetComponent<carta>().GetTipoCarta();
         }
-        nombreT.text = clonCarta.getClon(pos).GetComponent<carta>().nombreCarta;
+        nombreT.text = clonCarta.getClon(pos).GetComponent<carta>().GetName();
 
 
 
@@ -264,7 +264,7 @@ public class Interfaz : MonoBehaviour
 
                 magicaTrampa.text = clonCarta.getCartaCampoU(pos).GetComponent<carta>().GetTipoCarta();
             }
-            nombreT.text = clonCarta.getCartaCampoU(pos).GetComponent<carta>().nombreCarta;
+            nombreT.text = clonCarta.getCartaCampoU(pos).GetComponent<carta>().GetName();
         }
 
     }
@@ -316,7 +316,7 @@ public class Interfaz : MonoBehaviour
                             guardianFavorable.enabled = true;
                             atributo1.texture = (Texture2D)listas.atirbutos.GetValue(clonCarta.GetCartaCpu(pos).GetComponent<carta>().GetTipoAtributo());
                             guardianA.texture = (Texture2D)listas.guardianes.GetValue(clonCarta.GetCartaCpu(pos).GetComponent<carta>().GetGuardianStarA());
-                            nombreT1.text = clonCarta.GetCartaCpu(pos).GetComponent<carta>().nombreCarta;
+                            nombreT1.text = clonCarta.GetCartaCpu(pos).GetComponent<carta>().GetName();
                         }
                         else
                         {
@@ -352,7 +352,7 @@ public class Interfaz : MonoBehaviour
 
                         atributo1.texture = (Texture2D)listas.atirbutos.GetValue(clonCarta.GetCartaCpu(pos).GetComponent<carta>().GetTipoAtributo());
                         guardianA.texture = (Texture2D)listas.guardianes.GetValue(clonCarta.GetCartaCpu(pos).GetComponent<carta>().GetGuardianStarA());
-                        nombreT1.text = clonCarta.GetCartaCpu(pos).GetComponent<carta>().nombreCarta;
+                        nombreT1.text = clonCarta.GetCartaCpu(pos).GetComponent<carta>().GetName();
                     }
                     else
                     {
@@ -394,7 +394,7 @@ public class Interfaz : MonoBehaviour
                     atributo.enabled = true;
                     atributo.texture = (Texture2D)listas.atirbutos.GetValue(clonCarta.GetCartaCpu(pos).GetComponent<carta>().GetTipoAtributo());
                     guardian1.texture = (Texture2D)listas.guardianes.GetValue(clonCarta.GetCartaCpu(pos).GetComponent<carta>().GetGuardianStarA());
-                    nombreT.text = clonCarta.GetCartaCpu(pos).GetComponent<carta>().nombreCarta;
+                    nombreT.text = clonCarta.GetCartaCpu(pos).GetComponent<carta>().GetName();
                 }
                 else
                 {
@@ -433,7 +433,7 @@ public class Interfaz : MonoBehaviour
                         deficono1.enabled = true;
                         atributo1.enabled = true;
                         nombreT1.enabled = true;
-                        nombreT1.text = clonCarta.getCartaCampoU(pos).GetComponent<carta>().nombreCarta;
+                        nombreT1.text = clonCarta.getCartaCampoU(pos).GetComponent<carta>().GetName();
                         atkT1.text = "" + clonCarta.getCartaCampoU(pos).GetComponent<carta>().getAtaque();
                         defT1.text = "" + clonCarta.getCartaCampoU(pos).GetComponent<carta>().getDefensa();
                         atributo1.texture = (Texture2D)listas.atirbutos.GetValue(clonCarta.getCartaCampoU(pos).GetComponent<carta>().GetTipoAtributo());
@@ -449,7 +449,7 @@ public class Interfaz : MonoBehaviour
                     guardianA.enabled = true;
                     atributo1.enabled = true;
                     nombreT1.enabled = true;
-                    nombreT1.text = clonCarta.getCartaCampoU(pos).GetComponent<carta>().nombreCarta;
+                    nombreT1.text = clonCarta.getCartaCampoU(pos).GetComponent<carta>().GetName();
                     atkT1.text = "" + clonCarta.getCartaCampoU(pos).GetComponent<carta>().getAtaque();
                     defT1.text = "" + clonCarta.getCartaCampoU(pos).GetComponent<carta>().getDefensa();
                     atributo1.texture = (Texture2D)listas.atirbutos.GetValue(clonCarta.getCartaCampoU(pos).GetComponent<carta>().GetTipoAtributo());
@@ -460,7 +460,7 @@ public class Interfaz : MonoBehaviour
             else
             {
                 nombreT1.enabled = true;
-                nombreT1.text = clonCarta.getCartaCampoU(pos).GetComponent<carta>().nombreCarta;
+                nombreT1.text = clonCarta.getCartaCampoU(pos).GetComponent<carta>().GetName();
                 atributo1.enabled = true;
                 if (clonCarta.getCartaCampoU(pos).GetComponent<carta>().GetTipoCarta().Equals("Magica") || clonCarta.getCartaCampoU(pos).GetComponent<carta>().GetTipoCarta().Equals("Campo"))
                 {
@@ -509,7 +509,7 @@ public class Interfaz : MonoBehaviour
 
                 atkT1.text = "" + clonCarta.GetCartaCpu(pos).GetComponent<carta>().getAtaque();
                 defT1.text = "" + clonCarta.GetCartaCpu(pos).GetComponent<carta>().getDefensa();
-                nombreT1.text = clonCarta.GetCartaCpu(pos).GetComponent<carta>().nombreCarta;
+                nombreT1.text = clonCarta.GetCartaCpu(pos).GetComponent<carta>().GetName();
 
 
             }
@@ -610,8 +610,8 @@ public class Interfaz : MonoBehaviour
         espadasLuz.SetActive(false);
         cartasManoUsuario.SetActive(false);
         panelVidaYDeck.SetActive(false);
-        clonCarta.DesactivarComponentes();
-        clonCarta.DesactivarComponentesCpu();
+        clonCarta.InactivateComponent(clonCarta.clon);
+        clonCarta.InactivateComponent(clonCarta.clonCpu);
         datosCarta.SetActive(false);
     }
     public void DesactivarComponentes()
@@ -2233,7 +2233,7 @@ public class Interfaz : MonoBehaviour
         }
         if (juego.activarTextoDescuento) { 
             descuento.SetActive(true);
-            textoNombreCarta.color = Color.green;
+            textonombreCarta.color = Color.green;
         }
         string numeroCarta = juego.GetIdCarta().ToString();
         if (numeroCarta.Length == 1)
@@ -2249,7 +2249,7 @@ public class Interfaz : MonoBehaviour
         {
             textoNumeroCarta.text = "" + juego.GetIdCarta();
         }
-        textoNombreCarta.text = juego.GetnombreCarta();
+        textonombreCarta.text = juego.GetnombreCarta();
         //rangos
         string rangos = juego.GetRango();
         if(juego.rankPoints >= 50)
@@ -2286,7 +2286,7 @@ public class Interfaz : MonoBehaviour
             pow.gameObject.SetActive(false);
             condicionesVictoria.text = "Sin Victoria";
             textoNumeroCarta.text = "";
-            textoNombreCarta.text = "GANADOR " + juego.GetDuelistaDuelo();
+            textonombreCarta.text = "GANADOR " + juego.GetDuelistaDuelo();
             textoRango.color = new Color(0.4f, 0.22f, 0.19f);
         }
         if (perdio.Equals("usuario"))

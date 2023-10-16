@@ -8,7 +8,7 @@ public class carta : MonoBehaviour
     public int ataque;
     public int defensa;
     public int datosCarta;
-    public string nombreCarta;
+    private string nombreCarta;
     public int pos;
     public int guardian;
     public int guardian2;
@@ -22,19 +22,9 @@ public class carta : MonoBehaviour
     public string tipoCarta;
     public int tipoAtributo;
     public bool esInmortal = false;
+    private int starsNumber;
+    private string attribute; // este es el atributo de la carta (no si es pez, roca)sino por ejemplo fueg,agua,viento,magica...
     // Start is called before the first frame update
-
-    void Start()
-    {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-      
-    }
     public bool GetTieneBono()
     {
         return tieneBono;
@@ -254,6 +244,36 @@ public class carta : MonoBehaviour
     public void SetDefensa(int def)
     {
         defensa = def;
+    }
+
+    public void SetStarsNumber(int stars)
+    {
+        starsNumber = stars;
+    }
+
+    public int GetStarsNumber()
+    {
+        return starsNumber;
+    }
+
+    public void SetAttribute(string attribute)
+    {
+        this.attribute = attribute;
+    }
+
+    public string GetAttribute()
+    {
+        return attribute;
+    }
+
+    public string GetName()
+    {
+        return name;
+    }
+
+    public void SetName(string name)
+    {
+        this.name = name;
     }
 
 

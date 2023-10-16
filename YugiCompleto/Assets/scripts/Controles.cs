@@ -557,7 +557,7 @@ public class Controles : MonoBehaviour
                 juego.SetTurnoUsuario(false);
                 clon.OrganizarMano();
                 interfaz.DesactivarComponentes();
-                clon.DesactivarComponentes();
+                clon.InactivateComponent(clon.clon);
                 camara.DevolverCamara(false);
                 cuadroUsuario.ActivarAnimacion(indice);
                 indice = 0;
@@ -1160,7 +1160,7 @@ public class Controles : MonoBehaviour
 
                     yield return null;
                 }
-                clon.DesactivarComponentesCpu(posCarta);
+                clon.InactivateComponent(clon.clonCpu,posCarta);
                
                 clon.InicioColocarCartaCpu(posCarta, indice);
             }
@@ -1247,7 +1247,7 @@ public class Controles : MonoBehaviour
 
                     yield return null;
                 }
-                clon.DesactivarComponentesCpu(posCarta);
+                clon.InactivateComponent(clon.clonCpu,posCarta);
                 yield return new WaitForSeconds(0.2f);
                 clon.InicioColocarCartaCpu(posCarta, indice);
             }
@@ -2514,7 +2514,7 @@ public class Controles : MonoBehaviour
             juego.SetTurnoUsuario(false);
             clon.OrganizarMano();
             interfaz.DesactivarComponentes();
-            clon.DesactivarComponentes();
+            clon.InactivateComponent(clon.clon);
             camara.DevolverCamara(false);
             cuadroUsuario.ActivarAnimacion(indice);
             indice = 0;

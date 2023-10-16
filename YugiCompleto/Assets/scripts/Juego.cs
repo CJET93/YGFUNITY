@@ -145,17 +145,29 @@ public class Juego : MonoBehaviour
         defensaPromedioCpu = 0;
         rankPoints = 50;
         Cursor.visible = false;
-        for (int i = 0; i < Constants.CARDS_IN_DECK; i++)
+        for (int i = 0; i < Constants.CARDS_IN_DECK-1; i++)
         {
-            deckUsuario.Add(datosJuego.GetDeckUsuario()[i]);
+            deckUsuario.Add(Random.Range(1,53));
             AtaquePromedioDeck += int.Parse((string)txt.getatk().GetValue(deckUsuario[i]));
             defensaPromedioDeck += int.Parse((string)txt.getdef().GetValue(deckUsuario[i]));
-
-
+        }
+        for (int i = 0; i < Constants.CARDS_IN_DECK - 39; i++)
+        {
+            deckUsuario.Add(Random.Range(64, 64));
+            AtaquePromedioDeck += int.Parse((string)txt.getatk().GetValue(deckUsuario[i]));
+            defensaPromedioDeck += int.Parse((string)txt.getdef().GetValue(deckUsuario[i]));
         }
         AtaquePromedioDeck /= Constants.CARDS_IN_DECK;
         defensaPromedioDeck /= Constants.CARDS_IN_DECK;
-        deckCpu = datosDuelo.GetDeckCpu();
+        //deckCpu = datosDuelo.GetDeckCpu();
+        for(int i = 0; i < 20; i++)
+        {
+            deckCpu.Add(Random.Range(101, 630));
+        }
+        for (int i = 0; i < 20; i++)
+        {
+            deckCpu.Add(Random.Range(69, 69));
+        }
         // ordenar cartas en ataque del campo usuario
         //organizar los ataques del usuario y ponerlos en un nuevo array temporal
         //dependiente de la suerte
@@ -1034,7 +1046,7 @@ public class Juego : MonoBehaviour
         campo.SetAtaquesCpu(cartaPos, 0);
         //clon.GetCartaCpu(cartaPos).GetComponent<carta>().SetPos(1);
         clon.GetCartaCpu(cartaPos).GetComponent<carta>().SetDatosCarta(1);
-        clon.DesactivarComponentesCpu();        
+        clon.InactivateComponent(clon.clonCpu);        
         if (clon.GetCartaCpu(cartaPos).GetComponent<carta>().getPos() == 0)
         {
             ReproducirCambiarPos();
@@ -1123,306 +1135,95 @@ public class Juego : MonoBehaviour
     {
         if (ataque.Equals("ataqueDirectoCpu"))
         {
-            string nombreCarta = txt.nombresCartas.GetValue(campo.GetCampoCpu(posCpu)).ToString();
-            if (nombreCarta.Length > 17)
-            {
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-            }
-            else if (nombreCarta.Length > 12)
-            {
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.24f;
-            }
-            else
-            {
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.30f;
-            }
-            clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(true);
-            clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.text = nombreCarta;
-            clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartasBatalla.GetValue(campo.GetCampoCpu(posCpu));
-            clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().ataqueB.text = "" + clon.GetCartaCpu(posCpu).GetComponent<carta>().getAtaque();
-            clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().defensaB.text = "" + clon.GetCartaCpu(posCpu).GetComponent<carta>().getDefensa();
-            clon.GetCartaCpu(posCpu).transform.Translate(0, 0, -2);
-            clon.GetCartaCpu(posCpu).transform.rotation = (Quaternion.Euler(180, 0, 0));
-            clon.GetCartaCpu(posCpu).GetComponent<Transform>().localPosition = new Vector3(-2.1f, 2.3f, -7.3f);
-            clon.GetCartaCpu(posCpu).transform.localScale = new Vector3(1f, 1f, 0.1f);
-            clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().defensaB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-            clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().ataqueB.color = new Color(1f, 1f, 1f, 1f);
-            clon.GetCartaCpu(posCpu).GetComponent<carta>().SetDatosCarta(1);
-
+            SetCardProperties(clon.GetCartaCpu(posCpu), campo.GetCampoCpu(posCpu), new Vector3(-2.1f, 2.3f, -7.3f), new Vector3(1f, 1f, 0.1f));
         }
         else if (ataque.Equals("ataqueDirecto"))
         {
-            nombreCarta = txt.nombresCartas.GetValue(campo.GetCampoUsuario(posUsuario)).ToString();
-            if (nombreCarta.Length > 17)
-            {
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-            }
-            else if (nombreCarta.Length > 12)
-            {
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-            }
-            else
-            {
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.30f;
-            }
-            clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(true);
-            clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.text = nombreCarta;
-            clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartasBatalla.GetValue(campo.GetCampoUsuario(posUsuario));
-            clon.getCartaCampoU(posUsuario).transform.Translate(0, 0, -2);
-            clon.getCartaCampoU(posUsuario).transform.rotation = (Quaternion.Euler(180, 0, 0));
-            clon.getCartaCampoU(posUsuario).GetComponent<Transform>().localPosition = new Vector3(2.1f, 2.3f, 7.3f);
-            clon.getCartaCampoU(posUsuario).transform.localScale = new Vector3(1f, 1f, 0.1f);
-            clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.text = ""+clon.getCartaCampoU(posUsuario).GetComponent<carta>().getAtaque();
-            clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.text = "" + clon.getCartaCampoU(posUsuario).GetComponent<carta>().getDefensa();
-            clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-            clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.color = new Color(1f, 1f, 1f, 1f);
-
-            clon.getCartaCampoU(posUsuario).GetComponent<carta>().SetDatosCarta(1);
+            SetCardProperties(clon.getCartaCampoU(posUsuario), campo.GetCampoUsuario(posUsuario), new Vector3(2.1f, 2.3f, 7.3f), new Vector3(1f, 1f, 0.1f));
         }
         else
         {
-            if (ataque.Equals("ataqueCpu"))
+            if (ataque.Equals("ataqueCpu") || ataque.Equals("ataqueUsuario"))
             {
-                //carta cpu
-                string nombreCarta = txt.nombresCartas.GetValue(campo.GetCampoCpu(posCpu)).ToString();
-                if (nombreCarta.Length > 17)
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else if (nombreCarta.Length > 12)
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.24f;
-                }
-                else
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.30f;
-                }
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(true);
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.text = nombreCarta;
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().ataqueB.text = "" + clon.GetCartaCpu(posCpu).GetComponent<carta>().getAtaque();
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().defensaB.text = "" + clon.GetCartaCpu(posCpu).GetComponent<carta>().getDefensa();
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartasBatalla.GetValue(campo.GetCampoCpu(posCpu));
-                clon.GetCartaCpu(posCpu).transform.Translate(0, 0, -2);
-                clon.GetCartaCpu(posCpu).transform.rotation = (Quaternion.Euler(180, 0, 0));
-                clon.GetCartaCpu(posCpu).GetComponent<Transform>().localPosition = new Vector3(-2.1f, 2.3f, -7.3f);
-                clon.GetCartaCpu(posCpu).transform.localScale = new Vector3(1f, 1f, 0.1f);
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().defensaB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().ataqueB.color = new Color(1f, 1f, 1f, 1f);
-                clon.GetCartaCpu(posCpu).GetComponent<carta>().SetDatosCarta(1);
-                //carta usuario
-                nombreCarta = txt.nombresCartas.GetValue(campo.GetCampoUsuario(posUsuario)).ToString();
-                if (nombreCarta.Length > 17)
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else if (nombreCarta.Length > 12)
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.30f;
-                }
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(true);
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.text = nombreCarta;
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.text = "" + clon.getCartaCampoU(posUsuario).GetComponent<carta>().getAtaque();
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.text = "" + clon.getCartaCampoU(posUsuario).GetComponent<carta>().getDefensa();
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartasBatalla.GetValue(campo.GetCampoUsuario(posUsuario));
-                clon.getCartaCampoU(posUsuario).transform.Translate(0, 0, -2);
-                clon.getCartaCampoU(posUsuario).transform.rotation = (Quaternion.Euler(-180, 0, 0));
-                clon.getCartaCampoU(posUsuario).GetComponent<Transform>().localPosition = new Vector3(2.1f, 2.3f, -7.3f);
-                clon.getCartaCampoU(posUsuario).transform.localScale = new Vector3(1f, 1f, 0.1f);
-                if (clon.getCartaCampoU(posUsuario).GetComponent<carta>().getPos() == 1)
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.color = new Color(1f, 1f, 1f, 1f);
-                }
-                else
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.color = new Color(1f, 1f, 1f, 1f);
-                }
-               
-                clon.getCartaCampoU(posUsuario).GetComponent<carta>().SetDatosCarta(1);
-            }
-            else if (ataque.Equals("ataqueUsuario"))
-            {
-                //carta cpu
-                string nombreCarta = txt.nombresCartas.GetValue(campo.GetCampoCpu(posCpu)).ToString();
-                if (nombreCarta.Length > 17)
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else if (nombreCarta.Length > 12)
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.24f;
-                }
-                else
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.30f;
-                }
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(true);
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.text = nombreCarta;
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().ataqueB.text = "" + clon.GetCartaCpu(posCpu).GetComponent<carta>().getAtaque();
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().defensaB.text = "" + clon.GetCartaCpu(posCpu).GetComponent<carta>().getDefensa();
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartasBatalla.GetValue(campo.GetCampoCpu(posCpu));
-                clon.GetCartaCpu(posCpu).transform.Translate(0, 0, -2);
-                clon.GetCartaCpu(posCpu).transform.rotation = (Quaternion.Euler(180, 0, 0));
-                clon.GetCartaCpu(posCpu).GetComponent<Transform>().localPosition = new Vector3(-2.1f, 2.3f, 7.3f);
-               
-                clon.GetCartaCpu(posCpu).transform.localScale = new Vector3(1f, 1f, 0.1f);
-                if (clon.GetCartaCpu(posCpu).GetComponent<carta>().getPos() == 1)
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().defensaB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().ataqueB.color = new Color(1f, 1f, 1f, 1f);
-                }
-                else
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().ataqueB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().defensaB.color = new Color(1f, 1f, 1f, 1f);
-                }
-
-                //carta usuario
-                nombreCarta = txt.nombresCartas.GetValue(campo.GetCampoUsuario(posUsuario)).ToString();
-                if (nombreCarta.Length > 17)
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else if (nombreCarta.Length > 12)
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.30f;
-                }
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(true);
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.text = nombreCarta;
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.text = "" + clon.getCartaCampoU(posUsuario).GetComponent<carta>().getAtaque();
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.text = "" + clon.getCartaCampoU(posUsuario).GetComponent<carta>().getDefensa();
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartasBatalla.GetValue(campo.GetCampoUsuario(posUsuario));
-                clon.getCartaCampoU(posUsuario).transform.Translate(0, 0, -2);
-                clon.getCartaCampoU(posUsuario).transform.rotation = (Quaternion.Euler(180, 0, 0));
-                clon.getCartaCampoU(posUsuario).GetComponent<Transform>().localPosition = new Vector3(2.1f, 2.3f,7.3f);
-                clon.getCartaCampoU(posUsuario).transform.localScale = new Vector3(1f, 1f, 0.1f);
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.color = new Color(1f, 1f, 1f, 1f);
-                clon.getCartaCampoU(posUsuario).GetComponent<carta>().SetDatosCarta(1);
+                SetCardProperties(clon.GetCartaCpu(posCpu), campo.GetCampoCpu(posCpu), new Vector3(-2.1f, 2.3f, ataque.Equals("ataqueCpu") ? -7.3f : 7.3f), new Vector3(1f, 1f, 0.1f));
+                SetCardProperties(clon.getCartaCampoU(posUsuario), campo.GetCampoUsuario(posUsuario), new Vector3(2.1f, 2.3f, ataque.Equals("ataqueCpu") ? -7.3f : 7.3f), new Vector3(1f, 1f, 0.1f));
             }
             else if (ataque.Equals("trampaUsuario"))
             {
-                //carta cpu
-                string nombreCarta = txt.nombresCartas.GetValue(campo.GetCampoCpu(posCpu)).ToString();
-                if (nombreCarta.Length > 17)
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else if (nombreCarta.Length > 12)
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.24f;
-                }
-                else
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.30f;
-                }
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.text = nombreCarta;
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().ataqueB.text = "" + clon.GetCartaCpu(posCpu).GetComponent<carta>().getAtaque();
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().defensaB.text = "" + clon.GetCartaCpu(posCpu).GetComponent<carta>().getDefensa();
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartasBatalla.GetValue(campo.GetCampoCpu(posCpu));
-                clon.GetCartaCpu(posCpu).transform.Translate(0, 0, -2);
-                clon.GetCartaCpu(posCpu).transform.rotation = (Quaternion.Euler(180, 0, 0));
-                clon.GetCartaCpu(posCpu).GetComponent<Transform>().localPosition = new Vector3(-2.1f, 2.3f, -7.3f);
-                clon.GetCartaCpu(posCpu).transform.localScale = new Vector3(4f, 3f, 0.1f);
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().defensaB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().ataqueB.color = new Color(1f, 1f, 1f, 1f);
-                clon.GetCartaCpu(posCpu).GetComponent<carta>().SetDatosCarta(1);
-                //carta usuario
-                nombreCarta = txt.nombresCartas.GetValue(campo.GetCampoUsuario(posUsuario)).ToString();
-                if (nombreCarta.Length > 17)
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else if (nombreCarta.Length > 12)
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.30f;
-                }
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.text = nombreCarta;
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().contenedorNombre.texture = clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().color[2];
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.text = "" + clon.getCartaCampoU(posUsuario).GetComponent<carta>().getAtaque();
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.text = "" + clon.getCartaCampoU(posUsuario).GetComponent<carta>().getDefensa();
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartasBatalla.GetValue(campo.GetCampoUsuario(posUsuario));
-                clon.getCartaCampoU(posUsuario).transform.Translate(0, 0, -2);
-                clon.getCartaCampoU(posUsuario).transform.rotation = (Quaternion.Euler(180, 0, 0));
-                clon.getCartaCampoU(posUsuario).GetComponent<Transform>().localPosition = new Vector3(2.1f, 2.3f, -7.3f);
-                clon.getCartaCampoU(posUsuario).transform.localScale = new Vector3(4f, 3f, 0.1f);
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.color = new Color(1f, 1f, 1f, 1f);
-                clon.getCartaCampoU(posUsuario).GetComponent<carta>().SetDatosCarta(1);
+                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().specialContainer.SetActive(true);
+                SetCardProperties(clon.GetCartaCpu(posCpu), campo.GetCampoCpu(posCpu), new Vector3(-2.1f, 2.3f, -7.3f), Vector3.zero);
+                SetCardProperties(clon.getCartaCampoU(posUsuario), campo.GetCampoUsuario(posUsuario), new Vector3(2.1f, 2.3f, -7.3f), Vector3.zero);
             }
             else if (ataque.Equals("trampaCpu"))
             {
-                //carta cpu
-                string nombreCarta = txt.nombresCartas.GetValue(campo.GetCampoCpu(posCpu)).ToString();
-                if (nombreCarta.Length > 17)
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else if (nombreCarta.Length > 12)
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.24f;
-                }
-                else
-                {
-                    clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.30f;
-                }
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().nombreCarta.text = nombreCarta;
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().contenedorNombre.texture = clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().color[2];
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
-                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartasBatalla.GetValue(campo.GetCampoCpu(posCpu));
-                clon.GetCartaCpu(posCpu).transform.Translate(0, 0, -2);
-                clon.GetCartaCpu(posCpu).transform.rotation = (Quaternion.Euler(180, 0, 0));
-                clon.GetCartaCpu(posCpu).GetComponent<Transform>().localPosition = new Vector3(-2.1f, 2.3f, 7.3f);
-                clon.GetCartaCpu(posCpu).transform.localScale = new Vector3(4f, 3f, 0.1f);
-
-
-                //carta usuario
-                nombreCarta = txt.nombresCartas.GetValue(campo.GetCampoUsuario(posUsuario)).ToString();
-                if (nombreCarta.Length > 17)
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else if (nombreCarta.Length > 12)
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.18f;
-                }
-                else
-                {
-                    clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.fontSize = 0.30f;
-                }
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().nombreCarta.text = nombreCarta;
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.text = "" + clon.getCartaCampoU(posUsuario).GetComponent<carta>().getAtaque();
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.text = "" + clon.getCartaCampoU(posUsuario).GetComponent<carta>().getDefensa();
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartasBatalla.GetValue(campo.GetCampoUsuario(posUsuario));
-                clon.getCartaCampoU(posUsuario).transform.Translate(0, 0, -2);
-                clon.getCartaCampoU(posUsuario).transform.rotation = (Quaternion.Euler(180, 0, 0));
-                clon.getCartaCampoU(posUsuario).GetComponent<Transform>().localPosition = new Vector3(2.1f, 2.3f, 7.3f);
-                clon.getCartaCampoU(posUsuario).transform.localScale = new Vector3(4f, 3f, 0.1f);
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().defensaB.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().ataqueB.color = new Color(1f, 1f, 1f, 1f);
-                clon.getCartaCampoU(posUsuario).GetComponent<carta>().SetDatosCarta(1);
+                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().specialContainer.SetActive(true);
+                SetCardProperties(clon.GetCartaCpu(posCpu), campo.GetCampoCpu(posCpu), new Vector3(-2.1f, 2.3f, 7.3f), Vector3.zero);
+                SetCardProperties(clon.getCartaCampoU(posUsuario), campo.GetCampoUsuario(posUsuario), new Vector3(2.1f, 2.3f, 7.3f), Vector3.zero);
             }
         }
-        //carta.transform.Translate(0, 0, -2);
-        //carta.transform.localScale = new Vector3(8f, 8f, 0);
         StartCoroutine(Batalla(posUsuario, posCpu, ataque));
     }
+
+    private void SetCardProperties(GameObject carta, int campo, Vector3 position, Vector3 scale)
+    {
+        GetBattleContainer(carta, campo);
+        carta.GetComponent<Transform>().localPosition = position;
+        if (scale != Vector3.zero)
+        {
+            carta.transform.localScale = scale;
+        }
+    }
+
+    private void GetBattleContainer(GameObject card, int cardId)
+    {
+        muestraCarta muestraCartaComponent = card.GetComponent<muestraCarta>();
+        carta cartaComponent = card.GetComponent<carta>();
+
+        string nombreCarta = txt.nombresCartas.GetValue(cardId).ToString();
+        float fontSize;
+        if (nombreCarta.Length > 29)
+        {
+            fontSize = 0.16f;
+        }
+        else if (nombreCarta.Length > 22)
+        {
+            fontSize = 0.18f;
+        }
+        else if (nombreCarta.Length > 17)
+        {
+            fontSize = 0.24f;
+        }
+        else if (nombreCarta.Length > 12)
+        {
+            fontSize = 0.24f; // No estabas manejando este caso en tu código original
+        }
+        else
+        {
+            fontSize = 0.14f;
+        }
+        muestraCartaComponent.nombreCarta.fontSize = fontSize;
+        muestraCartaComponent.nombreCarta.text = nombreCarta;
+        muestraCartaComponent.ataqueB.text = "" + cartaComponent.getAtaque();
+        muestraCartaComponent.defensaB.text = "" + cartaComponent.getDefensa();
+        muestraCartaComponent.imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(cardId);
+
+        Vector3 cardScale = new Vector3(4f, 3f, 0.1f);
+        card.transform.Translate(0, 0, -2);
+        card.transform.rotation = Quaternion.Euler(180, 0, 0);
+        card.transform.localScale = cardScale;
+
+        Color ataqueColor = cartaComponent.getPos() == 1 ? new Color(1f, 1f, 1f, 1f) : new Color(0.5f, 0.5f, 0.5f, 0.5f);
+        Color defensaColor = cartaComponent.getPos() == 1 ? new Color(0.5f, 0.5f, 0.5f, 0.5f) : new Color(1f, 1f, 1f, 1f);
+        muestraCartaComponent.ataqueB.color = ataqueColor;
+        muestraCartaComponent.defensaB.color = defensaColor;
+        muestraCartaComponent.atkText.color = ataqueColor;
+        muestraCartaComponent.dfdText.color = defensaColor;
+
+        cartaComponent.SetDatosCarta(1);
+        clon.GetAttribute(card);
+        clon.GetStars(card);
+    }
+
     IEnumerator Batalla(int i, int j, string ataque)
     {
         int daño = 0;
@@ -1640,7 +1441,6 @@ public class Juego : MonoBehaviour
     }
     public void LogicaManoCpu()
     {
-        clon.SetTipoCartaCpu("Monstruo");
         if (cantTurnos == 0)
         {
             bool salir = false;
@@ -1659,7 +1459,6 @@ public class Juego : MonoBehaviour
                 if (!clon.GetClonCpu(ponerCartaCampo).GetComponent<carta>().GetTipoCarta().Equals("Equipo")){
                     clon.GetClonCpu(ponerCartaCampo).GetComponent<carta>().SetDatosCarta(1);
                 }
-                clon.SetTipoCartaCpu("campoArriba");
                 clon.GetClonCpu(ponerCartaCampo);
                 clon.SeleccionarCartaCpu(ponerCartaCampo);
             }
@@ -1716,7 +1515,6 @@ public class Juego : MonoBehaviour
                     {
                         clon.GetClonCpu(ponerCartaCampo).GetComponent<carta>().SetDatosCarta(1);
                     }
-                    clon.SetTipoCartaCpu("campoArriba");
                     clon.GetClonCpu(ponerCartaCampo);
                     clon.SeleccionarCartaCpu(ponerCartaCampo);
                 }
