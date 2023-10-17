@@ -39,8 +39,8 @@ public class ClonCarta : MonoBehaviour
     private int indiceMT;
     private bool primerMT;
     private int reduccion;
-    private const string atkText = "Atk ";
-    private const string defText = "Def";
+    private const string atkText = "";
+    private const string defText = "";
 
 
 
@@ -913,7 +913,7 @@ public class ClonCarta : MonoBehaviour
                 if (aumento != 0)
                 {
 
-                    yield return GetUpgrade(clon[pos], aumento, campoU[indice]);
+                    yield return GetUpgrade(clon[pos], aumento, campoU[indice],false);
                 }
                 else
                 {
@@ -1080,7 +1080,7 @@ public class ClonCarta : MonoBehaviour
                     CambiarCartaEquipo(temp[0], indice, true);
                     if (aumento != 0)
                     {
-                        yield return GetUpgrade(clon[temp[0]], aumento, campoU[indice]);
+                        yield return GetUpgrade(clon[temp[0]], aumento, campoU[indice],false);
                     }
                     else
                     {
@@ -1153,7 +1153,7 @@ public class ClonCarta : MonoBehaviour
                     if (aumento != 0)
                     {
                         Debug.LogError("cuando entrao en el miltor");
-                        yield return GetUpgrade(clon[temp[i]], aumento, clon[temp[i - 1]]);
+                        yield return GetUpgrade(clon[temp[i]], aumento, clon[temp[i - 1]],false);
                     }
                     else
                     {
@@ -1188,7 +1188,7 @@ public class ClonCarta : MonoBehaviour
 
                     if (aumento != 0)
                     {
-                        yield return GetUpgrade(clon[temp[i]], aumento, clon[temp[i - 1]]);
+                        yield return GetUpgrade(clon[temp[i]], aumento, clon[temp[i - 1]],false);
                     }
                     else
                     {
@@ -1577,52 +1577,7 @@ public class ClonCarta : MonoBehaviour
             }
             if (activador != 0)
             {
-                int tiempo = 0;
-                intefaz.SetTiempoFlash(2f);
-                intefaz.SetFlash(true);
-                GetCartaCpu(activador).transform.localScale = new Vector3(1.5f, 1.5f, 0.1f);
-                GetCartaCpu(activador).transform.rotation = (Quaternion.Euler(-180, 0, 0));
-
-                juego.ReproducirActivacion();
-
-                GetCartaCpu(activador).GetComponent<Transform>().localPosition = new Vector3(0.03f, 2f, 5.42f);
-                yield return new WaitForSeconds(1f);
-                tiempo = 0;
-                for (int i = 0; i < 180; i += 10)
-                {
-                    yield return new WaitForSeconds(0.01f);
-                    GetCartaCpu(activador).transform.Rotate(0f, -10, 0f);
-                    tiempo += 10;
-                    if (tiempo == 90 || tiempo == -90)
-                    {
-                        //GetCartaCpu(activador).transform.localScale = new Vector3(4f, 3f, 0.1f);
-
-                        GetCartaCpu(activador).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        GetCartaCpu(activador).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
-
-
-                        GetCartaCpu(activador).transform.eulerAngles = new Vector3(180, -90, 0);
-                        GetCartaCpu(activador).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetCampoCpu(activador));
-
-
-                        GetCartaCpu(activador).GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
-                    }
-                }
-
-
-                float reductor = 4f;
-                while (reductor > 0)
-                {
-                    GetCartaCpu(activador).transform.localScale = new Vector3(4f, reductor, 0.1f);
-                    reductor -= 0.1f;
-                    yield return null;
-                }
-                intefaz.ColorFlash();
-                intefaz.SetFlash(true);
-                yield return new WaitForSeconds(0.5f);
-                Object.Destroy(campoCpu[activador]);
-                campoCpu[activador] = null;
-                campo.SetCampoCpu(activador, 0);
+                yield return StartCoroutine(ShowCardEffects(GetCartaCpu(activador), activador, new Vector3(0.03f, 2f, 5.42f), Quaternion.Euler(-180, 0, 0)));
                 EfectoReverseTrap(indice);
             }
         }
@@ -1700,6 +1655,85 @@ public class ClonCarta : MonoBehaviour
 
 
     }
+
+    private IEnumerator ShowCardEffects(GameObject card ,int activador,Vector3 localPosition,Quaternion quaternion)
+    {
+        intefaz.SetTiempoFlash(2f);
+        intefaz.SetFlash(true);
+        card.transform.localScale = new Vector3(1.5f, 1.5f, 0.1f);
+        card.transform.localPosition = localPosition;
+        card.transform.rotation = quaternion;
+        juego.ReproducirActivacion();
+        yield return new WaitForSeconds(1f);
+        int field = !juego.GetTurnoUsuario() ? campo.GetCampoUsuario(activador) : campo.GetCampoCpu(activador);
+        card.transform.localScale = new Vector3(4f, 3f, 0.1f);
+        yield return StartCoroutine (SetCardRotation(card, field));
+        yield return new WaitForSeconds(1f);
+        float reductor = 3f;
+        while (reductor > 0)
+        {
+            card.transform.localScale = new Vector3(4f, reductor, 0.1f);
+            reductor -= 0.1f;
+            yield return null;
+        }
+        intefaz.ColorFlash();
+        intefaz.SetFlash(true);
+        yield return new WaitForSeconds(0.5f);
+        if (!juego.GetTurnoUsuario())
+        {
+            DestroyFieldCard(activador, campoU);
+        }
+        else
+        {
+            DestroyFieldCard(activador, campoCpu);
+        }
+      
+
+    }
+
+   
+
+    private IEnumerator SetCardRotation(GameObject card, int field)
+    {
+        int tiempo = 0;
+        var cardComponent = card.GetComponent<muestraCarta>();
+        string cardName= txt.nombresCartas.GetValue(field).ToString();
+        cardComponent.nombreCarta.text = cardName;
+        cardComponent.nombreCarta.fontSize = GetFontCardName(cardName,true);
+        cardComponent.imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(field);
+        cardComponent.specialContainer.SetActive(true);
+        if (card.GetComponent<carta>().GetTipoCarta().Equals("Trampa"))
+        {
+            cardComponent.trapContainer.SetActive(true);
+        }
+        GetAttribute(card);
+        for (int i = 0; i < 180; i += 10)
+        {
+            yield return new WaitForSeconds(0.01f);
+            card.transform.Rotate(0f, -10, 0f);
+            tiempo += 10;
+            if (tiempo == 90 || tiempo == -90)
+            {
+                card.transform.eulerAngles = new Vector3(180, -90, 0);
+                cardComponent.contenedorBatalla.SetActive(true);
+            }
+        }
+    }
+
+    private void DestroyFieldCard(int activador, GameObject[] campoArray)
+    {
+        Object.Destroy(campoArray[activador]);
+        campoArray[activador] = null;
+        if (!juego.GetTurnoUsuario())
+        {
+            campo.SetCampoUsuario(activador, 0);
+        }
+        else
+        {
+            campo.SetCampoCpu(activador, 0);
+        }
+    }
+
     public void CambiarPosCarta(int indice)
     {
 
@@ -2758,52 +2792,7 @@ public class ClonCarta : MonoBehaviour
             if (activador != 0)
             {
                 juego.TrampasActiadas++;
-                int tiempo = 0;
-                intefaz.SetTiempoFlash(2f);
-                intefaz.SetFlash(true);
-                getCartaCampoU(activador).transform.localScale = new Vector3(1.5f, 1.5f, 0.1f);
-                getCartaCampoU(activador).transform.rotation = (Quaternion.Euler(-180, 0, 0));
-
-                juego.ReproducirActivacion();
-
-                getCartaCampoU(activador).GetComponent<Transform>().localPosition = new Vector3(0.03f, 2f, -5.42f);
-                yield return new WaitForSeconds(1f);
-                tiempo = 0;
-                for (int i = 0; i < 180; i += 10)
-                {
-                    yield return new WaitForSeconds(0.01f);
-                    getCartaCampoU(activador).transform.Rotate(0f, -10, 0f);
-                    tiempo += 10;
-                    if (tiempo == 90 || tiempo == -90)
-                    {
-                        //GetCartaCpu(activador).transform.localScale = new Vector3(4f, 3f, 0.1f);
-
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
-
-
-                        getCartaCampoU(activador).transform.eulerAngles = new Vector3(180, -90, 0);
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetCampoUsuario(activador));
-
-
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
-                    }
-                }
-
-
-                float reductor = 4f;
-                while (reductor > 0)
-                {
-                    getCartaCampoU(activador).transform.localScale = new Vector3(4f, reductor, 0.1f);
-                    reductor -= 0.1f;
-                    yield return null;
-                }
-                intefaz.ColorFlash();
-                intefaz.SetFlash(true);
-                yield return new WaitForSeconds(0.5f);
-                Object.Destroy(campoU[activador]);
-                campoU[activador] = null;
-                campo.SetCampoUsuario(activador, 0);
+                yield return StartCoroutine(ShowCardEffects(getCartaCampoU(activador), activador, new Vector3(0.03f, 2f, 5.42f), Quaternion.Euler(-180, 0, 0)));
                 EfectoReverseTrap(pos);
             }
         }
@@ -3607,6 +3596,7 @@ public class ClonCarta : MonoBehaviour
         intefaz.DesactivarDatosUI();
         intefaz.datosCartaCpu.SetActive(false);
         intefaz.SetEstadoApuntador(false);
+        bool isFieldCard = true;
         int activador = 0;
         while (intefaz.datosCarta.transform.position.y > -180)
         {
@@ -3653,6 +3643,7 @@ public class ClonCarta : MonoBehaviour
 
             cartaCampo = campo.GetManoUsuario(indice);
             obtenedor = clon[indice];
+            isFieldCard = false;
             efectoDe = "usuario";
         }
         else if (controles.Getfase().Equals("efectoCampo"))
@@ -3673,12 +3664,13 @@ public class ClonCarta : MonoBehaviour
         {
             cartaCampo = campo.GetManoCpu(indice);
             obtenedor = clonCpu[indice];
+            isFieldCard = false;
             efectoDe = "cpu";
         }
 
         if (obtenedor.GetComponent<carta>().GetTipoCarta().Equals("Campo"))
         {
-            GetFieldEffects(cartaCampo, campoCambiar);
+           campoCambiar =  GetFieldEffects(cartaCampo);
         }
         else if (obtenedor.GetComponent<carta>().GetTipoCarta().Equals("Magica"))
         {
@@ -3730,6 +3722,9 @@ public class ClonCarta : MonoBehaviour
                 obtenedor.transform.localScale = new Vector3(4f, 3f, 0.1f);
 
                 obtenedor.GetComponent<muestraCarta>().specialContainer.gameObject.SetActive(true);
+                string cardName = obtenedor.GetComponent<carta>().GetName();
+                obtenedor.GetComponent<muestraCarta>().nombreCarta.text = cardName;
+                obtenedor.GetComponent<muestraCarta>().nombreCarta.fontSize = GetFontCardName(cardName,isFieldCard);
                 GetAttribute(obtenedor);
                 if(obtenedor.GetComponent<carta>().GetTipoCarta().Equals("Trampa")){
                     obtenedor.GetComponent<muestraCarta>().trapContainer.SetActive(true);
@@ -3817,108 +3812,14 @@ public class ClonCarta : MonoBehaviour
         {
             if (juego.GetTurnoUsuario())
             {
-                intefaz.SetTiempoFlash(2f);
-                intefaz.SetFlash(true);
-                GetCartaCpu(activador).transform.localScale = new Vector3(1.5f, 1.5f, 0.1f);
-                GetCartaCpu(activador).transform.rotation = (Quaternion.Euler(-180, 0, 0));
-
-                juego.ReproducirActivacion();
-                GetCartaCpu(activador).GetComponent<Transform>().localPosition = new Vector3(0.03f, 2f, 5.42f);
-                yield return new WaitForSeconds(1f);
-                tiempo = 0;
-                GetCartaCpu(activador).GetComponent<muestraCarta>().nombreCarta.text = txt.nombresCartas.GetValue(campo.GetCampoCpu(activador)).ToString();
-                GetCartaCpu(activador).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetCampoCpu(activador));
-
-                GetCartaCpu(activador).GetComponent<muestraCarta>().specialContainer.SetActive(true);
-                if (GetCartaCpu(activador).GetComponent<carta>().GetTipoCarta().Equals("Trampa"))
-                {
-                    GetCartaCpu(activador).GetComponent<muestraCarta>().trapContainer.SetActive(true);
-                }
-                GetAttribute(GetCartaCpu(activador));
-                for (int i = 0; i < 180; i += 10)
-                {
-                    yield return new WaitForSeconds(0.01f);
-                    GetCartaCpu(activador).transform.Rotate(0f, -10, 0f);
-                    tiempo += 10;
-                    if (tiempo == 90 || tiempo == -90)
-                    {
-
-                        GetCartaCpu(activador).transform.eulerAngles = new Vector3(180, -90, 0);
-                        GetCartaCpu(activador).GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
-                    }
-                }
-
-
-                GetCartaCpu(activador).transform.localScale = new Vector3(4f, 3f, 0.1f);
-                yield return new WaitForSeconds(1f);
-
-                reductor = 3f;
-                while (reductor > 0)
-                {
-                    GetCartaCpu(activador).transform.localScale = new Vector3(4f, reductor, 0.1f);
-                    reductor -= 0.1f;
-                    yield return null;
-                }
-                intefaz.ColorFlash();
-                intefaz.SetFlash(true);
-                yield return new WaitForSeconds(0.5f);
-                Object.Destroy(campoCpu[activador]);
-                campoCpu[activador] = null;
-                campo.SetCampoCpu(activador, 0);
-                juego.EfectosTrampaReverso(cartaCampo);
-
-
+                yield return StartCoroutine(ShowCardEffects(GetCartaCpu(activador),activador, new Vector3(0.03f, 2f, 5.42f), Quaternion.Euler(-180, 0, 0)));
             }
             else
             {
-                intefaz.SetTiempoFlash(2f);
-                intefaz.SetFlash(true);
-                getCartaCampoU(activador).transform.localScale = new Vector3(1.5f, 1.5f, 0.1f);
-                getCartaCampoU(activador).transform.rotation = (Quaternion.Euler(-180, 0, 0));
-
-                juego.ReproducirActivacion();
-
-                getCartaCampoU(activador).GetComponent<Transform>().localPosition = new Vector3(0.03f, 2f, 5.42f);
-                yield return new WaitForSeconds(1f);
-                tiempo = 0;
-                for (int i = 0; i < 180; i += 10)
-                {
-                    yield return new WaitForSeconds(0.01f);
-                    getCartaCampoU(activador).transform.Rotate(0f, -10, 0f);
-                    tiempo += 10;
-                    if (tiempo == 90 || tiempo == -90)
-                    {
-                        //GetCartaCpu(activador).transform.localScale = new Vector3(4f, 3f, 0.1f);
-
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
-
-
-                        getCartaCampoU(activador).transform.eulerAngles = new Vector3(180, -90, 0);
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetCampoUsuario(activador));
-
-
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
-                    }
-                }
-
-
-                reductor = 4f;
-                while (reductor > 0)
-                {
-                    getCartaCampoU(activador).transform.localScale = new Vector3(4f, reductor, 0.1f);
-                    reductor -= 0.1f;
-                    yield return null;
-                }
-                intefaz.ColorFlash();
-                intefaz.SetFlash(true);
-                yield return new WaitForSeconds(0.5f);
-                Object.Destroy(campoU[activador]);
-                campoU[activador] = null;
-                campo.SetCampoUsuario(activador, 0);
-                juego.EfectosTrampaReverso(cartaCampo);
+                yield return StartCoroutine(ShowCardEffects(getCartaCampoU(activador), activador, new Vector3(0.03f, 2f, 5.42f), Quaternion.Euler(-180, 0, 0)));
 
             }
+            juego.EfectosTrampaReverso(cartaCampo);
         }
 
 
@@ -3995,7 +3896,7 @@ public class ClonCarta : MonoBehaviour
         }
     }
 
-    private void GetFieldEffects(int cartaCampo,int campoCambiar)
+    private int GetFieldEffects(int cartaCampo)
     {
         if (juego.GetCampoModificado() != 6)
         {
@@ -4069,7 +3970,7 @@ public class ClonCarta : MonoBehaviour
             }
         }
 
-
+        int campoCambiar;
         if (cartaCampo == 632)
         {
             campoCambiar = 2;
@@ -4100,6 +4001,7 @@ public class ClonCarta : MonoBehaviour
             campoCambiar = 4;
             print("ahor cambio a bosque");
         }
+        return campoCambiar;
 
     }
     public void Transormacion3(int indice)
@@ -4411,58 +4313,12 @@ public class ClonCarta : MonoBehaviour
 
         if (aumento != 0)
         {
-            intefaz.ColorFlash();
-            intefaz.SetTiempoFlash(2f);
-            intefaz.SetFlash(true);
-            juego.ReproducirAumento();
             StartCoroutine(AnimacionAumentoCampo(indiceMonstruo));
-            campoU[indiceMonstruo].GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetCampoUsuario(indiceMonstruo));
-            campoU[indiceMonstruo].GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
-            campoU[indiceMonstruo].GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
             campoU[indiceMonstruo].transform.localScale = new Vector3(3f, 2.1f, 0.01f);
-            if ((campoU[indiceMonstruo].GetComponent<carta>().getAtaque() + aumento >= Constane || campoU[indiceMonstruo].GetComponent<carta>().getDefensa() + aumento >= Constane))
-            {
-                if (campoU[indiceMonstruo].GetComponent<carta>().getAtaque() + aumento >= Constane)
-                {
-
-                    campoU[indiceMonstruo].GetComponent<carta>().SetAtaque(Constane);
-
-                }
-                else
-                {
-                    campoU[indiceMonstruo].GetComponent<carta>().SetAtaque(campoU[indiceMonstruo].GetComponent<carta>().getAtaque() + aumento);
-                }
-                if (campoU[indiceMonstruo].GetComponent<carta>().getDefensa() + aumento >= Constane)
-                {
-                    campoU[indiceMonstruo].GetComponent<carta>().SetDefensa(Constane);
-
-                }
-                else
-                {
-                    campoU[indiceMonstruo].GetComponent<carta>().SetDefensa(campoU[indiceMonstruo].GetComponent<carta>().getDefensa() + aumento);
-                }
-
-            }
-            else
-            {
-                campoU[indiceMonstruo].GetComponent<carta>().SetAtaque(campoU[indiceMonstruo].GetComponent<carta>().getAtaque() + aumento);
-                campoU[indiceMonstruo].GetComponent<carta>().SetDefensa(campoU[indiceMonstruo].GetComponent<carta>().getDefensa() + aumento);
-            }
-
-
-            campoU[indiceMonstruo].GetComponent<muestraCarta>().ataque.text = "" + campoU[indiceMonstruo].GetComponent<carta>().getAtaque();
-            campoU[indiceMonstruo].GetComponent<muestraCarta>().defensa.text = "" + campoU[indiceMonstruo].GetComponent<carta>().getDefensa();
-            campoU[indiceMonstruo].GetComponent<muestraCarta>().ataqueB.text = atkText + campoU[indiceMonstruo].GetComponent<carta>().getAtaque();
-            campoU[indiceMonstruo].GetComponent<muestraCarta>().defensaB.text = defText + campoU[indiceMonstruo].GetComponent<carta>().getDefensa();
-            campoU[indiceMonstruo].GetComponent<muestraCarta>().nombreCarta.text = campoU[indiceMonstruo].GetComponent<carta>().GetName();
-            Object.Destroy(campoU[indiceEquipo]);
-            yield return new WaitForSeconds(1.5f);
-            campoU[indiceMonstruo].GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
-            campoU[indiceMonstruo].GetComponent<muestraCarta>().contenedorBatalla.SetActive(false);
+            campoU[indiceMonstruo].GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetCampoUsuario(indiceMonstruo));
+            yield return GetUpgrade(campoU[indiceMonstruo], aumento, campoU[indiceEquipo],true);         
             StartCoroutine(AnimacionAumentoCampo(indiceMonstruo));
             campoU[indiceMonstruo].transform.localScale = new Vector3(1.58f, 1.25f, 0.01f);
-
-            campoU[indiceEquipo] = null;
             yield return new WaitForSeconds(0.5f);
         }
         else
@@ -4518,52 +4374,7 @@ public class ClonCarta : MonoBehaviour
             }
             if (activador != 0)
             {
-                int tiempo = 0;
-                intefaz.SetTiempoFlash(2f);
-                intefaz.SetFlash(true);
-                GetCartaCpu(activador).transform.localScale = new Vector3(1.5f, 1.5f, 0.1f);
-                GetCartaCpu(activador).transform.rotation = (Quaternion.Euler(-180, 0, 0));
-
-                juego.ReproducirActivacion();
-
-                GetCartaCpu(activador).GetComponent<Transform>().localPosition = new Vector3(0.03f, 2f, 5.42f);
-                yield return new WaitForSeconds(1f);
-                tiempo = 0;
-                for (int i = 0; i < 180; i += 10)
-                {
-                    yield return new WaitForSeconds(0.01f);
-                    GetCartaCpu(activador).transform.Rotate(0f, -10, 0f);
-                    tiempo += 10;
-                    if (tiempo == 90 || tiempo == -90)
-                    {
-                        GetCartaCpu(activador).transform.localScale = new Vector3(4f, 3f, 0.1f);
-
-                        GetCartaCpu(activador).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        GetCartaCpu(activador).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
-
-
-                        GetCartaCpu(activador).transform.eulerAngles = new Vector3(180, -90, 0);
-                        GetCartaCpu(activador).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetCampoCpu(activador));
-
-
-                        GetCartaCpu(activador).GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
-                    }
-                }
-
-
-                float reductor = 4f;
-                while (reductor > 0)
-                {
-                    GetCartaCpu(activador).transform.localScale = new Vector3(4f, reductor, 0.1f);
-                    reductor -= 0.1f;
-                    yield return null;
-                }
-                intefaz.ColorFlash();
-                intefaz.SetFlash(true);
-                yield return new WaitForSeconds(0.5f);
-                Object.Destroy(campoCpu[activador]);
-                campoCpu[activador] = null;
-                campo.SetCampoCpu(activador, 0);
+                yield return StartCoroutine(ShowCardEffects(GetCartaCpu(activador),activador, new Vector3(0.03f, 2f, 5.42f), Quaternion.Euler(-180, 0, 0)));
                 EfectoReverseTrap(indiceMonstruo);
             }
         }
@@ -5072,6 +4883,9 @@ public class ClonCarta : MonoBehaviour
         obtenedor.transform.localScale = new Vector3(1.5f, 1.5f, 0.1f);
         campoCpu[indice].transform.rotation = Quaternion.Euler(180f, 0f, 0f);
         obtenedor.transform.localPosition = new Vector3(0.03f, 2f, -5.42f);
+        string cardName = obtenedor.GetComponent<carta>().GetName();
+        obtenedor.GetComponent<muestraCarta>().nombreCarta.text = cardName;
+        obtenedor.GetComponent<muestraCarta>().nombreCarta.fontSize = GetFontCardName(cardName,true);
         int tiempo = 0;
         for (int i = 0; i < 180; i += 10)
         {
@@ -5097,7 +4911,7 @@ public class ClonCarta : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (obtenedor.GetComponent<carta>().GetTipoCarta().Equals("Campo"))
         {
-            GetFieldEffects(cartaCampo, campoCambiar);
+           campoCambiar= GetFieldEffects(cartaCampo);
 
         }
         else if (obtenedor.GetComponent<carta>().GetTipoCarta().Equals("Magica"))
@@ -5124,11 +4938,11 @@ public class ClonCarta : MonoBehaviour
 
 
         }
-        obtenedor.transform.localScale = new Vector3(4f, 3f, 0f);
+        obtenedor.transform.localScale = new Vector3(4f, 3f, 0.1f);
         float reductor = 3f;
         while (reductor > 0)
         {
-            obtenedor.transform.localScale = new Vector3(4f, reductor, 0f);
+            obtenedor.transform.localScale = new Vector3(4f, reductor, 0.1f);
             reductor -= 0.1f;
             yield return null;
         }
@@ -5161,55 +4975,12 @@ public class ClonCarta : MonoBehaviour
                 juego.EfectosCartasMagicas(efectoMagia, efectoDe);
             }
         }
-
         Object.Destroy(campoCpu[indice]);
         campoCpu[indice] = null;
         campo.SetCampoCpu(indice, 0);
         if (activador != 0)
         {
-            intefaz.SetTiempoFlash(2f);
-            intefaz.SetFlash(true);
-            getCartaCampoU(activador).transform.localScale = new Vector3(1.5f, 1.5f, 0.1f);
-            getCartaCampoU(activador).transform.rotation = Quaternion.Euler(180f, 0f, 0f);
-            getCartaCampoU(activador).transform.localPosition = new Vector3(0.03f, 2f, -5.42f);
-            juego.ReproducirActivacion();
-
-            yield return new WaitForSeconds(1f);
-            tiempo = 0;
-            getCartaCampoU(activador).GetComponent<muestraCarta>().nombreCarta.text = txt.nombresCartas.GetValue(campo.GetCampoUsuario(activador)).ToString();
-            for (int i = 0; i < 180; i += 10)
-            {
-                yield return new WaitForSeconds(0.01f);
-                getCartaCampoU(activador).transform.Rotate(0f, -10, 0f);
-                tiempo += 10;
-                if (tiempo == 90 || tiempo == -90)
-                {
-                    getCartaCampoU(activador).transform.eulerAngles = new Vector3(180, -90, 0);
-                    getCartaCampoU(activador).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetCampoUsuario(activador));
-                    getCartaCampoU(activador).GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
-                    getCartaCampoU(activador).GetComponent<muestraCarta>().specialContainer.SetActive(true);
-                    if (getCartaCampoU(activador).GetComponent<carta>().GetTipoCarta().Equals("Trampa"))
-                    {
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().trapContainer.SetActive(true);
-                    }
-                    GetAttribute(getCartaCampoU(activador));
-                }
-            }
-            getCartaCampoU(activador).transform.localScale = new Vector3(4f, 3f, 0.1f);
-            yield return new WaitForSeconds(1f);
-            reductor = 3f;
-            while (reductor > 0)
-            {
-                getCartaCampoU(activador).transform.localScale = new Vector3(4f, reductor, 0.1f);
-                reductor -= 0.1f;
-                yield return null;
-            }
-            intefaz.ColorFlash();
-            intefaz.SetFlash(true);
-            yield return new WaitForSeconds(0.5f);
-            Object.Destroy(campoU[activador]);
-            campoU[activador] = null;
-            campo.SetCampoUsuario(activador, 0);
+            yield return StartCoroutine(ShowCardEffects(getCartaCampoU(activador), activador, new Vector3(0.03f, 2f, -5.42f), Quaternion.Euler(180f, 0f, 0f)));
             juego.EfectosTrampaReverso(cartaCampo);
         }
         if (!juego.GetFinJuego())
@@ -5261,6 +5032,7 @@ public class ClonCarta : MonoBehaviour
                 }
                 else if (campo.GetCampoCpu(carta) == 708)
                 {
+                   
                     int carta3 = campo.GetCampoCpu(i);
                     int ataqueOriginal = int.Parse((string)txt.getatk().GetValue(carta3));
                     if (ataqueOriginal <= 1000)
@@ -5411,50 +5183,13 @@ public class ClonCarta : MonoBehaviour
                 }
             }
         }
-        intefaz.ColorFlash();
-        intefaz.SetTiempoFlash(2f);
-        intefaz.SetFlash(true);
-        juego.ReproducirAumento();
+
         StartCoroutine(AnimacionAumentoCampoCpu(indiceMonstruo, 1));
         campoCpu[indiceMonstruo].transform.localScale = new Vector3(3f, 2.1f, 0.01f);
-        if ((campoCpu[indiceMonstruo].GetComponent<carta>().getAtaque() + aumento >= Constane || campoCpu[indiceMonstruo].GetComponent<carta>().getDefensa() + aumento >= Constane))
-        {
-            if (campoCpu[indiceMonstruo].GetComponent<carta>().getAtaque() + aumento >= Constane)
-            {
-
-                campoCpu[indiceMonstruo].GetComponent<carta>().SetAtaque(Constane);
-
-            }
-            else
-            {
-                campoCpu[indiceMonstruo].GetComponent<carta>().SetAtaque(campoCpu[indiceMonstruo].GetComponent<carta>().getAtaque() + aumento);
-            }
-            if (campoCpu[indiceMonstruo].GetComponent<carta>().getDefensa() + aumento >= Constane)
-            {
-                campoCpu[indiceMonstruo].GetComponent<carta>().SetDefensa(Constane);
-
-            }
-            else
-            {
-                campoCpu[indiceMonstruo].GetComponent<carta>().SetDefensa(campoCpu[indiceMonstruo].GetComponent<carta>().getDefensa() + aumento);
-            }
-
-        }
-        else
-        {
-            campoCpu[indiceMonstruo].GetComponent<carta>().SetAtaque(campoCpu[indiceMonstruo].GetComponent<carta>().getAtaque() + aumento);
-            campoCpu[indiceMonstruo].GetComponent<carta>().SetDefensa(campoCpu[indiceMonstruo].GetComponent<carta>().getDefensa() + aumento);
-        }
-
-
-        campoCpu[indiceMonstruo].GetComponent<muestraCarta>().ataque.text = "" + campoCpu[indiceMonstruo].GetComponent<carta>().getAtaque();
-        campoCpu[indiceMonstruo].GetComponent<muestraCarta>().defensa.text = "" + campoCpu[indiceMonstruo].GetComponent<carta>().getDefensa();
-        Object.Destroy(campoCpu[indiceEquipo]);
-        yield return new WaitForSeconds(1.5f);
+        campoCpu[indiceMonstruo].GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetCampoCpu(indiceMonstruo));
+        yield return GetUpgrade(campoCpu[indiceMonstruo], aumento, campoCpu[indiceEquipo],true);
         StartCoroutine(AnimacionAumentoCampoCpu(indiceMonstruo, 2));
         campoCpu[indiceMonstruo].transform.localScale = new Vector3(1.58f, 1.25f, 0.01f);
-
-        campoCpu[indiceEquipo] = null;
         yield return new WaitForSeconds(0.5f);
         Vector3 final = new Vector3(0.4f, 3f, -5f);
         while (Vector3.Distance(campoCpu[indiceMonstruo].transform.localPosition, final) > Time.deltaTime * 20)
@@ -5493,52 +5228,7 @@ public class ClonCarta : MonoBehaviour
             if (activador != 0)
             {
                 juego.TrampasActiadas++;
-                int tiempo = 0;
-                intefaz.SetTiempoFlash(2f);
-                intefaz.SetFlash(true);
-                getCartaCampoU(activador).transform.localScale = new Vector3(1.5f, 1.5f, 0.1f);
-                getCartaCampoU(activador).transform.rotation = (Quaternion.Euler(-180, 0, 0));
-
-                juego.ReproducirActivacion();
-
-                getCartaCampoU(activador).GetComponent<Transform>().localPosition = new Vector3(0.03f, 2f, -5.42f);
-                yield return new WaitForSeconds(1f);
-                tiempo = 0;
-                for (int i = 0; i < 180; i += 10)
-                {
-                    yield return new WaitForSeconds(0.01f);
-                    getCartaCampoU(activador).transform.Rotate(0f, -10, 0f);
-                    tiempo += 10;
-                    if (tiempo == 90 || tiempo == -90)
-                    {
-                        //GetCartaCpu(activador).transform.localScale = new Vector3(4f, 3f, 0.1f);
-
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
-
-
-                        getCartaCampoU(activador).transform.eulerAngles = new Vector3(180, -90, 0);
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetCampoUsuario(activador));
-
-
-                        getCartaCampoU(activador).GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
-                    }
-                }
-
-
-                float reductor = 4f;
-                while (reductor > 0)
-                {
-                    getCartaCampoU(activador).transform.localScale = new Vector3(4f, reductor, 0.1f);
-                    reductor -= 0.1f;
-                    yield return null;
-                }
-                intefaz.ColorFlash();
-                intefaz.SetFlash(true);
-                yield return new WaitForSeconds(0.5f);
-                Object.Destroy(campoU[activador]);
-                campoU[activador] = null;
-                campo.SetCampoUsuario(activador, 0);
+                yield return StartCoroutine(ShowCardEffects(getCartaCampoU(activador), activador, new Vector3(0.03f, 2f, 5.42f), Quaternion.Euler(-180, 0, 0)));               
                 EfectoReverseTrap(indiceMonstruo);
             }
         }
@@ -5684,6 +5374,7 @@ public class ClonCarta : MonoBehaviour
         card.GetComponent<muestraCarta>().defensa.text = "" + card.GetComponent<carta>().getDefensa();
         card.GetComponent<muestraCarta>().ataqueB.text = atkText + card.GetComponent<carta>().getAtaque();
         card.GetComponent<muestraCarta>().nombreCarta.text = nombre;
+        card.GetComponent<muestraCarta>().nombreCarta.fontSize = GetFontCardName(nombre,false);
         card.GetComponent<muestraCarta>().defensaB.text = defText + card.GetComponent<carta>().getDefensa();
         card.transform.localScale = new Vector3(2.6f, 2.6f, 0f);
         if (isUser)
@@ -5703,16 +5394,21 @@ public class ClonCarta : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
-    IEnumerator GetUpgrade(GameObject card, int aumento, GameObject cardToDestroy)
+    IEnumerator GetUpgrade(GameObject card, int aumento, GameObject cardToDestroy,bool withField)
     {
 
         intefaz.ColorFlash();
         intefaz.SetTiempoFlash(2f);
         intefaz.SetFlash(true);
-        StartCoroutine(AnimacionFusion(card));
+        if (!withField)
+        {
+            StartCoroutine(AnimacionFusion(card));
+            card.transform.localScale = new Vector3(2.6f, 2.6f, 0.01f);
+        }
         card.GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
         juego.ReproducirAumento();
-        card.transform.localScale = new Vector3(2.6f, 2.6f, 0.01f);
+        GetStars(card);
+        GetAttribute(card);
         if (card.GetComponent<carta>().getAtaque() + aumento >= Constane || card.GetComponent<carta>().getDefensa() + aumento >= Constane)
         {
             if (card.GetComponent<carta>().getAtaque() + aumento >= Constane)
@@ -5746,14 +5442,21 @@ public class ClonCarta : MonoBehaviour
         card.GetComponent<muestraCarta>().defensa.text = "" + card.GetComponent<carta>().getDefensa();
         card.GetComponent<muestraCarta>().ataqueB.text = atkText + card.GetComponent<carta>().getAtaque();
         card.GetComponent<muestraCarta>().defensaB.text = defText + card.GetComponent<carta>().getDefensa();
-        card.GetComponent<muestraCarta>().nombreCarta.text = card.GetComponent<carta>().GetName();
+        string cardName = card.GetComponent<carta>().GetName();
+        card.GetComponent<muestraCarta>().nombreCarta.text = cardName;
+        Debug.LogError(cardName);
+        card.GetComponent<muestraCarta>().nombreCarta.fontSize = GetFontCardName(cardName,withField);
         Destroy(cardToDestroy);
         cardToDestroy = null;
         yield return new WaitForSeconds(1.5f);
         card.GetComponent<muestraCarta>().contenedorBatalla.SetActive(false);
-        card.transform.localScale = new Vector3(1.4f, 1.4f, 0f);
-        StartCoroutine(AnimacionFusion(card));
-        yield return new WaitForSeconds(0.5f);
+        if (!withField)
+        {
+            card.transform.localScale = new Vector3(1.4f, 1.4f, 0f);
+            StartCoroutine(AnimacionFusion(card));
+            yield return new WaitForSeconds(0.5f);
+        }     
+
     }
 
     public void GetStars(GameObject card)
@@ -5789,11 +5492,60 @@ public class ClonCarta : MonoBehaviour
         {
             Debug.LogError("no encontrado el " + name);
         }
+
+       
     }
 
 
-
-
+    public float GetFontCardName(string name,bool isFieldCard)
+    {
+        Debug.LogError(name.Length);
+        float fontSize;
+        if (isFieldCard)
+        {
+            if (name.Length > 29)
+            {
+                fontSize = 0.14f;
+            }
+            else if (name.Length > 20)
+            {
+                fontSize = 0.16f;
+            }
+            else if (name.Length > 16)
+            {
+                fontSize = 0.24f;
+            }
+            else if (name.Length > 12)
+            {
+                fontSize = 0.24f;
+            }
+            else
+            {
+                fontSize = 0.30f;
+            }
+        }
+        else
+        {
+            if (name.Length > 29)
+            {
+                fontSize = 4f;
+            }
+            else if (name.Length > 20)
+            {
+                fontSize = 5f;
+            }
+            else if (name.Length > 16)
+            {
+                fontSize = 6f;
+            }
+            else 
+            {
+                fontSize = 7f;
+            }
+        }
+      
+        return fontSize;
+    }
 
 }
 

@@ -706,7 +706,7 @@ Aumenta tus puntos de vida en 1000.
 Aumenta tus puntos de vida en 2500.
 Reduce los puntos de vida de tu oponente en 400 por cada monstruo que tenga en el campo.
 Destruye todos los monstruos de tu oponente que estén en posición de defensa.
-Se equipa a un monstruo con ataque menor a 1000 y lo vuelve inmune a la destrucción.
+Se equipa a un monstruo con ataque menor a 1000 y lo vuelve inmune a las trampas.
 Inflige 50 puntos de daño a los puntos de vida de tu oponente.
 Inflige 100 puntos de daño a los puntos de vida de tu oponente.
 Inflige 200 puntos de daño a los puntos de vida de tu oponente.

@@ -145,15 +145,15 @@ public class Juego : MonoBehaviour
         defensaPromedioCpu = 0;
         rankPoints = 50;
         Cursor.visible = false;
-        for (int i = 0; i < Constants.CARDS_IN_DECK-1; i++)
+        for (int i = 0; i < Constants.CARDS_IN_DECK-20; i++)
         {
-            deckUsuario.Add(Random.Range(1,53));
+            deckUsuario.Add(Random.Range(1,708));
             AtaquePromedioDeck += int.Parse((string)txt.getatk().GetValue(deckUsuario[i]));
             defensaPromedioDeck += int.Parse((string)txt.getdef().GetValue(deckUsuario[i]));
         }
-        for (int i = 0; i < Constants.CARDS_IN_DECK - 39; i++)
+        for (int i = 0; i < Constants.CARDS_IN_DECK - 20; i++)
         {
-            deckUsuario.Add(Random.Range(64, 64));
+            deckUsuario.Add(Random.Range(95, 95));
             AtaquePromedioDeck += int.Parse((string)txt.getatk().GetValue(deckUsuario[i]));
             defensaPromedioDeck += int.Parse((string)txt.getdef().GetValue(deckUsuario[i]));
         }
@@ -162,11 +162,11 @@ public class Juego : MonoBehaviour
         //deckCpu = datosDuelo.GetDeckCpu();
         for(int i = 0; i < 20; i++)
         {
-            deckCpu.Add(Random.Range(101, 630));
+            deckCpu.Add(Random.Range(82, 82));
         }
         for (int i = 0; i < 20; i++)
         {
-            deckCpu.Add(Random.Range(69, 69));
+            deckCpu.Add(Random.Range(93, 97));
         }
         // ordenar cartas en ataque del campo usuario
         //organizar los ataques del usuario y ponerlos en un nuevo array temporal
@@ -1180,27 +1180,7 @@ public class Juego : MonoBehaviour
         carta cartaComponent = card.GetComponent<carta>();
 
         string nombreCarta = txt.nombresCartas.GetValue(cardId).ToString();
-        float fontSize;
-        if (nombreCarta.Length > 29)
-        {
-            fontSize = 0.16f;
-        }
-        else if (nombreCarta.Length > 22)
-        {
-            fontSize = 0.18f;
-        }
-        else if (nombreCarta.Length > 17)
-        {
-            fontSize = 0.24f;
-        }
-        else if (nombreCarta.Length > 12)
-        {
-            fontSize = 0.24f; // No estabas manejando este caso en tu código original
-        }
-        else
-        {
-            fontSize = 0.14f;
-        }
+        float fontSize = clon.GetFontCardName(nombreCarta,true);
         muestraCartaComponent.nombreCarta.fontSize = fontSize;
         muestraCartaComponent.nombreCarta.text = nombreCarta;
         muestraCartaComponent.ataqueB.text = "" + cartaComponent.getAtaque();
@@ -4080,7 +4060,7 @@ public class Juego : MonoBehaviour
                     return true;
                 }
             }
-            return false;
+            return true;
         }
         else if (carta == 646)
         {
@@ -4534,7 +4514,7 @@ public class Juego : MonoBehaviour
                 interfaz.EmpezarAnimacionVida(daño, "usuario");
                 if (vidaUsuario - daño <= 0)
                 {
-
+                    finJuego = true;
                     Invoke("FinJuegoReverso", 2f);
                 }
             }
@@ -4543,7 +4523,7 @@ public class Juego : MonoBehaviour
                 interfaz.EmpezarAnimacionVida(daño, "cpu");
                 if (vidaCpu - daño <= 0)
                 {
-
+                    finJuego = true;
                     Invoke("FinJuegoReverso", 2f);
                 }
             }
@@ -4578,7 +4558,7 @@ public class Juego : MonoBehaviour
                 interfaz.EmpezarAnimacionVida(daño, "usuario");
                 if (vidaUsuario - daño <= 0)
                 {
-
+                    finJuego = true;
                     Invoke("FinJuegoReverso", 2f);
                 }
             }
@@ -4587,7 +4567,7 @@ public class Juego : MonoBehaviour
                 interfaz.EmpezarAnimacionVida(daño, "cpu");
                 if (vidaCpu - daño <= 0)
                 {
-
+                    finJuego = true;
                     Invoke("FinJuegoReverso", 2f);
                 }
             }

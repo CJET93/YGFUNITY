@@ -1759,9 +1759,6 @@ MonoBehaviour:
   imagenCartaB: {fileID: 7363651662116483421}
   ataqueB: {fileID: 5269723085280677392}
   defensaB: {fileID: 5021686372876011904}
-  panelAtaqueB: {fileID: 0}
-  panelDefensaB: {fileID: 0}
-  contenedorNombre: {fileID: 0}
   nombreCarta: {fileID: 1786977729024431492}
   imagenMiniCarta: {fileID: 7378251931339667237}
   monsterContainer: {fileID: 4349824014187286513}
@@ -1841,13 +1838,13 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -8984792794694318807, guid: f540aee4a179b6d49a7d2443ecc80890,
     type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
 --- !u!1 &4498364738745129877
 GameObject:

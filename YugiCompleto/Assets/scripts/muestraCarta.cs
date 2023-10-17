@@ -24,9 +24,6 @@ public class muestraCarta : MonoBehaviour
     public Image imagenCartaB;
     public TextMeshProUGUI ataqueB;
     public TextMeshProUGUI defensaB;
-    public RawImage panelAtaqueB;
-    public RawImage panelDefensaB;
-    public RawImage contenedorNombre;
     public TextMeshProUGUI nombreCarta;
     public RawImage imagenMiniCarta;
     public GameObject monsterContainer;

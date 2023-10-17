@@ -1178,13 +1178,9 @@ public class Interfaz : MonoBehaviour
                 if (desaparecerPaneles == false && reductor < 0.9f)
                 {
                     desaparecerPaneles = true;
-                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
-                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
                 }
                 yield return new WaitForSeconds(0.01f);
             }
-            clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
             particula.gameObject.SetActive(false);
             yield return new WaitForSeconds(0.2f);
            
@@ -1217,18 +1213,15 @@ public class Interfaz : MonoBehaviour
             while (reductor > 0)
             {
                 particula.transform.Translate(0f, 0f, 0.1f);
-                clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().imagenCartaB.fillAmount = reductor;
+                clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().monsterContainer.GetComponent<Image>().fillAmount = reductor;
                 reductor -= 0.1f;
                 if (desaparecerPaneles == false && reductor < 0.9f)
                 {
                     desaparecerPaneles = true;
-                    clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                    clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
                 }
 
                 yield return new WaitForSeconds(0.01f);
             }
-            clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
             particula.gameObject.SetActive(false);
             yield return new WaitForSeconds(0.2f);
             clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().imagenCarta.gameObject.SetActive(true);
@@ -1264,12 +1257,9 @@ public class Interfaz : MonoBehaviour
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
-                        clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
                     }
                     yield return new WaitForSeconds(0.01f);
                 }
-                clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
             }
             else
             {
@@ -1285,12 +1275,9 @@ public class Interfaz : MonoBehaviour
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
-                        clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
                     }
                     yield return new WaitForSeconds(0.01f);
-                }
-                clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
+                };
             }
           
             particula.gameObject.SetActive(false);
@@ -1317,12 +1304,9 @@ public class Interfaz : MonoBehaviour
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
-                        clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
                     }
                     yield return new WaitForSeconds(0.01f);
                 }
-                clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
 
             }
             else
@@ -1339,12 +1323,9 @@ public class Interfaz : MonoBehaviour
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
-                        clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
                     }
                     yield return new WaitForSeconds(0.01f);
                 }
-                clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
 
             }
            
@@ -1447,7 +1428,6 @@ public class Interfaz : MonoBehaviour
                         }
                     }
                 }
-                clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
                 particulaTrampa.gameObject.SetActive(false);
                 yield return new WaitForSeconds(0.2f);
                 clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
@@ -1505,13 +1485,10 @@ public class Interfaz : MonoBehaviour
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
-                        clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
                     }
 
                     yield return new WaitForSeconds(0.01f);
                 }
-                clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
                 particulaTrampa.gameObject.SetActive(false);
                 reductor = 3f;
                 while (reductor > 0)
@@ -1621,7 +1598,6 @@ public class Interfaz : MonoBehaviour
                         }
                     }
                 }
-                clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
                 particulaTrampa.gameObject.SetActive(false);
                 yield return new WaitForSeconds(0.2f);
                 clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
@@ -1677,12 +1653,9 @@ public class Interfaz : MonoBehaviour
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
-                        clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(false);
-                        clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(false);
                     }
                     yield return new WaitForSeconds(0.01f);
                 }
-                clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorNombre.gameObject.SetActive(false);
                 particulaTrampa.gameObject.SetActive(false);
                 reductor = 3f;
                 while (reductor > 0)
@@ -1764,8 +1737,6 @@ public class Interfaz : MonoBehaviour
         if (clonCarta.GetCartaCpu(cartaCpuPos) != null && juego.GetTurnoUsuario() == false)
         {
 
-            clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(true);
-            clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(true);
 
             clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().imagenCarta.color = new Color(0.5f, 0.5f, 0.5f, 1f);
             clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().imagenMiniCarta.color = new Color(0.5f, 0.5f, 0.5f, 1f);
@@ -1780,8 +1751,6 @@ public class Interfaz : MonoBehaviour
         }
         if (clonCarta.getCartaCampoU(cartaPos) != null && juego.GetTurnoUsuario() == true)
         {
-            clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(true);
-            clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(true);
 
             clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().imagenCarta.color = new Color(0.5f, 0.5f, 0.5f, 1f);
             clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().imagenMiniCarta.color = new Color(0.5f, 0.5f, 0.5f, 1f);
@@ -1802,8 +1771,6 @@ public class Interfaz : MonoBehaviour
                 {
                     if (clonCarta.getCartaCampoU(i) != null)
                     {
-                        clonCarta.getCartaCampoU(i).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(true);
-                        clonCarta.getCartaCampoU(i).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(true);
 
                         clonCarta.getCartaCampoU(i).GetComponent<muestraCarta>().imagenCarta.color = new Color(0.5f, 0.5f, 0.5f, 1f);
                         clonCarta.getCartaCampoU(i).GetComponent<muestraCarta>().imagenMiniCarta.color = new Color(0.5f, 0.5f, 0.5f, 1f);
@@ -1824,9 +1791,6 @@ public class Interfaz : MonoBehaviour
                     if (clonCarta.GetCartaCpu(i) != null)
                     {
 
-
-                        clonCarta.GetCartaCpu(i).GetComponent<muestraCarta>().panelAtaqueB.gameObject.SetActive(true);
-                        clonCarta.GetCartaCpu(i).GetComponent<muestraCarta>().panelDefensaB.gameObject.SetActive(true);
 
                         clonCarta.GetCartaCpu(i).GetComponent<muestraCarta>().imagenCarta.color = new Color(0.5f, 0.5f, 0.5f, 1f);
                         clonCarta.GetCartaCpu(i).GetComponent<muestraCarta>().imagenMiniCarta.color = new Color(0.5f, 0.5f, 0.5f, 1f);
