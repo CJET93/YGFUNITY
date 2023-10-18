@@ -147,13 +147,13 @@ public class Juego : MonoBehaviour
         Cursor.visible = false;
         for (int i = 0; i < Constants.CARDS_IN_DECK-20; i++)
         {
-            deckUsuario.Add(Random.Range(1,708));
+            deckUsuario.Add(Random.Range(685,685));
             AtaquePromedioDeck += int.Parse((string)txt.getatk().GetValue(deckUsuario[i]));
             defensaPromedioDeck += int.Parse((string)txt.getdef().GetValue(deckUsuario[i]));
         }
         for (int i = 0; i < Constants.CARDS_IN_DECK - 20; i++)
         {
-            deckUsuario.Add(Random.Range(95, 95));
+            deckUsuario.Add(Random.Range(638, 638));
             AtaquePromedioDeck += int.Parse((string)txt.getatk().GetValue(deckUsuario[i]));
             defensaPromedioDeck += int.Parse((string)txt.getdef().GetValue(deckUsuario[i]));
         }
@@ -162,7 +162,7 @@ public class Juego : MonoBehaviour
         //deckCpu = datosDuelo.GetDeckCpu();
         for(int i = 0; i < 20; i++)
         {
-            deckCpu.Add(Random.Range(82, 82));
+            deckCpu.Add(Random.Range(1, 721));
         }
         for (int i = 0; i < 20; i++)
         {
@@ -1151,12 +1151,14 @@ public class Juego : MonoBehaviour
             else if (ataque.Equals("trampaUsuario"))
             {
                 clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().specialContainer.SetActive(true);
+                clon.getCartaCampoU(posUsuario).GetComponent<muestraCarta>().trapContainer.SetActive(true);
                 SetCardProperties(clon.GetCartaCpu(posCpu), campo.GetCampoCpu(posCpu), new Vector3(-2.1f, 2.3f, -7.3f), Vector3.zero);
                 SetCardProperties(clon.getCartaCampoU(posUsuario), campo.GetCampoUsuario(posUsuario), new Vector3(2.1f, 2.3f, -7.3f), Vector3.zero);
             }
             else if (ataque.Equals("trampaCpu"))
             {
                 clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().specialContainer.SetActive(true);
+                clon.GetCartaCpu(posCpu).GetComponent<muestraCarta>().trapContainer.SetActive(true);
                 SetCardProperties(clon.GetCartaCpu(posCpu), campo.GetCampoCpu(posCpu), new Vector3(-2.1f, 2.3f, 7.3f), Vector3.zero);
                 SetCardProperties(clon.getCartaCampoU(posUsuario), campo.GetCampoUsuario(posUsuario), new Vector3(2.1f, 2.3f, 7.3f), Vector3.zero);
             }
@@ -4060,7 +4062,7 @@ public class Juego : MonoBehaviour
                     return true;
                 }
             }
-            return true;
+            return false;
         }
         else if (carta == 646)
         {

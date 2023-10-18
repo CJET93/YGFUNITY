@@ -1787,6 +1787,7 @@ public class ClonCarta : MonoBehaviour
         indiceMT = -1;
         clonCpu[i] = Instantiate(original, new Vector3(original.transform.position.x + 800, original.transform.position.y, original.transform.position.z), original.transform.rotation);
         clonCpu[i].GetComponent<muestraCarta>().contenedorReverso.SetActive(true);
+        clonCpu[i].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetManoCpu(i));
         string tipoCarta = txt.GetTipoCarta().GetValue(campo.GetManoCpu(i)).ToString().Trim();
         string nombre = (string)txt.getnom().GetValue(campo.GetManoCpu(i));
         clonCpu[i].GetComponent<carta>().SetName(nombre);
@@ -1965,6 +1966,8 @@ public class ClonCarta : MonoBehaviour
                     clonCpu[0].GetComponent<carta>().SetTipoCarta(tipoCarta);
                     clonCpu[0].GetComponent<carta>().SetTieneBono(false);
                     clonCpu[0].GetComponent<carta>().SetTieneBonoDesfavorable(false);
+                    clonCpu[0].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetManoCpu(0));
+                    Debug.LogError("QUELDO");
                     int stars = int.Parse((string)txt.GetStars().GetValue(campo.GetManoCpu(0)));
                     string attribute = txt.GetAttributes().GetValue(campo.GetManoCpu(0)).ToString();
                     clonCpu[0].GetComponent<carta>().SetAttribute(attribute);

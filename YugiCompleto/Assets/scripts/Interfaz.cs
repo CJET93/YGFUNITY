@@ -1174,7 +1174,7 @@ public class Interfaz : MonoBehaviour
             {
                 particula.transform.Translate(0f, 0f, 0.1f);
                 reductor -= 0.1f;
-                clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().imagenCartaB.fillAmount = reductor;
+                clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorBatalla.GetComponent<Image>().fillAmount = reductor;
                 if (desaparecerPaneles == false && reductor < 0.9f)
                 {
                     desaparecerPaneles = true;
@@ -1213,7 +1213,7 @@ public class Interfaz : MonoBehaviour
             while (reductor > 0)
             {
                 particula.transform.Translate(0f, 0f, 0.1f);
-                clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().monsterContainer.GetComponent<Image>().fillAmount = reductor;
+                clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorBatalla.GetComponent<Image>().fillAmount = reductor;
                 reductor -= 0.1f;
                 if (desaparecerPaneles == false && reductor < 0.9f)
                 {
@@ -1253,7 +1253,7 @@ public class Interfaz : MonoBehaviour
                 {
                     particula.transform.Translate(0f, 0f, 0.1f);
                     reductor -= 0.1f;
-                    clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().imagenCartaB.fillAmount = reductor;
+                    clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorBatalla.GetComponent<Image>().fillAmount = reductor;
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
@@ -1271,7 +1271,7 @@ public class Interfaz : MonoBehaviour
                 {
                     particula.transform.Translate(0f, 0f, 0.1f);
                     reductor -= 0.1f;
-                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().imagenCartaB.fillAmount = reductor;
+                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorBatalla.GetComponent<Image>().fillAmount = reductor;
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
@@ -1300,7 +1300,7 @@ public class Interfaz : MonoBehaviour
 
                     particula.transform.Translate(0f, 0f, 0.1f);
                     reductor -= 0.1f;
-                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().imagenCartaB.fillAmount = reductor;
+                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorBatalla.GetComponent<Image>().fillAmount = reductor;
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
@@ -1319,7 +1319,7 @@ public class Interfaz : MonoBehaviour
                 {
                     particula.transform.Translate(0f, 0f, 0.1f);
                     reductor -= 0.1f;
-                    clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().imagenCartaB.fillAmount = reductor;
+                    clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorBatalla.GetComponent<Image>().fillAmount = reductor;
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
@@ -1393,7 +1393,7 @@ public class Interfaz : MonoBehaviour
 
                     particulaTrampa.transform.Translate(0f, 0f, 0.1f);
                     reductor -= 0.1f;
-                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().imagenCartaB.fillAmount = reductor;
+                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorBatalla.GetComponent<Image>().fillAmount = reductor;
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
@@ -1480,7 +1480,7 @@ public class Interfaz : MonoBehaviour
                 while (reductor > 0)
                 {
                     particulaTrampa.transform.Translate(0f, 0f, 0.1f);
-                    clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().imagenCartaB.fillAmount = reductor;
+                    clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorBatalla.GetComponent<Image>().fillAmount = reductor;
                     reductor -= 0.1f;
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
@@ -1561,7 +1561,7 @@ public class Interfaz : MonoBehaviour
                 while (reductor > 0)
                 {
                     particulaTrampa.transform.Translate(0f, 0f, 0.1f);
-                    clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().imagenCartaB.fillAmount = reductor;
+                    clonCarta.GetCartaCpu(cartaCpuPos).GetComponent<muestraCarta>().contenedorBatalla.GetComponent<Image>().fillAmount = reductor;
                     reductor -= 0.1f;
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
@@ -1649,7 +1649,7 @@ public class Interfaz : MonoBehaviour
 
                     particulaTrampa.transform.Translate(0f, 0f, 0.1f);
                     reductor -= 0.1f;
-                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().imagenCartaB.fillAmount = reductor;
+                    clonCarta.getCartaCampoU(cartaPos).GetComponent<muestraCarta>().contenedorBatalla.GetComponent<Image>().fillAmount = reductor;
                     if (desaparecerPaneles == false && reductor < 0.9f)
                     {
                         desaparecerPaneles = true;
