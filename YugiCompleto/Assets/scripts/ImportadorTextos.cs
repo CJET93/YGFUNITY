@@ -64,7 +64,6 @@ public class ImportadorTextos : MonoBehaviour
     public TextAsset dropSATEC;
     public TextAsset descripcionCarta;
     public TextAsset stars;
-    public Texture2D[] cartas;
     public Texture2D[] miniImagens;
     public Texture2D[] guardianes;
     public Texture2D[]atirbutos;
@@ -74,8 +73,6 @@ public class ImportadorTextos : MonoBehaviour
     public TextAsset cardImages;
     public Sprite[] attributeImages;
 
-    // no supe como pasar de texture2d a sprite por lo que me toco crear una nueva lista de cartas
-    public Sprite[] cartasBatalla;
     //inicializa todas las listas ya cargadas
     void Awake()
     {
@@ -191,7 +188,7 @@ public class ImportadorTextos : MonoBehaviour
         {
             descripcionCartaTexto = descripcionCarta.text.Split('\n');
         }
-
+        Debug.LogError("cuantas veces entro acá");
         if (cardImages != null)
         {
             string[] cardImagesTxt = cardImages.text.Split('\n');
@@ -199,6 +196,7 @@ public class ImportadorTextos : MonoBehaviour
             {
                 //cartas.SetValue(Resources.Load<Texture2D>("cards/images/"+cardImagesTxt.GetValue(i).ToString().Trim()), i);
                 cartas1.SetValue(Resources.Load<Sprite>("cards/images/" + cardImagesTxt.GetValue(i).ToString().Trim()), i);
+                miniImagens.SetValue(Resources.Load<Texture2D>("cards/miniImages/" + cardImagesTxt.GetValue(i).ToString().Trim()), i);
             }
         }
 

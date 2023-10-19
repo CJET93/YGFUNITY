@@ -57,7 +57,6 @@ public class ClonCarta : MonoBehaviour
     {
         reduccion = 0;
         clon[i] = Instantiate(original, new Vector3(original.transform.position.x + 800, original.transform.position.y, original.transform.position.z), original.transform.rotation);
-        clon[i].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetManoUsuario(i));
         clon[i].GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(campo.GetManoUsuario(i));
         clon[i].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetManoUsuario(i));
         string tipoCarta = txt.GetTipoCarta().GetValue(campo.GetManoUsuario(i)).ToString().Trim();
@@ -759,7 +758,6 @@ public class ClonCarta : MonoBehaviour
         }
         clon[indice].GetComponent<muestraCarta>().contenedorNormal.SetActive(true);
         clon[indice].GetComponent<muestraCarta>().textoMT.gameObject.SetActive(false);
-        clon[indice].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(cambiar);
         clon[indice].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(cambiar);
         clon[indice].GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(cambiar);
         clon[indice].GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(cambiar);
@@ -925,7 +923,6 @@ public class ClonCarta : MonoBehaviour
                     campoU[indice].GetComponent<muestraCarta>().textoMT.gameObject.SetActive(true);
                     campoU[indice].GetComponent<muestraCarta>().textoMT.text = txtMT;
 
-                    campoU[indice].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(imgCarta);
                     campoU[indice].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(imgCarta);
                     while (campoU[indice].transform.localPosition.x <= 6)
                     {
@@ -1093,8 +1090,6 @@ public class ClonCarta : MonoBehaviour
                         campoU[indice].GetComponent<muestraCarta>().textoMT.gameObject.SetActive(true);
                         campoU[indice].GetComponent<muestraCarta>().textoMT.text = txtMT;
 
-
-                        campoU[indice].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(imgCarta);
                         campoU[indice].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(imgCarta);
                         while (campoU[indice].transform.localPosition.x <= 6)
                         {
@@ -1166,7 +1161,6 @@ public class ClonCarta : MonoBehaviour
                         clon[temp[i - 1]].GetComponent<muestraCarta>().textoMT.gameObject.SetActive(true);
                         clon[temp[i - 1]].GetComponent<muestraCarta>().textoMT.text = txtMT;
 
-                        clon[temp[i - 1]].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(imgCarta);
                         clon[temp[i - 1]].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(imgCarta);
                         while (clon[temp[i - 1]].transform.localPosition.x >= -500)
                         {
@@ -1461,7 +1455,6 @@ public class ClonCarta : MonoBehaviour
         }
     
        
-        fieldCard.GetComponent<muestraCarta>().imagenCarta.texture = handCard.GetComponent<muestraCarta>().imagenCarta.texture;
         fieldCard.GetComponent<muestraCarta>().imagenMiniCarta.texture = handCard.GetComponent<muestraCarta>().imagenMiniCarta.texture;
         if (handCard.GetComponent<carta>().GetDatosCarta() == 0)
         {
@@ -2058,7 +2051,6 @@ public class ClonCarta : MonoBehaviour
         {
             clonCpu[indice].transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
             clonCpu[indice].GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
-            clonCpu[indice].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetManoCpu(indice));
             clonCpu[indice].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetManoCpu(indice));
             clonCpu[indice].GetComponent<muestraCarta>().textoMT.gameObject.SetActive(true);
             yield return new WaitForSeconds(0.5f);
@@ -2291,7 +2283,6 @@ public class ClonCarta : MonoBehaviour
 
 
         clonCpu[pos].GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
-        clonCpu[pos].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetManoCpu(pos));
         clonCpu[pos].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetManoCpu(pos));
         clonCpu[pos].GetComponent<muestraCarta>().textoMT.gameObject.SetActive(true);
         clonCpu[pos].transform.rotation = Quaternion.Euler(0f, 0f, 0f);
@@ -2440,13 +2431,11 @@ public class ClonCarta : MonoBehaviour
             int realizada = 0;
             if (campoCpu[indice].GetComponent<carta>().GetDatosCarta() == 0)
             {
-                campoCpu[indice].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetCampoCpu(indice));
                 campoCpu[indice].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetCampoCpu(indice));
                 campoCpu[indice].GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
             }
             if (clonCpu[pos].GetComponent<carta>().GetDatosCarta() == 0)
             {
-                clonCpu[pos].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetManoCpu(pos));
                 clonCpu[pos].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetManoCpu(pos));
                 clonCpu[pos].GetComponent<muestraCarta>().ataque.text = "" + clonCpu[pos].GetComponent<carta>().getAtaque();
                 clonCpu[pos].GetComponent<muestraCarta>().defensa.text = "" + clonCpu[pos].GetComponent<carta>().getDefensa();
@@ -2540,7 +2529,6 @@ public class ClonCarta : MonoBehaviour
             {
                 if (temp.Contains(i))
                 {
-                    clonCpu[i].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetManoCpu(i));
                     clonCpu[i].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetManoCpu(i));
                     if (!clonCpu[i].GetComponent<carta>().GetTipoCarta().Equals("Monstruo"))
                     {
@@ -2612,7 +2600,6 @@ public class ClonCarta : MonoBehaviour
                     int cambiar = campo.GetManoCpu(temp[i - 1]);
                     clonCpu[temp[i]].GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
                     clonCpu[temp[i]].GetComponent<muestraCarta>().textoMT.gameObject.SetActive(false);
-                    clonCpu[temp[i]].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(cambiar);
                     clonCpu[temp[i]].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(cambiar);
                     clonCpu[temp[i]].GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(cambiar);
                     int ataqueconvertidor = clonCpu[temp[i - 1]].GetComponent<carta>().getAtaque();
@@ -4860,7 +4847,6 @@ public class ClonCarta : MonoBehaviour
         cartaCampo = campo.GetCampoCpu(indice);
         obtenedor = campoCpu[indice];
 
-        obtenedor.GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetCampoCpu(indice));
         obtenedor.GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetCampoCpu(indice));
         obtenedor.GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
         obtenedor.GetComponent<muestraCarta>().textoMT.gameObject.SetActive(true);
@@ -5107,13 +5093,11 @@ public class ClonCarta : MonoBehaviour
         campoCpu[indiceEquipo].GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
         campoCpu[indiceEquipo].GetComponent<muestraCarta>().textoMT.gameObject.SetActive(true);
         campoCpu[indiceEquipo].GetComponent<muestraCarta>().textoMT.text = campoCpu[indiceEquipo].GetComponent<carta>().GetTipoCarta().ToUpper();
-        campoCpu[indiceEquipo].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetCampoCpu(indiceEquipo));
         campoCpu[indiceEquipo].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetCampoCpu(indiceEquipo));
         int realizada = 0;
 
         if (campoCpu[indiceMonstruo].GetComponent<carta>().GetDatosCarta() == 0)
         {
-            campoCpu[indiceMonstruo].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetCampoCpu(indiceMonstruo));
             campoCpu[indiceMonstruo].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetCampoCpu(indiceMonstruo));
             campoCpu[indiceMonstruo].GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
         }
@@ -5302,7 +5286,6 @@ public class ClonCarta : MonoBehaviour
                 }
 
                 campoU[i].GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
-                campoU[i].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetCampoUsuario(i));
                 campoU[i].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetCampoUsuario(i));
             }
             else
@@ -5321,7 +5304,6 @@ public class ClonCarta : MonoBehaviour
                 campoU[i].GetComponent<carta>().SetDatosCarta(controles.GetValoresCampo(i));
                 if (campoU[i].GetComponent<carta>().GetDatosCarta() == 1)
                 {
-                    campoU[i].GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetCampoUsuario(i));
                     campoU[i].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetCampoUsuario(i));
                 }
                 else
@@ -5347,7 +5329,6 @@ public class ClonCarta : MonoBehaviour
         intefaz.SetFlash(true);
         StartCoroutine(AnimacionFusion(card));
         card.GetComponent<muestraCarta>().contenedorBatalla.SetActive(true);
-        card.GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(fusion);
         card.GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(fusion);
         card.GetComponent<muestraCarta>().imagenCartaB.sprite = (Sprite)txt.cartas1.GetValue(fusion);
         int ataqueconvertidor = int.Parse((string)txt.getatk().GetValue(fusion));

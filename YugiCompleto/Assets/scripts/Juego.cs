@@ -2499,7 +2499,6 @@ public class Juego : MonoBehaviour
                         {
                             clon.GetCartaCpu(i).GetComponent<carta>().SetDatosCarta(1);
                             clon.GetCartaCpu(i).GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
-                            clon.GetCartaCpu(i).GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetCampoCpu(i));
                         }
                     }
                     interfaz.espadasLuz.transform.eulerAngles = new Vector3(90f, 0f, 0f);
@@ -2518,7 +2517,6 @@ public class Juego : MonoBehaviour
                     {
                         clon.GetCartaCpu(i).GetComponent<carta>().SetDatosCarta(1);
                         clon.GetCartaCpu(i).GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
-                        clon.GetCartaCpu(i).GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetCampoCpu(i));
                     
                 }
                 }
@@ -5164,7 +5162,6 @@ public class Juego : MonoBehaviour
             for (int i = 0; i < 5; i++)
             {
                 clon.GetClonCpu(i).GetComponent<muestraCarta>().contenedorReverso.SetActive(false);
-                clon.GetClonCpu(i).GetComponent<muestraCarta>().imagenCarta.texture = (Texture2D)txt.cartas.GetValue(campo.GetManoCpu((i)));
                 clon.GetClonCpu(i).GetComponent<muestraCarta>().ataque.text = "" + clon.GetClonCpu(i).GetComponent<carta>().getAtaque();
                 clon.GetClonCpu(i).GetComponent<muestraCarta>().defensa.text = "" + clon.GetClonCpu(i).GetComponent<carta>().getDefensa();
             }

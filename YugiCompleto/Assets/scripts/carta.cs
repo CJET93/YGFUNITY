@@ -68,99 +68,7 @@ public class carta : MonoBehaviour
         tipoCarta = tipo;
     }
     //metodo temporal juego con una carta sin mano
-    public void obtenerCarta()
-    {
-       
-        int ataqueconvertidor = int.Parse((string)txt.getatk().GetValue(campo.getPos()));
-        ataque = ataqueconvertidor;
-        int defconvertidor = int.Parse((string)txt.getdef().GetValue(campo.getPos()));
-        defensa = defconvertidor;
-        nombreCarta = (string)txt.getnom().GetValue(campo.getPos());
-        if (datosCarta == 1)
-        {
-            GetComponent<MeshRenderer>().material.mainTexture = (Texture2D)txt.cartas.GetValue(campo.getPos());
-        }
-        else
-        {
-            GetComponent<MeshRenderer>().material.mainTexture = (Texture2D)txt.cartas.GetValue(110);
-        }
-       
-    }
-    public void CambiarPosicion()
-    {
-        
-            
-            StartCoroutine(Rotar());
-            
-        
-        
-        
-         
-    }
-    
    
-    IEnumerator Rotar ()
-    {
-        if (animacionAcabada == true)
-        {
-            animacionAcabada = false;
-            float grados;
-            float rotar;
-            bool realizada = false;
-
-            if (pos == 1)
-            {
-                grados = 90f;
-                rotar = -90f;
-                while (realizada == false)
-                {
-                    float rotacion = rotar * 6 * Time.fixedDeltaTime;
-                    transform.Rotate(0, 0, rotacion);
-                    if (grados > transform.eulerAngles.z)
-                    {
-                        GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 90);
-                        realizada = true;
-
-                    }
-                    yield return new WaitForEndOfFrame();
-                }
-                pos = 0;
-                yield return new WaitForSeconds(0.05f);
-                animacionAcabada = true;
-            }
-            else
-            {
-                grados = 180f;
-                rotar = 180f;
-                while (realizada == false)
-                {
-                    float rotacion = rotar * 6 * Time.fixedDeltaTime;
-                    transform.Rotate(0, 0, rotacion);
-                    if (grados < transform.eulerAngles.z)
-                    {
-                        GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 180);
-                        realizada = true;
-
-                    }
-                    yield return new WaitForEndOfFrame();
-                }
-                pos = 1;
-                yield return new WaitForSeconds(0.05f);
-                animacionAcabada = true;
-                
-            }
-        
-        }
-        
-       
-        
-       
-        
-        
-            
-            
-        
-    }
     public void SetDatosCarta(int datos)
     {
         datosCarta = datos;
@@ -169,42 +77,7 @@ public class carta : MonoBehaviour
     {
         return datosCarta;
     }
-    public void EntraBatalla()
-    {
-        
-        transform.Translate(0, 0, -2);
-        transform.localScale = new Vector3(8f, 8f, 0);
-        StartCoroutine(Batalla());
-    }
-    //el nombre de este metodo y su comportamiento puede camnbiar
-    IEnumerator Batalla()
-    {
-        float grados=180f;
-        float rotar=-45f;
-        bool realizada = false;
-        bool animacion1 = false;
-        while (!realizada)
-        {
-            float rotacion = rotar * 15 * Time.fixedDeltaTime;
-            transform.Rotate(0, rotacion, 0);
-            if (grados-135 < transform.eulerAngles.y && animacion1==false)
-            {
-                GetComponent<Transform>().eulerAngles = new Vector3(0, 225, 180);
-                GetComponent<MeshRenderer>().material.mainTexture = (Texture2D)txt.cartas.GetValue(campo.getPos());
-                animacion1 = true;
-                grados = 225;
-                
-            }
-            if (grados+100 < transform.eulerAngles.y)
-            {
-                GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 180);
-                realizada = true;
-            }
 
-            yield return new WaitForSeconds(0.05f);
-        }
-       
-    }
     public void SetPos(int posCarta)
     {
         pos = posCarta;

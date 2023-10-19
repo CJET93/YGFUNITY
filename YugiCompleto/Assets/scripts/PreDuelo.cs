@@ -2224,7 +2224,7 @@ public class PreDuelo : MonoBehaviour
             if (cartaReemplazo != -1)
             {
                 fase = "cerrar";
-                panelCarta.transform.Find("imgcarta").GetComponent<Image>().sprite = (Sprite)txt.cartasBatalla.GetValue(cartasCofre[cartaReemplazo]);
+                //panelCarta.transform.Find("imgcarta").GetComponent<Image>().sprite = (Sprite)txt.cartasBatalla.GetValue(cartasCofre[cartaReemplazo]);
 
                 if (txt.GetTipoCarta().GetValue(cartasCofre[cartaReemplazo]).ToString().Trim().Equals("Monstruo"))
                 {
@@ -2277,7 +2277,7 @@ public class PreDuelo : MonoBehaviour
             if (deck.Count > 0 && indiceDeck < deck.Count)
             {
                 fase = "cerrar";
-                panelCarta.transform.Find("imgcarta").GetComponent<Image>().sprite = (Sprite)txt.cartasBatalla.GetValue(deck[indiceDeck]);
+                //panelCarta.transform.Find("imgcarta").GetComponent<Image>().sprite = (Sprite)txt.cartasBatalla.GetValue(deck[indiceDeck]);
 
                 if (txt.GetTipoCarta().GetValue(deck[indiceDeck]).ToString().Trim().Equals("Monstruo"))
                 {
