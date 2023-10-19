@@ -78,7 +78,10 @@ public class Libreria : MonoBehaviour
                         clonCarta.transform.Find("cardContainer/specialContainer").GetComponent<Image>().gameObject.SetActive(true);
                     }
                     clonCarta.transform.Find("cardContainer/cardImage").GetComponent<Image>().sprite = (Sprite)txt.cartas1.GetValue(contador);
-                    clonCarta.transform.Find("cardContainer/cardText").GetComponent<TextMeshProUGUI>().text =(string)txt.getnom().GetValue(contador);
+                    string cardName = (string)txt.getnom().GetValue(contador);
+                    float fontSize = GetFontCardName(cardName);
+                    clonCarta.transform.Find("cardContainer/cardText").GetComponent<TextMeshProUGUI>().text = cardName;
+                    clonCarta.transform.Find("cardContainer/cardText").GetComponent<TextMeshProUGUI>().fontSize = fontSize;
                 }
                 else
                 {
@@ -98,6 +101,28 @@ public class Libreria : MonoBehaviour
         }
      
 
+    }
+    private float GetFontCardName(string name)
+    {
+        float fontSize;
+        if (name.Length > 29)
+        {
+            fontSize = 2f;
+        }
+        else if (name.Length > 20)
+        {
+            fontSize = 3f;
+        }
+        else if (name.Length > 16)
+        {
+            fontSize = 4f;
+        }
+        else
+        {
+            fontSize = 5f;
+        }
+
+        return fontSize;
     }
     public void TotalYPorcentaje()
     {

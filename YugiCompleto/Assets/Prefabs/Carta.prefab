@@ -648,9 +648,6 @@ MonoBehaviour:
   imagenCartaB: {fileID: 1769254235479267819}
   ataqueB: {fileID: 5520158797483198223}
   defensaB: {fileID: 6442856824826946297}
-  panelAtaqueB: {fileID: 0}
-  panelDefensaB: {fileID: 0}
-  contenedorNombre: {fileID: 0}
   nombreCarta: {fileID: 10506905127796062}
   imagenMiniCarta: {fileID: 2665151409950390307}
   monsterContainer: {fileID: 8786002960988208327}

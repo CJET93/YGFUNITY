@@ -577,7 +577,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1659382821471402286}
-  - {fileID: 7472492796770273658}
   m_Father: {fileID: 4958031901521690844}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 180, z: 0}
@@ -614,7 +613,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: dadfab41c27be7a468ff135a8517c079, type: 3}
+  m_Texture: {fileID: 2800000, guid: eac37e9878052f746afbf73ef660a163, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2560,6 +2559,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2402435910737667812}
+  - {fileID: 7472492796770273658}
   - {fileID: 1746789285065510535}
   m_Father: {fileID: 1731902681507829570}
   m_RootOrder: 0
@@ -2842,7 +2842,7 @@ RectTransform:
   - {fileID: 1978750225906326215}
   - {fileID: 6128706467272838111}
   m_Father: {fileID: 1659382821471402286}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3023,17 +3023,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7259972572244157785}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00042915344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1731902681507829570}
+  m_Father: {fileID: 1659382821471402286}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0067, y: 0.1241}
-  m_SizeDelta: {x: 0.95, y: 0.713}
+  m_AnchoredPosition: {x: 0.0043499, y: 0.4997}
+  m_SizeDelta: {x: 0.9683, y: 0.7193}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8240573034124610940
 CanvasRenderer:

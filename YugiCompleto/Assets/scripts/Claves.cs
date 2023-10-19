@@ -107,7 +107,10 @@ public class Claves : MonoBehaviour
                 imagenCarta.transform.Find("cardContainer/monsterContainer/cardAtk").GetComponent<TextMeshProUGUI>().text = "Atk " + (string)txt.getatk().GetValue(idCarta);
                 imagenCarta.transform.Find("cardContainer/monsterContainer/cardDef").GetComponent<TextMeshProUGUI>().text = "Def " + (string)txt.getdef().GetValue(idCarta);
                 imagenCarta.transform.Find("cardContainer/cardImage").GetComponent<Image>().sprite = (Sprite)txt.cartas1.GetValue(idCarta);
-                imagenCarta.transform.Find("cardContainer/cardName").GetComponent<TextMeshProUGUI>().text = (string)txt.getnom().GetValue(idCarta);
+                string cardName = (string)txt.getnom().GetValue(idCarta);
+                float fontSize = GetFontCardName(cardName);
+                imagenCarta.transform.Find("cardContainer/cardName").GetComponent<TextMeshProUGUI>().text = cardName;
+                imagenCarta.transform.Find("cardContainer/cardName").GetComponent<TextMeshProUGUI>().fontSize = fontSize;
                 string name = txt.attributeText[idCarta];
                 int indice = -1;
 
@@ -317,6 +320,29 @@ public class Claves : MonoBehaviour
         botonSalir.SetActive(true);
 
 
+    }
+
+    private float GetFontCardName(string name)
+    {
+        float fontSize;
+        if (name.Length > 29)
+        {
+            fontSize = 13f;
+        }
+        else if (name.Length > 20)
+        {
+            fontSize = 15f;
+        }
+        else if (name.Length > 16)
+        {
+            fontSize = 17f;
+        }
+        else
+        {
+            fontSize = 19f;
+        }
+
+        return fontSize;
     }
     public void CancelarCompra()
     {

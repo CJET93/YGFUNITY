@@ -147,27 +147,13 @@ public class Juego : MonoBehaviour
         Cursor.visible = false;
         for (int i = 0; i < Constants.CARDS_IN_DECK-20; i++)
         {
-            deckUsuario.Add(Random.Range(685,685));
-            AtaquePromedioDeck += int.Parse((string)txt.getatk().GetValue(deckUsuario[i]));
-            defensaPromedioDeck += int.Parse((string)txt.getdef().GetValue(deckUsuario[i]));
-        }
-        for (int i = 0; i < Constants.CARDS_IN_DECK - 20; i++)
-        {
-            deckUsuario.Add(Random.Range(638, 638));
+            deckUsuario.Add(datosJuego.GetDeckUsuario()[i]);
             AtaquePromedioDeck += int.Parse((string)txt.getatk().GetValue(deckUsuario[i]));
             defensaPromedioDeck += int.Parse((string)txt.getdef().GetValue(deckUsuario[i]));
         }
         AtaquePromedioDeck /= Constants.CARDS_IN_DECK;
         defensaPromedioDeck /= Constants.CARDS_IN_DECK;
-        //deckCpu = datosDuelo.GetDeckCpu();
-        for(int i = 0; i < 20; i++)
-        {
-            deckCpu.Add(Random.Range(1, 721));
-        }
-        for (int i = 0; i < 20; i++)
-        {
-            deckCpu.Add(Random.Range(93, 97));
-        }
+        deckCpu = datosDuelo.GetDeckCpu();
         // ordenar cartas en ataque del campo usuario
         //organizar los ataques del usuario y ponerlos en un nuevo array temporal
         //dependiente de la suerte

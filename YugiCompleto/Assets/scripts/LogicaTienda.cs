@@ -321,26 +321,35 @@ public class LogicaTienda : MonoBehaviour
 
             while (!realizada)
             {
-
-
-                clon[i].GetComponent<RawImage>().transform.Rotate(0 * Time.fixedDeltaTime, 900 * Time.fixedDeltaTime, 0 * Time.fixedDeltaTime);
-
-
-                if (clon[i].GetComponent<RawImage>().transform.rotation.eulerAngles.y > 90 && animacion1 == false)
+                clon[i].transform.transform.Rotate(0 * Time.fixedDeltaTime, 900 * Time.fixedDeltaTime, 0 * Time.fixedDeltaTime);
+                if (clon[i].transform.rotation.eulerAngles.y > 90 && animacion1 == false)
                 {
-                    clon[i].GetComponent<RawImage>().transform.eulerAngles = new Vector3(0, -90, 0);
-
-                    ///clon.GetClonCpu(j).GetComponent<Transform>().eulerAngles = new Vector3(-200, 360, 180);
-                    clon[i].GetComponent<RawImage>().texture = (Texture2D)txt.cartas.GetValue(cartas[i]);
-                    //cartaCpu.GetComponent<Transform>().eulerAngles = new Vector3(0, -240, 180);
-                    //cartaCpu.GetComponent<MeshRenderer>().material.mainTexture = (Texture2D)cartaCpu.txt.cartas.GetValue(campo.GetCpuPos());
+                    clon[i].transform.eulerAngles = new Vector3(0, -90, 0);
+                    GameObject cardContainer = clon[i].transform.Find("noReverseContainer").gameObject;
+                    cardContainer.SetActive(true);
+                    cardContainer.transform.Find("cardImage").GetComponent<Image>().sprite = (Sprite)txt.cartas1.GetValue(cartas[i]);
+                    cardContainer.transform.Find("cardName").GetComponent<TextMeshProUGUI>().text = txt.nombresCartas.GetValue(cartas[i]).ToString();
+                    float fontSize = GetFontCardName(txt.nombresCartas.GetValue(cartas[i]).ToString());
+                    cardContainer.transform.Find("cardName").GetComponent<TextMeshProUGUI>().fontSize = fontSize;
+                    cardContainer.transform.Find("monsterContainer/cardAtk").GetComponent<TextMeshProUGUI>().text = "Atk "+txt.getatk().GetValue(cartas[i]).ToString();
+                    cardContainer.transform.Find("monsterContainer/cardDef").GetComponent<TextMeshProUGUI>().text = "Def " + txt.getatk().GetValue(cartas[i]).ToString();
+                      if (!txt.GetTipoCarta().GetValue(cartas[i]).ToString().Trim().Equals("Monstruo"))
+                    {
+                        cardContainer.transform.Find("specialContainer").gameObject.SetActive(true);
+                        if (txt.GetTipoCarta().GetValue(cartas[i]).ToString().Trim().Equals("Trampa"))
+                        {
+                            cardContainer.transform.Find("specialContainer/trapContainer").gameObject.SetActive(true);
+                        }
+                    }
+                    GetAttribute(cardContainer, cartas[i]);
+                    getStars(cardContainer, cartas[i]);
                     animacion1 = true;
 
 
                 }
-                if (clon[i].GetComponent<RawImage>().transform.rotation.eulerAngles.y < 180 && animacion1 == true)
+                if (clon[i].transform.rotation.eulerAngles.y < 180 && animacion1 == true)
                 {
-                    clon[i].GetComponent<RawImage>().transform.rotation = (Quaternion.Euler(0, 0, 0));
+                    clon[i].transform.rotation = (Quaternion.Euler(0, 0, 0));
                     realizada = true;
                 }
 
@@ -355,6 +364,65 @@ public class LogicaTienda : MonoBehaviour
         //botonCambiar.SetActive(true);
         //botonCancelar.SetActive(true);
 
+    }
+
+    private void GetAttribute(GameObject cardContainer,int cardNumber)
+    {
+        string name = txt.attributeText[cardNumber];
+        int indice = -1;
+
+        for (int i = 0; i < txt.attributeImages.Length; i++)
+        {
+            if (txt.attributeImages[i].name == name)
+            {
+                indice = i;
+                break;
+            }
+        }
+
+        if (indice != -1)
+        {
+            cardContainer.transform.Find("cardAttribute").GetComponent<Image>().sprite = txt.attributeImages[indice];
+        }
+        else
+        {
+            Debug.LogError($"Sprite con nombre '{name}' no encontrado en txt.attributeImages.");
+        }
+    }
+
+    private float GetFontCardName(string name)
+    {
+        float fontSize;
+            if (name.Length > 29)
+            {
+                fontSize = 20f;
+            }
+            else if (name.Length > 20)
+            {
+                fontSize = 25f;
+            }
+            else if (name.Length > 16)
+            {
+                fontSize = 30f;
+            }
+            else
+            {
+                fontSize = 40f;
+            }
+
+        return fontSize;
+    }
+
+
+    private void getStars(GameObject container, int cardNumber)
+    {
+        int numberOfStarsToShow = int.Parse((string)txt.GetStars().GetValue(cardNumber));
+        int stars = container.transform.Find("monsterContainer/starsContainer").childCount;
+        for (int i = 0; i < stars; i++)
+        {
+            Transform star = container.transform.Find("monsterContainer/starsContainer").GetChild(i);
+            star.gameObject.SetActive(i < numberOfStarsToShow);
+        }
     }
     public void llenarListaCartas(int valor)
     {

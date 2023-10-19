@@ -1967,7 +1967,6 @@ public class ClonCarta : MonoBehaviour
                     clonCpu[0].GetComponent<carta>().SetTieneBono(false);
                     clonCpu[0].GetComponent<carta>().SetTieneBonoDesfavorable(false);
                     clonCpu[0].GetComponent<muestraCarta>().imagenMiniCarta.texture = (Texture2D)txt.miniImagens.GetValue(campo.GetManoCpu(0));
-                    Debug.LogError("QUELDO");
                     int stars = int.Parse((string)txt.GetStars().GetValue(campo.GetManoCpu(0)));
                     string attribute = txt.GetAttributes().GetValue(campo.GetManoCpu(0)).ToString();
                     clonCpu[0].GetComponent<carta>().SetAttribute(attribute);

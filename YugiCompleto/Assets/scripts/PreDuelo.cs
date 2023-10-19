@@ -1711,7 +1711,10 @@ public class PreDuelo : MonoBehaviour
         {
             Debug.LogError($"Sprite con nombre '{name}' no encontrado en txt.attributeImages.");
         }
-        panelCarta.transform.Find("cardContainer/cardName").GetComponent<TextMeshProUGUI>().text = txt.getnom().GetValue(cardNumber).ToString();
+        string cardName = txt.getnom().GetValue(cardNumber).ToString();
+        float fontSize = GetFontCardName(cardName);
+        panelCarta.transform.Find("cardContainer/cardName").GetComponent<TextMeshProUGUI>().text = cardName;
+        panelCarta.transform.Find("cardContainer/cardName").GetComponent<TextMeshProUGUI>().fontSize = fontSize;
         panelCarta.transform.Find("cardContainer/imgCard").GetComponent<Image>().sprite = (Sprite)txt.cartas1.GetValue(cardNumber);
 
         if (txt.GetTipoCarta().GetValue(cardNumber).ToString().Trim().Equals("Monstruo"))
@@ -1757,6 +1760,29 @@ public class PreDuelo : MonoBehaviour
             panel1.transform.Find("imgtipo").GetComponent<RawImage>().texture = (Texture2D)txt.atirbutos.GetValue(23);
         }
         panelCarta.SetActive(true);
+    }
+
+    private float GetFontCardName(string name)
+    {
+        float fontSize;
+        if (name.Length > 29)
+        {
+            fontSize = 9f;
+        }
+        else if (name.Length > 20)
+        {
+            fontSize = 12f;
+        }
+        else if (name.Length > 16)
+        {
+            fontSize = 14f;
+        }
+        else
+        {
+            fontSize = 16f;
+        }
+
+        return fontSize;
     }
     public void ActualizarDeckCpu()
     {
