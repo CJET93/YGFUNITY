@@ -30,7 +30,7 @@ public class Interfaz : MonoBehaviour
     public CuadroUsuario cuadroUsuario;
     public Juego juego;
     public GameObject datosCarta;
-    public ImportadorTextos listas;
+    private Data listas;
     public Text cantDeckUsuario;
     public Text cantDeckCpu;
     public TextMeshProUGUI magicaTrampa;
@@ -99,6 +99,7 @@ public class Interfaz : MonoBehaviour
     void Start()
 
     {
+        listas= juego.GetData();
         tiempoFlash = 5f;
     }
 

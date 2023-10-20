@@ -28,7 +28,7 @@ public class PreDuelo : MonoBehaviour
     public GameObject contenedor;
     public GameObject panelDeck;
     public GameObject panelCofre;
-    public ImportadorTextos txt;
+    private Data txt;
     public Sonido sonido;
     public GameObject panel1;
     public GameObject panel2;
@@ -117,6 +117,7 @@ public class PreDuelo : MonoBehaviour
         fase = "cofre";
         //deck de prueba
         deck = datosJuego.GetDeckUsuario();
+        txt = datosJuego.GetData();
 
         //DESCOMENTARIEEEAR
 
@@ -1373,7 +1374,6 @@ public class PreDuelo : MonoBehaviour
 
     private void UpdteOneCard(int idCard)
     {
-        Debug.LogError("id de la carta es" + idCard + "pero id reemplazo es" + cartasCofre[idCard]);
         int id = cartasCofre[idCard];
         int idCantidad = idOrden == 1 ? id-1  : idCard;
 
@@ -1917,11 +1917,9 @@ public class PreDuelo : MonoBehaviour
     {
         StopAllCoroutines();
         deslizadoRapido = false;
-        Debug.LogError("entre acá");
     }
     public void BotonAbajo()
     {
-        Debug.LogError("entre acá eva");
         if (!deslizadoRapido)
         {
             StartCoroutine(FlechaAbajoArriba());

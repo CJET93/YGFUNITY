@@ -45,13 +45,20 @@ public class DatosJuego : MonoBehaviour
     public bool esJugadorUno = true;
 
     public float Descuento { get => descuento; set => descuento = value; }
+    [SerializeField]
+    private Data data;
 
     private void Awake()
     {
+        
         if(datosJuego != null)
         {
             Destroy(gameObject);
             return;
+        }
+        else
+        {
+            data.ReadData();
         }
         datosJuego = this;
         GameObject.DontDestroyOnLoad(gameObject);
@@ -306,6 +313,11 @@ public class DatosJuego : MonoBehaviour
         deckUsuario = datos.deckUsuario;
         nombreJugador = datos.nombreJugador;
         slot = datos.slot;
+    }
+
+    public Data GetData()
+    {
+        return data;
     }
 
 

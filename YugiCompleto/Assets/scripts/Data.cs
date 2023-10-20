@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ImportadorTextos : MonoBehaviour
+[CreateAssetMenu(fileName = "Data", menuName = "data", order = 0)]
+public class Data : ScriptableObject
 {
     public string[] lineasTexto;
     public string[] lineasAtk;
@@ -66,7 +66,7 @@ public class ImportadorTextos : MonoBehaviour
     public TextAsset stars;
     public Texture2D[] miniImagens;
     public Texture2D[] guardianes;
-    public Texture2D[]atirbutos;
+    public Texture2D[] atirbutos;
     public Sprite[] cartas1;
     public TextAsset attributes;
 
@@ -74,12 +74,8 @@ public class ImportadorTextos : MonoBehaviour
     public Sprite[] attributeImages;
 
     //inicializa todas las listas ya cargadas
-    void Awake()
+    public void ReadData()
     {
-        if (fichero != null)
-        {
-            lineasTexto = fichero.text.Split('\n');
-        }
         if (atk != null)
         {
             lineasAtk = atk.text.Split('\n');
@@ -132,7 +128,7 @@ public class ImportadorTextos : MonoBehaviour
         {
             equiposTexto = equipos.text.Split('\n');
         }
-        if(destinoSA != null)
+        if (destinoSA != null)
         {
             destinoSATexxto = destinoSA.text.Split('\n');
         }
@@ -152,9 +148,9 @@ public class ImportadorTextos : MonoBehaviour
         {
             clavesTexto = claves.text.Split('\n');
         }
-        if(costo != null)
+        if (costo != null)
         {
-            costoTexto=costo.text.Split('\n');
+            costoTexto = costo.text.Split('\n');
         }
         if (ordenDuelistas != null)
         {
@@ -188,27 +184,26 @@ public class ImportadorTextos : MonoBehaviour
         {
             descripcionCartaTexto = descripcionCarta.text.Split('\n');
         }
-        Debug.LogError("cuantas veces entro acá");
+      
         if (cardImages != null)
         {
             string[] cardImagesTxt = cardImages.text.Split('\n');
             for (int i = 0; i < cardImagesTxt.Length; i++)
             {
-                //cartas.SetValue(Resources.Load<Texture2D>("cards/images/"+cardImagesTxt.GetValue(i).ToString().Trim()), i);
                 cartas1.SetValue(Resources.Load<Sprite>("cards/images/" + cardImagesTxt.GetValue(i).ToString().Trim()), i);
                 miniImagens.SetValue(Resources.Load<Texture2D>("cards/miniImages/" + cardImagesTxt.GetValue(i).ToString().Trim()), i);
             }
         }
 
-        if(stars != null)
+        if (stars != null)
         {
             starsText = stars.text.Split('\n');
         }
 
-        if(attributes != null)
+        if (attributes != null)
         {
             attributeText = attributes.text.Split('\n');
-            for(int i = 0; i < attributeText.Length; i++)
+            for (int i = 0; i < attributeText.Length; i++)
             {
                 attributeText[i] = attributeText[i].Trim();
             }
@@ -269,7 +264,7 @@ public class ImportadorTextos : MonoBehaviour
     {
         return nombresTipoCartaTexto;
     }
-    public string [] GetNumeroTipoCarta()
+    public string[] GetNumeroTipoCarta()
     {
         return numeroTipoCartaTexto;
     }
@@ -344,6 +339,4 @@ public class ImportadorTextos : MonoBehaviour
         return attributeText;
 
     }
-
-
 }

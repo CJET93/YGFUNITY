@@ -14,7 +14,7 @@ public class Claves : MonoBehaviour
     public TextMeshProUGUI numeroCarta;
     public TextMeshProUGUI costoCarta;
     public TextMeshProUGUI claveTexto;
-    public ImportadorTextos txt;
+    private Data txt;
     public string clave;
     public GameObject imagenCarta;
     private GameObject objetoDatosJuego;
@@ -37,6 +37,7 @@ public class Claves : MonoBehaviour
     {
         sonido.MusicaClaves();
         estrellasTexto.text = "X" + datosJuego.GetEstrellas();
+        txt = datosJuego.GetData();
     }
     private void initialValues()
     {

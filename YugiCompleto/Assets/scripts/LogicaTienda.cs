@@ -19,7 +19,7 @@ public class LogicaTienda : MonoBehaviour
     private DatosJuego datosJuego;
     public GameObject[] clon;
     public GameObject original;
-    public ImportadorTextos txt;
+    private Data txt;
     public GameObject imagenCarta;
     public GameObject contenedor;
     public Sonido sonido;
@@ -53,6 +53,7 @@ public class LogicaTienda : MonoBehaviour
         estrellas.text = "Estrellas X"+datosJuego.GetEstrellas();
         desactivarControles = false;
         fase = "packs";
+        txt = datosJuego.GetData();
         ValidarPacks();
         Validar();
     }
@@ -487,7 +488,6 @@ public class LogicaTienda : MonoBehaviour
                         valorTotal = (int.Parse(txt.getatk()[random]));
                     }
                 }
-                Debug.LogWarning(probabilidad);
                 cartas[i] = random;
                 random = Random.Range(1, Constants.TOTAL_CARDS);
                 valorTotal = (int.Parse(txt.getatk()[random]));
@@ -512,7 +512,6 @@ public class LogicaTienda : MonoBehaviour
             {
                 if (probabilidad == 99)
                 {
-                    Debug.LogWarning(probabilidad);
                     while (valorTotal < 3000 || int.Parse(txt.GetPots()[random]) > 3)
                     {
                         random = Random.Range(1, Constants.TOTAL_CARDS);

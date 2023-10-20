@@ -8,7 +8,7 @@ public class Juego : MonoBehaviour
     public Campo campo;
     private Fade fade;
     private ClonCarta clon;
-    private ImportadorTextos txt;
+    private Data txt;
     private ImportadorHistoria importadorHistoria;
     private List<int> defensasAltas = new List<int>();
     private List<int> cartasCampo = new List<int>();
@@ -128,10 +128,10 @@ public class Juego : MonoBehaviour
             }
         }
      
-        txt = GameObject.Find("Listas").GetComponent<ImportadorTextos>();
         importadorHistoria = GameObject.Find("ListaHistoria").GetComponent<ImportadorHistoria>();
         fade = GameObject.Find("fade").GetComponent<Fade>();
         clon = GameObject.Find("Clon").GetComponent<ClonCarta>();
+        txt = datosJuego.GetData();
 
 
     }
@@ -171,6 +171,11 @@ public class Juego : MonoBehaviour
         
         //CreasInstancais();
         //carta.obtenerCarta();
+    }
+
+    public Data GetData()
+    {
+        return txt;
     }
     IEnumerator AnimacionVida()
     {

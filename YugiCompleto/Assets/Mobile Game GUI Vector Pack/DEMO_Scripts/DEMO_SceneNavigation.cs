@@ -3,9 +3,9 @@
 public class DEMO_SceneNavigation : MonoBehaviour {
 
     [SerializeField]
-    private GameObject graphicsManager;
+    private GameObject graphicsManager=null;
     [SerializeField]
-    private GameObject soundManager;
+    private GameObject soundManager = null;
 
     // Use this for initialization
     void Start () {

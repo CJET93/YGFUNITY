@@ -14,7 +14,6 @@ public class carta : MonoBehaviour
     public int guardian2;
     public int guardianActivo;
     public Campo campo ;
-    public ImportadorTextos txt;
     public ClonCarta clonCarta;
     public bool animacionAcabada =true;
     public bool tieneBono = false;

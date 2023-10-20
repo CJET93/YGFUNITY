@@ -9,7 +9,7 @@ public class Libreria : MonoBehaviour
 {
     public GameObject original;
     public GameObject contenedor;
-    public ImportadorTextos txt;
+    private Data txt;
     public int posX;
     public int posY;
     public int contador;
@@ -33,6 +33,7 @@ public class Libreria : MonoBehaviour
     }
     void Start()
     {
+        txt = datosJuego.GetData();
         sonido.MusicaLibreria();
         posX = 0;
         posY = 0;

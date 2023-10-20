@@ -12,7 +12,7 @@ public class ClonCarta : MonoBehaviour
     public GameObject contenedorCampoUsuario;
     public GameObject contenedorCampoCpu;
     public CuadroUsuario cuadroUsuario;
-    public ImportadorTextos txt;
+    private Data txt;
     public Campo campo;
     public carta carta;
     public static int Constane = 9999;
@@ -49,6 +49,7 @@ public class ClonCarta : MonoBehaviour
     void Start()
     {
         atkBatallPos = new Vector3(0f, 0f, 0f);
+        txt = juego.GetData();
     }
 
 
@@ -1147,7 +1148,6 @@ public class ClonCarta : MonoBehaviour
 
                     if (aumento != 0)
                     {
-                        Debug.LogError("cuando entrao en el miltor");
                         yield return GetUpgrade(clon[temp[i]], aumento, clon[temp[i - 1]],false);
                     }
                     else
@@ -1421,7 +1421,6 @@ public class ClonCarta : MonoBehaviour
     // LISTA DE POSICIONES CARTAS EN TABLERO USUARIO
     public float posicionesTableroUsuario(int indice)
     {
-        Debug.LogError("queldo" + campoU[indice] +"y "+indice);
         float[] x = new float[5];
         x[0] = 3.24f;
         x[1] = 1.62f;
@@ -5427,7 +5426,6 @@ public class ClonCarta : MonoBehaviour
         card.GetComponent<muestraCarta>().defensaB.text = defText + card.GetComponent<carta>().getDefensa();
         string cardName = card.GetComponent<carta>().GetName();
         card.GetComponent<muestraCarta>().nombreCarta.text = cardName;
-        Debug.LogError(cardName);
         card.GetComponent<muestraCarta>().nombreCarta.fontSize = GetFontCardName(cardName,withField);
         Destroy(cardToDestroy);
         cardToDestroy = null;
@@ -5482,7 +5480,6 @@ public class ClonCarta : MonoBehaviour
 
     public float GetFontCardName(string name,bool isFieldCard)
     {
-        Debug.LogError(name.Length);
         float fontSize;
         if (isFieldCard)
         {

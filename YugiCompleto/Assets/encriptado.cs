@@ -52,7 +52,7 @@ public class encriptado : MonoBehaviour
     public TextAsset probabilidadDrop;
 
 
-    public ImportadorTextos txt;
+    public Data txt;
     public ImportadorHistoria txt1;
 
     string CJETCode = "9876543210ABCDEFGHIJKLMÑNOPQRSTUVWXYZAabcdefghijklmnñopqrstuvwxyz <>?.-_#()'& ";
@@ -339,7 +339,7 @@ public class encriptado : MonoBehaviour
             }
 
         }
-        catch(Exception i)
+        catch(Exception )
         {
             Application.Quit();
         }

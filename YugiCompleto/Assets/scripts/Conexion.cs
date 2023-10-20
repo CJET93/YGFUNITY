@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Conexion : MonoBehaviourPunCallbacks
 {
-    string gameVersion = "1.1";
+
     [SerializeField]
     private byte maxPlayersPerRoom = 2;
 
@@ -23,9 +23,6 @@ public class Conexion : MonoBehaviourPunCallbacks
 
     private TextMeshProUGUI nickUsuario2;
 
-    [SerializeField]
-
-    private TextMeshProUGUI PRUEBA;
 
 
     private GameObject btnLoad;
@@ -104,7 +101,6 @@ public class Conexion : MonoBehaviourPunCallbacks
     {
         //fdfddf
         Debug.Log("lidrock "+player.CustomProperties["deck"]);
-        PRUEBA.text = player.CustomProperties["deck"].ToString();
     }
     [PunRPC]
     public void ActualizarLobby()

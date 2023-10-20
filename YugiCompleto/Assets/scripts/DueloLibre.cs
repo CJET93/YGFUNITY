@@ -17,7 +17,7 @@ public class DueloLibre : MonoBehaviour
     public ScrollRect scroll;
     public RawImage[] duelistas;
     public RawImage cuadro;
-    public ImportadorTextos txt;
+    private Data txt;
     public ImportadorHistoria importadorHistoria;
     private GameObject objetoDatosJuego;
     private GameObject objetoDatosDuelo;
@@ -48,6 +48,7 @@ public class DueloLibre : MonoBehaviour
     }
     private void Start()
     {
+        txt = datosJuego.GetData();
         Cursor.visible = false;
         sonido.MenuDueloLibre();
         valoresScroll[0] = 1f;
