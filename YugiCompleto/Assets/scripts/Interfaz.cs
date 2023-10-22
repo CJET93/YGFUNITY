@@ -2270,7 +2270,7 @@ public class Interfaz : MonoBehaviour
         textoGanar.gameObject.SetActive(true);
         while (textoGanar.GetComponent<Transform>().localPosition.y <= 180)
         {
-            textoGanar.gameObject.transform.Translate(0f * Time.deltaTime, 350f * Time.deltaTime, 0f * Time.deltaTime);
+            textoGanar.gameObject.transform.Translate(0f * Time.deltaTime, 500f * Time.deltaTime, 0f * Time.deltaTime);
             yield return null;
         }
         while (controles.Getfase().Equals("letrasFin"))
@@ -2284,7 +2284,7 @@ public class Interfaz : MonoBehaviour
         }
         while (textoGanar.GetComponent<Transform>().localPosition.y >= -280)
         {
-            textoGanar.gameObject.transform.Translate(0f * Time.deltaTime, -400f * Time.deltaTime, 0f * Time.deltaTime);
+            textoGanar.gameObject.transform.Translate(0f * Time.deltaTime, -500f * Time.deltaTime, 0f * Time.deltaTime);
             yield return null;
         }
         textoLpUsuario.text = "" + juego.GetVidaUsuario();
@@ -2308,7 +2308,7 @@ public class Interfaz : MonoBehaviour
         textoPerder.gameObject.SetActive(true);
         while (textoPerder.GetComponent<Transform>().localPosition.y <= 180)
         {
-            textoPerder.gameObject.transform.Translate(0f * Time.deltaTime, 300f * Time.deltaTime, 0f * Time.deltaTime);
+            textoPerder.gameObject.transform.Translate(0f * Time.deltaTime, 500f * Time.deltaTime, 0f * Time.deltaTime);
             yield return null;
         }
         while (controles.Getfase().Equals("letrasFin"))
@@ -2323,7 +2323,7 @@ public class Interfaz : MonoBehaviour
         }
         while (textoPerder.GetComponent<Transform>().localPosition.y >= -280)
         {
-            textoPerder.gameObject.transform.Translate(0f * Time.deltaTime, -400f * Time.deltaTime, 0f * Time.deltaTime);
+            textoPerder.gameObject.transform.Translate(0f * Time.deltaTime, -500f * Time.deltaTime, 0f * Time.deltaTime);
             yield return null;
         }
         if (controles.Getfase().Equals("saltarLetras"))
